@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YPP ENERGY | BOLD FUTURE</title>
+    <title>YPP ENERGY | 와이피피에너지 주식회사</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -22,6 +22,7 @@
             color: #111;
             overflow-x: hidden;
             margin: 0;
+            min-width: 375px;
         }
 
         /* Typography */
@@ -310,7 +311,8 @@
     </div>
 
     <!-- Main Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-[100] mix-blend-difference text-white p-8 flex justify-between items-center">
+    <nav class="fixed top-0 left-0 w-full z-[100] mix-blend-difference text-white p-8 flex justify-between items-center"
+    style="background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
         <a href="#" class="text-2xl font-black tracking-tighter">YPP ENERGY</a>
         <div class="space-x-12 flex font-bold uppercase text-sm tracking-widest items-center">
             <a href="#about" class="hidden md:inline-block hover:opacity-50 transition-opacity">About</a>
@@ -320,7 +322,8 @@
     </nav>
 
     <!-- Hero -->
-    <section id="home" class="min-h-screen flex flex-col justify-end p-8 md:p-16 relative overflow-hidden">
+    <!-- Previous Hero Version (Static Background) -->
+    <section id="home" class="min-h-screen flex flex-col justify-end p-8 md:p-16 relative overflow-hidden" style="padding-top: 5rem;">
         <div class="absolute top-1/4 left-1/4 w-[60vw] h-[60vw] bg-blue-50 rounded-full blur-[120px] -z-10 animate-pulse"></div>
         <div class="reveal active">
             <h1 class="big-text mb-12">TOTAL<br><span class="text-transparent" style=" color:#fff; text-shadow: 0 0 10px #002271;">POWER</span><br>CONTROL</h1>
@@ -332,12 +335,47 @@
             </div>
         </div>
     </section>
+   
+    <!-- <section id="home" class="min-h-screen flex flex-col justify-end p-8 md:p-16 relative overflow-hidden" style="padding-top: 5rem;">
+        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover -z-20">
+            <source src="https://www.pexels.com/download/video/34338488/" type="video/mp4">
+        </video>
+        <div class="absolute top-0 left-0 w-full h-full bg-black/40 -z-10"></div>
+        <div class="reveal active">
+            <h1 class="big-text mb-12 text-white">TOTAL<br><span class="text-transparent" style=" color:#fff; text-shadow: 0 0 10px #002271;">POWER</span><br>CONTROL</h1>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-end gap-8 border-t border-white pt-8 reveal active text-white">
+            <p class="max-w-md text-xl font-light leading-relaxed">YPP ENERGY는 원자력, 화력, 풍력, SMR 등에 이르기까지 에너지 전 분야를 아우르는 통합 솔루션을 제공합니다.</p>
+            <div class="text-right">
+                <p class="text-4xl font-black italic">GLOBAL IMPACT</p>
+            </div>
+        </div>
+    </section> -->
 
     <!-- Marquee -->
     <div class="marquee">
         <div class="marquee-content">
-            <span class="marquee-text">Nuclear Power</span><span class="marquee-text">SMR Innovation</span><span class="marquee-text">Green Hydrogen</span><span class="marquee-text">Data Center Solution</span>
-            <span class="marquee-text">Nuclear Power</span><span class="marquee-text">SMR Innovation</span><span class="marquee-text">Green Hydrogen</span><span class="marquee-text">Data Center Solution</span>
+            <span class="marquee-text">Nuclear Power</span>
+            <span class="marquee-text">Thermal Power</span>
+            <span class="marquee-text">Renewable Energy</span>
+            <span class="marquee-text">Hydrogen</span>
+            <span class="marquee-text">Substation</span>
+            <span class="marquee-text">BESS</span>
+            <span class="marquee-text">Valve</span>
+            <span class="marquee-text">Military</span>
+            <span class="marquee-text">Data Center</span>
+            <span class="marquee-text">SMR Innovation</span>
+            <!-- Repeat for seamless loop -->
+            <span class="marquee-text">Nuclear Power</span>
+            <span class="marquee-text">Thermal Power</span>
+            <span class="marquee-text">Renewable Energy</span>
+            <span class="marquee-text">Hydrogen</span>
+            <span class="marquee-text">Substation</span>
+            <span class="marquee-text">BESS</span>
+            <span class="marquee-text">Valve</span>
+            <span class="marquee-text">Military</span>
+            <span class="marquee-text">Data Center</span>
+            <span class="marquee-text">SMR Innovation</span>
         </div>
     </div>
 
@@ -345,7 +383,7 @@
     <section id="solutions" class="py-32 bg-black text-white overflow-hidden relative">
         <div class="px-8 md:px-16 mb-16 reveal">
             <h3 class="text-sm uppercase tracking-[0.3em] text-blue-500 font-bold mb-4">Core Business</h3>
-            <div class="text-8xl font-black leading-none">SOLUTIONS.</div>
+            <div class="font-black leading-none" style="font-size: clamp(3.5rem, 12vw, 10rem);">SOLUTIONS.</div>
         </div>
         <div class="horizontal-container">
             <div class="horizontal-scroll px-8 md:px-16" id="horizontal-scroll">
@@ -439,12 +477,12 @@
     <!-- Footer -->
     <footer class="p-8 md:p-16 flex flex-col gap-12 bg-white">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-4xl font-black tracking-tighter text-blue-600">YPP.ENERGY</div>
+            <img src="logo/logo.png" alt="YPP ENERGY" class="h-10 w-auto">
             <div class="text-sm text-gray-400">© 2025 ALL RIGHTS RESERVED.</div>
-            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
+            <!-- <div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
                 <a href="#" class="hover:text-blue-600">Contact</a>
-            </div>
-        </div>
+            </div> -->
+        </img>
     </footer>
 
     <script>
