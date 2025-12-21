@@ -7,6 +7,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .solution-section { display: none; }
+        .solution-section.active { display: block; }
+        .tab-btn { position: relative; opacity: 0.4; transition: all 0.3s ease; }
+        .tab-btn:hover { opacity: 1; color: #000; }
+        .tab-btn.active { opacity: 1; }
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .tab-btn.active::after { width: 100%; }
+        
+        /* Custom scrollbar for horizontal tabs on mobile */
+        .tabs-container::-webkit-scrollbar { display: none; }
+        .tabs-container { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 <body class="selection:bg-blue-600 selection:text-white">
 
@@ -14,17 +36,1921 @@
     <div id="menu-placeholder"></div>
     <div id="nav-placeholder"></div>
 
-    <!-- Content Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center p-8 md:p-16 pt-32">
-        <div class="reveal active text-center">
-            <h1 class="text-6xl md:text-8xl font-black mb-8 uppercase">SOLUTIONS</h1>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto">YPP ENERGY의 솔루션 페이지입니다. 현재 콘텐츠 준비 중입니다.</p>
+    <!-- Page: SOLUTIONS -->
+    <div id="page-solutions" class="page-content">
+        <!-- Hero Header & Tab Navigation -->
+        <section class="pt-48 pb-10 px-8 md:px-16 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-12 reveal">SOLUTIONS.</h1>
+                
+                <!-- Local Tab Navigation Bar -->
+                <div class="tabs-container flex overflow-x-auto gap-8 md:gap-12 border-b border-gray-100 pb-4 reveal whitespace-nowrap">
+                    <button onclick="showSolutionSection('nuclear')" class="tab-btn active text-lg font-bold uppercase tracking-widest" id="btn-nuclear">원자력</button>
+                    <button onclick="showSolutionSection('combined')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-combined">복합화력</button>
+                    <button onclick="showSolutionSection('renewable')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-renewable">신재생에너지</button>
+                    <button onclick="showSolutionSection('hydrogen')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-hydrogen">그린수소/암모니아</button>
+                    <button onclick="showSolutionSection('substation')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-substation">변전소</button>
+                    <button onclick="showSolutionSection('bess')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-bess">BESS</button>
+                    <button onclick="showSolutionSection('datacenter')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-datacenter">데이터센터</button>
+                    <button onclick="showSolutionSection('valve')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-valve">콘트롤밸브</button>
+                    <button onclick="showSolutionSection('military')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-military">미군기지</button>
+                    <button onclick="showSolutionSection('smr')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-smr">SMR</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Content Container -->
+        <div class="min-h-[60vh]">
+            
+            <!-- 1. Section: 원자력 (Nuclear) -->
+            <section id="sect-nuclear" class="solution-section active py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-blue-800 font-bold tracking-widest uppercase mb-4">Nuclear Power Solutions</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">신뢰와 품질로 공급하는<br>원자력 설비개선 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                YPP는 원자력 발전소의 설계, 제작, 납품, 시운전, 설비개선 및 품질검증(CGID)에 이르는 전 주기 솔루션을 제공합니다. 고도의 신뢰성과 안전성이 요구되는 환경에서 국제 규격을 철저히 준수하며 설비의 안정적 운영에 기여합니다.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex items-center gap-3 text-gray-700">
+                                    <i class="fa-solid fa-circle-check text-blue-800"></i>
+                                    <span>전 주기(Life-cycle) 지원</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-gray-700">
+                                    <i class="fa-solid fa-circle-check text-blue-800"></i>
+                                    <span>국제 규격(Code & Standard) 준수</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-gray-700">
+                                    <i class="fa-solid fa-circle-check text-blue-800"></i>
+                                    <span>전기 및 계측제어(I&C) 전문성</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-gray-700">
+                                    <i class="fa-solid fa-circle-check text-blue-800"></i>
+                                    <span>CGID 품질검증 역량</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-video bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl relative group">
+                                <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=1200" alt="Nuclear Power Plant" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Competencies -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">핵심 경쟁력</h2>
+                            <p class="text-gray-500">원자력 산업의 엄격한 기준을 충족하는 YPP의 기술 자산</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 hover:shadow-xl transition-all reveal">
+                                <div class="w-12 h-12 bg-blue-800 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <h4 class="text-lg font-bold mb-4">품질 체계</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed">ISO 9001, 14001, ISO 19443 및 KEPIC 인증 기반의 완벽한 품질 시스템</p>
+                            </div>
+                            <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 hover:shadow-xl transition-all reveal delay-100">
+                                <div class="w-12 h-12 bg-blue-800 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <h4 class="text-lg font-bold mb-4">R&D 역량</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed">27명의 전담 연구인력 보유 및 국내외 EPC사와의 풍부한 협업 경험</p>
+                            </div>
+                            <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 hover:shadow-xl transition-all reveal delay-200">
+                                <div class="w-12 h-12 bg-blue-800 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-handshake"></i>
+                                </div>
+                                <h4 class="text-lg font-bold mb-4">글로벌 파트너십</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed">한수원 및 글로벌 원전 대상 독자 플랫폼 기반 시스템 제공</p>
+                            </div>
+                            <div class="bg-white p-10 rounded-[2.5rem] border border-gray-100 hover:shadow-xl transition-all reveal delay-300">
+                                <div class="w-12 h-12 bg-blue-800 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <h4 class="text-lg font-bold mb-4">첨단 시스템</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed">발전기 통합 예방진단(GMDS) 및 산업용 UPS 등 특화 솔루션</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scope of Work -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+                        <div class="group bg-slate-50 p-12 rounded-[3rem] hover:bg-blue-900 transition-all duration-500 reveal">
+                            <h4 class="text-2xl font-black mb-6 group-hover:text-white">설계 (Design)</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-8 group-hover:text-blue-100">
+                                디지털 3중화 보호계전기반 설계 및 전기·계측제어 도면 분야의 전문 엔지니어링을 수행합니다.
+                            </p>
+                            <div class="text-blue-800 group-hover:text-blue-300 text-4xl"><i class="fa-solid fa-compass-drafting"></i></div>
+                        </div>
+                        <div class="group bg-slate-50 p-12 rounded-[3rem] hover:bg-blue-900 transition-all duration-500 reveal delay-100">
+                            <h4 class="text-2xl font-black mb-6 group-hover:text-white">제작 (Fabrication)</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-8 group-hover:text-blue-100">
+                                제어반, 시료채취설비(Sampling System) 등 원전 특수 설비의 정밀 제작을 담당합니다.
+                            </p>
+                            <div class="text-blue-800 group-hover:text-blue-300 text-4xl"><i class="fa-solid fa-industry"></i></div>
+                        </div>
+                        <div class="group bg-slate-50 p-12 rounded-[3rem] hover:bg-blue-900 transition-all duration-500 reveal delay-200">
+                            <h4 class="text-2xl font-black mb-6 group-hover:text-white">설비개선 (Retrofit)</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-8 group-hover:text-blue-100">
+                                디지털 제어반·모듈 교체 및 노후 I&C 설비 개선을 통해 원전의 수명을 연장하고 효율을 높입니다.
+                            </p>
+                            <div class="text-blue-800 group-hover:text-blue-300 text-4xl"><i class="fa-solid fa-wrench"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Project Status -->
+                    <div class="mb-32">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div class="reveal">
+                                <h4 class="text-2xl font-black mb-8 border-l-4 border-blue-800 pl-6">국내 주요 프로젝트</h4>
+                                <div class="bg-gray-50 rounded-[2.5rem] p-10">
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                        신한울 3,4호기 및 고리, 새울, 월성, 한빛, 한울 등 <span class="font-bold text-blue-800">국내 전 원전 대상</span> 전력설비 보호/감시/제어 시스템을 납품하고 있습니다.
+                                    </p>
+                                    <ul class="space-y-3 text-sm">
+                                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-800 text-[10px]"></i> <span>현장 제어반 등 원전설비개선 수행</span></li>
+                                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-800 text-[10px]"></i> <span>Q-Class 예비품(전원공급기, 변류기 등) 공급</span></li>
+                                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-blue-800 text-[10px]"></i> <span>GCB 및 보호감시제어반 O&M 수행</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="reveal delay-200">
+                                <h4 class="text-2xl font-black mb-8 border-l-4 border-blue-800 pl-6">해외 주요 프로젝트</h4>
+                                <div class="bg-blue-900 text-white rounded-[2.5rem] p-10">
+                                    <div class="space-y-6">
+                                        <div>
+                                            <div class="text-blue-300 text-[10px] font-bold uppercase tracking-widest mb-1">Türkiye</div>
+                                            <div class="font-bold">Akkuyu 원전 Turbine I&C Package 공급</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-blue-300 text-[10px] font-bold uppercase tracking-widest mb-1">Egypt</div>
+                                            <div class="font-bold">El-Dabaa 원전 Turbine I&C 및 전기설비 공급</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-blue-300 text-[10px] font-bold uppercase tracking-widest mb-1">UAE</div>
+                                            <div class="font-bold">Barakah 원전(BNPP) 제어/계전기반 및 밸브 공급</div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-8 text-xs text-blue-200 italic">* 미국, 체코, 루마니아 등 글로벌 신규 원전 사업 진출 준비 중</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Supply Records Table -->
+                    <div class="mb-32 reveal">
+                        <h2 class="text-3xl font-black mb-12 text-center">주요 공급 실적</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse min-w-[800px]">
+                                <thead>
+                                    <tr class="border-b-2 border-blue-800">
+                                        <th class="py-6 px-4 text-sm font-black uppercase tracking-wider">분야</th>
+                                        <th class="py-6 px-4 text-sm font-black uppercase tracking-wider">기간</th>
+                                        <th class="py-6 px-4 text-sm font-black uppercase tracking-wider">프로젝트 / 품목</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-600 text-sm">
+                                    <!-- 전기 분야 -->
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4 font-bold text-blue-900" rowspan="15">전기 분야</td>
+                                        <td class="py-4 px-4">2010-2011</td>
+                                        <td class="py-4 px-4">신고리 3, 4호기 제어 및 계전기반 (현 새울 1, 4호기)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2011-2012</td>
+                                        <td class="py-4 px-4">한울 1, 2호기 갑종 보호계전기반</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2011-2012</td>
+                                        <td class="py-4 px-4">한빛 1, 2호기 갑종 보호계전기반 및 SWGR 보호계전기</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2012</td>
+                                        <td class="py-4 px-4">한빛 3, 4호기 갑종 보호계전기반</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2014-2015</td>
+                                        <td class="py-4 px-4">고리 3, 4호기 갑종 보호계전기반 및 SWGR 보호계전기</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2015-2016</td>
+                                        <td class="py-4 px-4">한울 3, 4호기 갑종 보호계전기반</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2014-2015</td>
+                                        <td class="py-4 px-4">한울 5, 6호기 갑종 보호계전기반</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2014-2017</td>
+                                        <td class="py-4 px-4">UAE BNPP 1~4호기 제어 및 계전기반 및 SWGR Relay</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2020-2021</td>
+                                        <td class="py-4 px-4">신고리 5, 6호기 제어 및 계전기반 및 SWGR Relay (현 새울 3호기)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2023-2024</td>
+                                        <td class="py-4 px-4">신월성 1, 2호기 RCP 전동기 보호계전기반</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2024</td>
+                                        <td class="py-4 px-4">신고리 1, 2호기 RCP 전동기 보호계전기반</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2027-2028</td>
+                                        <td class="py-4 px-4">신한율 3, 4호기 제어 및 계전기반 및 SWGR Relay(납기예정)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2017-2025</td>
+                                        <td class="py-4 px-4">신고리 5,6호기 보안설비용 전원 설비</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2019</td>
+                                        <td class="py-4 px-4">삼랑진 양수발전소 1,2호기 ECMS& SWGR계전기</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2025</td>
+                                        <td class="py-4 px-4">고리 2호기 이동용 발전기용 DS 설비</td>
+                                    </tr>
+
+                                    <!-- 계측·제어 분야 -->
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4 font-bold text-blue-900" rowspan="6">계측·제어 분야</td>
+                                        <td class="py-4 px-4">2018</td>
+                                        <td class="py-4 px-4">고리 2호기 물처리실 제어반(PLC) 개선 (S-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2020</td>
+                                        <td class="py-4 px-4">한빛 3, 4호기 가스탈기기 제어시스템 설비 개선 (A-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2022</td>
+                                        <td class="py-4 px-4">한울 1호기 계전기 제어반 (Q-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2024</td>
+                                        <td class="py-4 px-4">한빛 3, 4호기 현장 제어반 (A-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2024</td>
+                                        <td class="py-4 px-4">한울 본부 종합정비공작건물 HVAC 제어반 (S-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2025</td>
+                                        <td class="py-4 px-4">고리 1발 TSC Local Control Panel (A-Class)</td>
+                                    </tr>
+
+                                    <!-- CGID 분야 -->
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4 font-bold text-blue-900" rowspan="6">CGID 분야</td>
+                                        <td class="py-4 px-4">2021</td>
+                                        <td class="py-4 px-4">신월성 1호기, 2호기 Current Transformer 및 기타 전기 부품(Q-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2022</td>
+                                        <td class="py-4 px-4">고리 1호기, 2호기 Overvoltage Absorber Items (Q-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2022</td>
+                                        <td class="py-4 px-4">새울 1호기, 2호기 Transducer 및 기타 전기 부품 (Q-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2022</td>
+                                        <td class="py-4 px-4">한빛 6호기 Current Transformer 및 기타 전기 부품 (Q-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2023</td>
+                                        <td class="py-4 px-4">새울 1호기, 2호기 Electric Motor 및 기타 전기 부품 (Q-Class)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2024</td>
+                                        <td class="py-4 px-4">UR Relays → 디지털 보호계전기</td>
+                                    </tr>
+
+                                    <!-- 해외 원전 분야 -->
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4 font-bold text-blue-900" rowspan="2">해외 원전 분야</td>
+                                        <td class="py-4 px-4">2024</td>
+                                        <td class="py-4 px-4">튀르키예 Akkuyu 원전 1~4호기 Turbine I&C Package / Level Indicator Sets</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-blue-50 transition-colors">
+                                        <td class="py-4 px-4">2025</td>
+                                        <td class="py-4 px-4">이집트 El-Dabaa 원전 1~4호기 Turbine I&C Package / Electrical Equipment</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Qualifications -->
+                    <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white reveal">
+                        <h3 class="text-center text-blue-400 font-bold uppercase tracking-widest mb-16">Qualifications & Certifications</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                            <div>
+                                <h5 class="text-xl font-bold mb-6 border-b border-white/10 pb-4">한수원 유자격 (KHNP)</h5>
+                                <ul class="space-y-3 text-sm text-gray-400">
+                                    <li>• 제어: HVAC, 보조/현장 제어반, 시료채취설비</li>
+                                    <li>• 전기: 스위치야드 보호반, 보호감시제어 시스템</li>
+                                    <li>• 정비: 보호계전기 시험, GCB 정밀점검</li>
+                                    <li>• 품질: 일반규격품 품질검증(CGID) 인증</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="text-xl font-bold mb-6 border-b border-white/10 pb-4">한전기술 유자격 (KEPCO E&C)</h5>
+                                <ul class="space-y-3 text-sm text-gray-400">
+                                    <li>• 계측제어 설계분야 (A/E, SD)</li>
+                                    <li>• 원자력 발전소 엔지니어링 설계 역량</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="text-xl font-bold mb-6 border-b border-white/10 pb-4">글로벌 인증</h5>
+                                <ul class="space-y-3 text-sm text-gray-400">
+                                    <li>• ISO 19443 (원자력 품질 경영 시스템)</li>
+                                    <li>• KEPIC (전력산업기술기준) 인증</li>
+                                    <li>• BNPP NASL (Nawah Approved Supplier)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Section: 복합화력 (Combined Cycle) -->
+            <section id="sect-combined" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-start">
+                        <div class="reveal">
+                            <h3 class="text-blue-600 font-bold tracking-widest uppercase mb-4">Combined Cycle Power Plant</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">설계부터 턴키 건설까지<br>완전한 화력발전 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                YPP는 복합화력 및 열병합발전소의 전기 분야, 제어분야 및 변전설비를 설계, 공급 및 시공을 주로 수행했으며, 화력 발전소 계통의 설비분야에 뛰어난 역량을 가진 고급 기술인력을 확보하여 발전소 EPC 사업을 추진하고 있습니다.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex items-center gap-3 text-gray-700">
+                                    <i class="fa-solid fa-check text-blue-500"></i>
+                                    <span>전기·제어시스템 설계/공급/시공</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-gray-700">
+                                    <i class="fa-solid fa-check text-blue-500"></i>
+                                    <span>복합화력 및 열병합 전문성</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-gray-700">
+                                    <i class="fa-solid fa-check text-blue-500"></i>
+                                    <span>고급 기술인력 보유</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-gray-700">
+                                    <i class="fa-solid fa-check text-blue-500"></i>
+                                    <span>30여년의 발전분야 경험</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1473081556163-2a17de81fc97?auto=format&fit=crop&q=80&w=1200" alt="Power Plant" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Capabilities -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">기술역량</h2>
+                            <p class="text-gray-500 max-w-2xl mx-auto">30 여년간 발전분야에서 쌓은 다양한 경험을 토대로 고객의 요구에 부응하는 최신의 기술과 신뢰성 있은 발전설비를 Turnkey Solution을 제공합니다.</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                            <div class="bg-gray-50 p-10 rounded-[2rem] reveal">
+                                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">전력보호계통</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">화력발전소 전력보호계통 풍부한 경험</p>
+                            </div>
+                            <div class="bg-gray-50 p-10 rounded-[2rem] reveal delay-100">
+                                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">예방진단</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">변전소 및 변전설비 예방진단</p>
+                            </div>
+                            <div class="bg-gray-50 p-10 rounded-[2rem] reveal delay-200">
+                                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-sliders"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">제어설비</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">플랜트 제어설비</p>
+                            </div>
+                            <div class="bg-gray-50 p-10 rounded-[2rem] reveal delay-300">
+                                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">해외사업</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">해외 발전사업 상당한 실적과 노하우</p>
+                            </div>
+                            <div class="bg-gray-50 p-10 rounded-[2rem] reveal delay-400">
+                                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">턴키 솔루션</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">기술과 신뢰 바탕의 완전한 발전플랜트 솔루션</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Systems -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+                        <div class="group bg-white border border-gray-100 p-12 rounded-[3rem] hover:shadow-2xl transition-all duration-500 reveal">
+                            <h4 class="text-2xl font-black mb-6 group-hover:text-blue-600 transition-colors">전기설비 감시제어시스템</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8">
+                                최신 디지털 기술 기반의 전기설비 보호·감시·예방·진단·제어 시스템. 첨단기술 기반의 디지털 보호계전기와 네트워크 기술을 기반으로 발전소와 플랜트의 전기설비에 대한 운용과 보수, 점검의 편의성을 제공하고, 전력계통을 보호-감시-제어하는 자동화 시스템으로 사고예방과 안전한 고장복구가 가능.
+                            </p>
+                            <div class="flex items-center gap-2 text-blue-600 font-bold">
+                                <span>ECMS Solution</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="group bg-white border border-gray-100 p-12 rounded-[3rem] hover:shadow-2xl transition-all duration-500 reveal delay-200">
+                            <h4 class="text-2xl font-black mb-6 group-hover:text-blue-600 transition-colors">전력설비 예방진단</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8">
+                                화력, 수력, 원자력, 풍력 등의 발전소, 변전소, 석유화학, 플랜트, 선박, 항공 분야의 주요 설비인 GIS/변압기/터빈/발전기/모터/펌프/팬 등의 회전설비 또는 왕복운동 기계 설비의 상태를 분석, 고장을 미리 방지하여 설비의 가동률을 향상시킬 수 있는 지능형 종합 예방 진단시스템.
+                            </p>
+                            <div class="flex items-center gap-2 text-blue-600 font-bold">
+                                <span>Condition Monitoring</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Future Plan -->
+                    <div class="bg-blue-600 rounded-[3rem] p-12 md:p-20 text-white reveal">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                            <div>
+                                <h3 class="text-blue-200 font-bold uppercase tracking-widest mb-4">Project Status</h3>
+                                <h2 class="text-4xl md:text-5xl font-black mb-6">향후 계획</h2>
+                                <p class="text-xl text-blue-100 font-light">중앙아시아, 동유럽 및 서유럽 국가의 발전플랜트 입찰을 계획하고 있습니다.</p>
+                            </div>
+                            <div class="text-8xl opacity-20">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Section: 신재생에너지 (Renewable Energy) -->
+            <section id="sect-renewable" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro & Stats -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-green-600 font-bold tracking-widest uppercase mb-4">Renewable Energy</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">개발부터 운영까지<br>통합 신재생 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                당사가 집중하고 있는 해외시장(중앙아시아, 동남아, 중동)을 타겟으로 태양광, 풍력, 소수력 등 신재생에너지 발전플랜트를 초기 개발단계에서부터 시작하여 PPA 확보, 투자/금융유치, 기자재조달, EPC 조달, O&M까지 전 벨류체인에 대한 솔루션을 제공합니다.
+                            </p>
+                            <div class="grid grid-cols-2 gap-8">
+                                <div>
+                                    <div class="text-4xl font-black text-green-600 mb-1">43+</div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Years Experience</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black text-green-600 mb-1">3</div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Target Regions</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black text-green-600 mb-1">1,000<span class="text-lg ml-1">MW</span></div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Wind (KZ)</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black text-green-600 mb-1">600<span class="text-lg ml-1">MW</span></div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Solar (KZ)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="aspect-[3/4] bg-gray-100 rounded-3xl overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1509391366360-fe5bb65830bb?auto=format&fit=crop&q=80&w=600" alt="Solar" class="w-full h-full object-cover">
+                                </div>
+                                <div class="aspect-[3/4] bg-gray-100 rounded-3xl overflow-hidden mt-12">
+                                    <img src="https://images.unsplash.com/photo-1466611653911-95281773ad90?auto=format&fit=crop&q=80&w=600" alt="Wind" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Target Markets -->
+                    <div class="mb-32 reveal">
+                        <h4 class="text-center text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-12">Target Markets</h4>
+                        <div class="flex flex-wrap justify-center gap-8 md:gap-20">
+                            <div class="flex flex-col items-center gap-4">
+                                <div class="text-6xl">🇰🇿</div>
+                                <span class="text-xl font-bold">중앙아시아</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-4">
+                                <div class="text-6xl">🌏</div>
+                                <span class="text-xl font-bold">동남아시아</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-4">
+                                <div class="text-6xl">🕌</div>
+                                <span class="text-xl font-bold">중동</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capabilities -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+                        <div class="bg-white border border-gray-100 p-12 rounded-[3rem] reveal">
+                            <h4 class="text-2xl font-black mb-6">43년간 축적된 전문성</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8">발전시장에서 43년간 쌓아온 경험, 기술, 기자재소싱력 및 對 정부 네트워크를 활용합니다.</p>
+                            <ul class="space-y-3 text-sm font-bold text-green-600">
+                                <li># 선진 발전 기술력</li>
+                                <li># 글로벌 소싱 네트워크</li>
+                                <li># 강력한 정부 관계</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-100 p-12 rounded-[3rem] reveal delay-100">
+                            <h4 class="text-2xl font-black mb-6">전략적 파트너십</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8">카자흐스탄 그린수소 프로젝트를 기반으로 글로벌 공급선과 제휴하여 EPC 가격경쟁력을 확보합니다.</p>
+                            <ul class="space-y-3 text-sm font-bold text-green-600">
+                                <li># 풍력 1,000MW 추진</li>
+                                <li># 태양광 600MW 추진</li>
+                                <li># EPC 가격 경쟁력</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-100 p-12 rounded-[3rem] reveal delay-200">
+                            <h4 class="text-2xl font-black mb-6">시장 접근 및 로컬 제휴</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8">핵심 로컬파트너와 제휴하여 직접 PPA 입찰에 참여하거나 로컬사업자에게 최적의 솔루션을 제공합니다.</p>
+                            <ul class="space-y-3 text-sm font-bold text-green-600">
+                                <li># 직접 PPA 입찰 참여</li>
+                                <li># PPA 보유자 지원</li>
+                                <li># 로컬 파트너십 강화</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Value Chain -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">Value Chain Solution</h2>
+                            <p class="text-gray-500">초기 개발부터 장기 운영 및 유지보수까지 전 생애주기 통합 솔루션</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Step 01 -->
+                            <div class="group bg-gray-50 p-10 rounded-[2.5rem] hover:bg-green-600 transition-all duration-500 reveal">
+                                <div class="text-sm font-black text-green-600 group-hover:text-white/60 mb-4 transition-colors">01. 개발 단계</div>
+                                <h4 class="text-2xl font-black mb-6 group-hover:text-white transition-colors">프로젝트 기획</h4>
+                                <p class="text-gray-500 group-hover:text-white/80 text-sm leading-relaxed mb-6 transition-colors">부지 평가, 타당성 조사, 규제 승인, 환경 영향 분석 등 초기 개발 전반을 수행합니다.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">부지 선정</span>
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">타당성 조사</span>
+                                </div>
+                            </div>
+                            <!-- Step 02 -->
+                            <div class="group bg-gray-50 p-10 rounded-[2.5rem] hover:bg-green-600 transition-all duration-500 reveal delay-100">
+                                <div class="text-sm font-black text-green-600 group-hover:text-white/60 mb-4 transition-colors">02. PPA 확보</div>
+                                <h4 class="text-2xl font-black mb-6 group-hover:text-white transition-colors">전력구매계약</h4>
+                                <p class="text-gray-500 group-hover:text-white/80 text-sm leading-relaxed mb-6 transition-colors">장기 전력구매계약(PPA) 협상 및 전략적 파트너십 구축을 통해 수익성을 확보합니다.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">계약 협상</span>
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">리스크 관리</span>
+                                </div>
+                            </div>
+                            <!-- Step 03 -->
+                            <div class="group bg-gray-50 p-10 rounded-[2.5rem] hover:bg-green-600 transition-all duration-500 reveal delay-200">
+                                <div class="text-sm font-black text-green-600 group-hover:text-white/60 mb-4 transition-colors">03. 투자 및 금융</div>
+                                <h4 class="text-2xl font-black mb-6 group-hover:text-white transition-colors">금융 구조화</h4>
+                                <p class="text-gray-500 group-hover:text-white/80 text-sm leading-relaxed mb-6 transition-colors">금융 모델링, 투자자 관계 구축, 자본 구조 최적화를 통해 자금을 조달합니다.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">금융 모델링</span>
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">투자자 유치</span>
+                                </div>
+                            </div>
+                            <!-- Step 04 -->
+                            <div class="group bg-gray-50 p-10 rounded-[2.5rem] hover:bg-green-600 transition-all duration-500 reveal">
+                                <div class="text-sm font-black text-green-600 group-hover:text-white/60 mb-4 transition-colors">04. 기자재 조달</div>
+                                <h4 class="text-2xl font-black mb-6 group-hover:text-white transition-colors">전략적 소싱</h4>
+                                <p class="text-gray-500 group-hover:text-white/80 text-sm leading-relaxed mb-6 transition-colors">글로벌 기자재 소싱 네트워크를 통해 품질 보증 및 비용 최적화를 실현합니다.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">글로벌 소싱</span>
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">품질 관리</span>
+                                </div>
+                            </div>
+                            <!-- Step 05 -->
+                            <div class="group bg-gray-50 p-10 rounded-[2.5rem] hover:bg-green-600 transition-all duration-500 reveal delay-100">
+                                <div class="text-sm font-black text-green-600 group-hover:text-white/60 mb-4 transition-colors">05. EPC 실행</div>
+                                <h4 class="text-2xl font-black mb-6 group-hover:text-white transition-colors">건설 및 시운전</h4>
+                                <p class="text-gray-500 group-hover:text-white/80 text-sm leading-relaxed mb-6 transition-colors">엔지니어링 설계, 건설 관리, 시운전까지 프로젝트 실행 전반을 책임집니다.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">엔지니어링</span>
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">건설 관리</span>
+                                </div>
+                            </div>
+                            <!-- Step 06 -->
+                            <div class="group bg-gray-50 p-10 rounded-[2.5rem] hover:bg-green-600 transition-all duration-500 reveal delay-200">
+                                <div class="text-sm font-black text-green-600 group-hover:text-white/60 mb-4 transition-colors">06. 운영 및 유지보수</div>
+                                <h4 class="text-2xl font-black mb-6 group-hover:text-white transition-colors">장기 운영 (O&M)</h4>
+                                <p class="text-gray-500 group-hover:text-white/80 text-sm leading-relaxed mb-6 transition-colors">성능 모니터링, 예측 정비, 최적화 서비스를 통해 발전 효율을 극대화합니다.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">성능 모니터링</span>
+                                    <span class="px-3 py-1 bg-white/50 rounded-full text-[10px] font-bold group-hover:bg-white/20 group-hover:text-white">예측 정비</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Status -->
+                    <div class="mb-32">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div class="reveal">
+                                <h4 class="text-2xl font-black mb-8 border-l-4 border-green-600 pl-6">국내 추진실적</h4>
+                                <div class="space-y-6">
+                                    <div class="flex justify-between items-center p-6 bg-gray-50 rounded-2xl">
+                                        <div>
+                                            <div class="text-sm text-gray-400 mb-1">풍력 프로젝트</div>
+                                            <div class="font-bold text-lg">화순 / 영흥</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-green-600 font-black text-xl">4MW / 13MW</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-center p-6 bg-gray-50 rounded-2xl">
+                                        <div>
+                                            <div class="text-sm text-gray-400 mb-1">태양광 프로젝트</div>
+                                            <div class="font-bold text-lg">제주 / 신보령</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-green-600 font-black text-xl">3MW / 7MW</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reveal delay-200">
+                                <h4 class="text-2xl font-black mb-8 border-l-4 border-green-600 pl-6">현재 추진현황</h4>
+                                <div class="space-y-6">
+                                    <div class="p-6 bg-green-50 rounded-2xl border border-green-100">
+                                        <div class="flex justify-between items-center mb-4">
+                                            <span class="text-green-700 font-bold">카자흐스탄 프로젝트</span>
+                                            <span class="px-3 py-1 bg-green-600 text-white text-[10px] rounded-full font-bold">IN PROGRESS</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <div class="text-xs text-green-600/60 mb-1 uppercase">Wind</div>
+                                                <div class="text-2xl font-black text-green-800">1,000MW</div>
+                                            </div>
+                                            <div>
+                                                <div class="text-xs text-green-600/60 mb-1 uppercase">Solar</div>
+                                                <div class="text-2xl font-black text-green-800">600MW</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-500 text-sm italic">* 카자흐스탄 및 인근 국가 추가 사업 준비 중</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value Proposition -->
+                    <div class="bg-gray-900 rounded-[3rem] p-12 md:p-20 text-white reveal">
+                        <h3 class="text-center text-green-500 font-bold uppercase tracking-widest mb-16">Our Value Proposition</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                            <div class="text-center">
+                                <div class="text-4xl mb-6">🎯</div>
+                                <h5 class="text-xl font-bold mb-4">원스톱 서비스</h5>
+                                <p class="text-gray-400 text-sm leading-relaxed">숙련된 단일 파트너를 통한 완전한 프로젝트 생애주기 관리</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl mb-6">⚡</div>
+                                <h5 class="text-xl font-bold mb-4">신속한 프로젝트 진행</h5>
+                                <p class="text-gray-400 text-sm leading-relaxed">통합 접근법과 입증된 프로세스를 통한 프로젝트 납기 단축</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl mb-6">🛡️</div>
+                                <h5 class="text-xl font-bold mb-4">리스크 완화</h5>
+                                <p class="text-gray-400 text-sm leading-relaxed">모든 프로젝트 단계와 이해관계자에 대한 포괄적 리스크 관리</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Section: 그린수소/암모니아 (Green Hydrogen/Ammonia) -->
+            <section id="sect-hydrogen" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro & Stats -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-emerald-600 font-bold tracking-widest uppercase mb-4">Green Hydrogen & Ammonia</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">상업 규모 그린수소 및<br>그린암모니아 플랜트 개발</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                국내의 소규모 그린수소 사업 추진 실적과 경험을 바탕으로 해외에 Commercial 규모의 그린수소 및 그린 암모니아 플랜트 건설 및 생산사업을 추진합니다. 카자흐스탄을 1차 사업 대상 국가로 선정하여 글로벌 청정수소 시장을 선도하고 있습니다.
+                            </p>
+                            <div class="grid grid-cols-2 gap-8">
+                                <div>
+                                    <div class="text-4xl font-black text-emerald-600 mb-1">75,000<span class="text-lg ml-1">톤</span></div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Green Hydrogen</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black text-emerald-600 mb-1">310,000<span class="text-lg ml-1">톤</span></div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Green Ammonia</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black text-emerald-600 mb-1">2025.07</div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Gov. Agreement</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black text-emerald-600 mb-1">4.25<span class="text-lg ml-1">MW</span></div>
+                                    <div class="text-sm text-gray-400 uppercase tracking-wider">Domestic Projects</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="relative p-12 bg-emerald-50 rounded-[3rem] overflow-hidden">
+                                <div class="relative z-10">
+                                    <h4 class="text-emerald-800 font-black text-2xl mb-8">Production Process</h4>
+                                    <div class="space-y-6">
+                                        <div class="flex items-center gap-6">
+                                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">🌞</div>
+                                            <div class="flex-grow h-[2px] bg-emerald-200 relative">
+                                                <div class="absolute -right-1 -top-1 w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                            </div>
+                                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">💧</div>
+                                        </div>
+                                        <div class="flex justify-between px-2 text-[10px] font-bold text-emerald-600 uppercase tracking-widest">
+                                            <span>Renewable</span>
+                                            <span>Electrolysis</span>
+                                        </div>
+                                        <div class="flex items-center gap-6">
+                                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm">💧</div>
+                                            <div class="flex-grow h-[2px] bg-emerald-200 relative">
+                                                <div class="absolute -right-1 -top-1 w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                            </div>
+                                            <div class="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center text-3xl shadow-sm text-white">🟢</div>
+                                        </div>
+                                        <div class="flex justify-between px-2 text-[10px] font-bold text-emerald-600 uppercase tracking-widest">
+                                            <span>Electrolysis</span>
+                                            <span>Green H2</span>
+                                        </div>
+                                        <div class="flex items-center gap-6">
+                                            <div class="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center text-3xl shadow-sm text-white">🟢</div>
+                                            <div class="flex-grow h-[2px] bg-emerald-200 relative">
+                                                <div class="absolute -right-1 -top-1 w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                            </div>
+                                            <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-sm text-white">🔵</div>
+                                        </div>
+                                        <div class="flex justify-between px-2 text-[10px] font-bold text-emerald-600 uppercase tracking-widest">
+                                            <span>Green H2</span>
+                                            <span>Green Ammonia</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-200/20 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capabilities -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+                        <div class="bg-white border border-gray-100 p-12 rounded-[3rem] reveal">
+                            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-8 text-xl">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h4 class="text-2xl font-black mb-6">포괄적 기술 솔루션</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8 text-sm">수전해설비(AEC/PEM)부터 전력제어, 운영시스템(BOP)까지 포괄하는 기술솔루션 역량을 보유하고 있습니다.</p>
+                            <ul class="space-y-2 text-xs font-bold text-emerald-600">
+                                <li>• AEC/PEM 수전해 시스템</li>
+                                <li>• 전력 제어 시스템</li>
+                                <li>• BOP 운영 시스템</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-100 p-12 rounded-[3rem] reveal delay-100">
+                            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-8 text-xl">
+                                <i class="fa-solid fa-handshake-angle"></i>
+                            </div>
+                            <h4 class="text-2xl font-black mb-6">정부 네트워크</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8 text-sm">에너지 사업을 통해 쌓아온 대정부 네트워크를 활용하여 정부향 기획/제안사업의 강력한 추진력을 발휘합니다.</p>
+                            <ul class="space-y-2 text-xs font-bold text-emerald-600">
+                                <li>• 정부 관계 전략적 파트너십</li>
+                                <li>• 국책 사업 제안 및 수행</li>
+                                <li>• 글로벌 협력 체계 구축</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-100 p-12 rounded-[3rem] reveal delay-200">
+                            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-8 text-xl">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <h4 class="text-2xl font-black mb-6">전체 밸류체인 관리</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8 text-sm">사업성 분석(F/S)부터 투자 유치, EPC 조달 및 O&M까지 전 과정을 매니지할 수 있는 전문 인력을 보유하고 있습니다.</p>
+                            <ul class="space-y-2 text-xs font-bold text-emerald-600">
+                                <li>• 사업성 분석 (F/S)</li>
+                                <li>• 투자/금융 유치</li>
+                                <li>• EPC 조달 및 O&M</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project Status -->
+                    <div class="mb-32">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div class="reveal">
+                                <h4 class="text-2xl font-black mb-8 border-l-4 border-emerald-600 pl-6">국내 추진실적</h4>
+                                <div class="bg-gray-50 rounded-[2.5rem] p-10">
+                                    <div class="space-y-6">
+                                        <div class="flex justify-between items-center pb-6 border-b border-gray-200">
+                                            <span class="font-bold">새만금</span>
+                                            <span class="text-emerald-600 font-black">0.5MW</span>
+                                        </div>
+                                        <div class="flex justify-between items-center pb-6 border-b border-gray-200">
+                                            <span class="font-bold">안산</span>
+                                            <span class="text-emerald-600 font-black">1.25MW</span>
+                                        </div>
+                                        <div class="flex justify-between items-center pb-6 border-b border-gray-200">
+                                            <span class="font-bold">동해</span>
+                                            <span class="text-emerald-600 font-black">2.5MW</span>
+                                        </div>
+                                        <div class="flex justify-between items-center pt-4">
+                                            <span class="text-sm text-gray-400 font-bold uppercase tracking-widest">Total Capacity</span>
+                                            <span class="text-2xl font-black text-emerald-700">4.25MW</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reveal delay-200">
+                                <h4 class="text-2xl font-black mb-8 border-l-4 border-emerald-600 pl-6">현재 추진현황</h4>
+                                <div class="bg-emerald-900 text-white rounded-[2.5rem] p-10 relative overflow-hidden">
+                                    <div class="relative z-10">
+                                        <div class="flex justify-between items-start mb-8">
+                                            <div>
+                                                <h5 class="text-emerald-400 font-bold text-sm mb-1 uppercase tracking-widest">Kazakhstan 1st Project</h5>
+                                                <p class="text-xl font-bold">정부 협약 체결 (2025.07)</p>
+                                            </div>
+                                            <span class="px-3 py-1 bg-emerald-500 text-[10px] font-bold rounded-full">OFFICIAL</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-8 mb-8">
+                                            <div>
+                                                <div class="text-3xl font-black mb-1">75,000<span class="text-sm ml-1 opacity-60">톤</span></div>
+                                                <div class="text-[10px] uppercase tracking-widest opacity-60">Green Hydrogen</div>
+                                            </div>
+                                            <div>
+                                                <div class="text-3xl font-black mb-1">310,000<span class="text-sm ml-1 opacity-60">톤</span></div>
+                                                <div class="text-[10px] uppercase tracking-widest opacity-60">Green Ammonia</div>
+                                            </div>
+                                        </div>
+                                        <p class="text-emerald-300 text-sm leading-relaxed">협약 체결 후 후속 작업 추진 중이며, 2차 확장 프로젝트 및 인근 국가 사업을 준비하고 있습니다.</p>
+                                    </div>
+                                    <div class="absolute bottom-0 right-0 w-48 h-48 bg-emerald-800 rounded-full -mb-24 -mr-24 blur-3xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="mb-32 reveal">
+                        <h4 class="text-center text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-16">Project Development Timeline</h4>
+                        <div class="relative">
+                            <div class="absolute top-1/2 left-0 w-full h-[2px] bg-gray-100 -translate-y-1/2 hidden md:block"></div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                                <div class="bg-white p-8 rounded-3xl border border-gray-100 text-center">
+                                    <div class="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold">1</div>
+                                    <h5 class="font-bold mb-2">국내 경험 축적</h5>
+                                    <p class="text-xs text-gray-500">국내 4.25MW 그린수소 프로젝트 완료</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-3xl border border-emerald-200 text-center shadow-xl shadow-emerald-100">
+                                    <div class="w-10 h-10 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold">2</div>
+                                    <h5 class="font-bold mb-2">카자흐스탄 착수</h5>
+                                    <p class="text-xs text-gray-500">정부 협약 체결 (2025.07) 및 실행</p>
+                                </div>
+                                <div class="bg-white p-8 rounded-3xl border border-gray-100 text-center">
+                                    <div class="w-10 h-10 bg-gray-200 text-gray-400 rounded-full flex items-center justify-center mx-auto mb-6 font-bold">3</div>
+                                    <h5 class="font-bold mb-2">지역 확장</h5>
+                                    <p class="text-xs text-gray-500">카자흐스탄 2차 및 인근 국가 확장</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Competitive Advantages -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+                        <div class="p-8 bg-gray-50 rounded-3xl">
+                            <div class="text-2xl mb-4">⏱️</div>
+                            <h6 class="font-bold mb-2 text-sm">시장 타이밍</h6>
+                            <p class="text-[11px] text-gray-500 leading-relaxed">2024년 한국 청정수소 시장 개방에 대비한 선제적 진입</p>
+                        </div>
+                        <div class="p-8 bg-gray-50 rounded-3xl">
+                            <div class="text-2xl mb-4">💎</div>
+                            <h6 class="font-bold mb-2 text-sm">자원 우위</h6>
+                            <p class="text-[11px] text-gray-500 leading-relaxed">카자흐스탄의 우수한 신재생 에너지원 확보</p>
+                        </div>
+                        <div class="p-8 bg-gray-50 rounded-3xl">
+                            <div class="text-2xl mb-4">✅</div>
+                            <h6 class="font-bold mb-2 text-sm">입증된 경험</h6>
+                            <p class="text-[11px] text-gray-500 leading-relaxed">국내 프로젝트를 통해 구축된 견고한 기술 기반</p>
+                        </div>
+                        <div class="p-8 bg-gray-50 rounded-3xl">
+                            <div class="text-2xl mb-4">🏛️</div>
+                            <h6 class="font-bold mb-2 text-sm">정부 관계</h6>
+                            <p class="text-[11px] text-gray-500 leading-relaxed">강력한 정부 네트워크와 공식 협약 확보</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Section: 변전소 (Substation) -->
+            <section id="sect-substation" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-indigo-600 font-bold tracking-widest uppercase mb-4">Substation Solutions</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">친환경·고효율·고신뢰성<br>변전소 통합 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed">
+                                YPP는 전력계통 설계, 기자재 공급, 설치, 시운전까지 전 과정에 걸친 실적과 기술력을 바탕으로, 고객 요구에 맞춰 최적의 변전소를 구축합니다. AIS·GIS 방식부터 디지털·스마트 변전소까지 폭넓은 솔루션을 Turnkey 방식으로 제공합니다.
+                            </p>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-video bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1200" alt="Substation" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-indigo-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capabilities Grid -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">사업역량 및 경쟁력</h2>
+                            <p class="text-gray-500">설계부터 운영까지, 변전소 전 생애주기를 아우르는 YPP의 핵심 역량</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-xl transition-all reveal">
+                                <div class="text-indigo-600 text-3xl mb-6"><i class="fa-solid fa-compass-drafting"></i></div>
+                                <h4 class="text-xl font-bold mb-4">종합 설계·시공 능력</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">부지 조사, 구조계산, 토목·전기 설계부터 시공 관리까지 원스톱으로 수행하며 현지 Grid Code를 완벽히 반영합니다.</p>
+                            </div>
+                            <div class="p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-xl transition-all reveal delay-100">
+                                <div class="text-indigo-600 text-3xl mb-6"><i class="fa-solid fa-network-wired"></i></div>
+                                <h4 class="text-xl font-bold mb-4">글로벌 공급 네트워크</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">변압기, 차단기 등 주요 기자재를 글로벌 제조사와 협력하여 공급하며, 현지 규격에 부합하는 경쟁력을 확보하고 있습니다.</p>
+                            </div>
+                            <div class="p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-xl transition-all reveal delay-200">
+                                <div class="text-indigo-600 text-3xl mb-6"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                <h4 class="text-xl font-bold mb-4">O&M 및 진단 시스템</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">AI 기반 실시간 모니터링과 Substation Automation System 구축을 통해 운영 효율과 계통 신뢰성을 극대화합니다.</p>
+                            </div>
+                            <div class="p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-xl transition-all reveal">
+                                <div class="text-indigo-600 text-3xl mb-6"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                                <h4 class="text-xl font-bold mb-4">Turnkey 수행 역량</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">EPC 전 과정(설계·조달·시공·시운전)을 직접 수행하며, 현지 파트너사와의 협업 및 인허가 관리 노하우를 보유하고 있습니다.</p>
+                            </div>
+                            <div class="p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:shadow-xl transition-all reveal delay-100">
+                                <div class="text-indigo-600 text-3xl mb-6"><i class="fa-solid fa-earth-asia"></i></div>
+                                <h4 class="text-xl font-bold mb-4">해외 시장 개발력</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed">중앙아시아, 중남미, 동남아 등 고성장 시장에서 타당성 분석과 금융 조달을 포함한 개발형 EPC 사업을 전개합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Table -->
+                    <div class="mb-32 reveal">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                            <div>
+                                <h2 class="text-4xl font-black mb-4">주요 실적</h2>
+                                <p class="text-gray-500">국내외 다양한 환경에서 입증된 YPP의 변전소 구축 레퍼런스</p>
+                            </div>
+                            <div class="text-sm font-bold text-indigo-600 uppercase tracking-widest border-b-2 border-indigo-600 pb-1">
+                                Major Projects
+                            </div>
+                        </div>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b-2 border-gray-900">
+                                        <th class="py-6 px-4 text-sm uppercase tracking-wider font-black">구분</th>
+                                        <th class="py-6 px-4 text-sm uppercase tracking-wider font-black">프로젝트명</th>
+                                        <th class="py-6 px-4 text-sm uppercase tracking-wider font-black">주요 사양</th>
+                                        <th class="py-6 px-4 text-sm uppercase tracking-wider font-black">국가</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-600">
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-indigo-600">해외</td>
+                                        <td class="py-6 px-4 font-bold text-gray-900">Pulau Indah 복합화력 변전소</td>
+                                        <td class="py-6 px-4 text-sm">500kV AIS & GCB</td>
+                                        <td class="py-6 px-4 text-sm">말레이시아</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-indigo-600">해외</td>
+                                        <td class="py-6 px-4 font-bold text-gray-900">Andres I LNG 터미널 확장 변전소</td>
+                                        <td class="py-6 px-4 text-sm">138kV AIS</td>
+                                        <td class="py-6 px-4 text-sm">도미니카</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-indigo-600">해외</td>
+                                        <td class="py-6 px-4 font-bold text-gray-900">Gatun 복합화력 변전소</td>
+                                        <td class="py-6 px-4 text-sm">230kV GIS & 전력변압기 & 비상발전기</td>
+                                        <td class="py-6 px-4 text-sm">파나마</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-indigo-600">해외</td>
+                                        <td class="py-6 px-4 font-bold text-gray-900">Turkistan 복합화력 변전소</td>
+                                        <td class="py-6 px-4 text-sm">550/220kV AIS & 자동변압기</td>
+                                        <td class="py-6 px-4 text-sm">카자흐스탄</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-blue-600">국내/해외</td>
+                                        <td class="py-6 px-4 font-bold text-gray-900">주한미군 기지 변전소 업그레이드</td>
+                                        <td class="py-6 px-4 text-sm">AIS→GIS 개조, 자동화 시스템</td>
+                                        <td class="py-6 px-4 text-sm">한국 (미군기지)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-blue-600">국내</td>
+                                        <td class="py-6 px-4 font-bold text-gray-900">한국전력공사(KEPCO) Project</td>
+                                        <td class="py-6 px-4 text-sm">154kv, 345kv, 765kv 보호반</td>
+                                        <td class="py-6 px-4 text-sm">한국</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-indigo-600">해외</td>
+                                        <td class="py-6 px-4 font-bold text-gray-900">Nahcivan–Babek–Cesmebasar 변전소</td>
+                                        <td class="py-6 px-4 text-sm">220/110 AZ / 220kV AIS</td>
+                                        <td class="py-6 px-4 text-sm">아제르바이잔</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-indigo-600">해외</td>
+                                        <td class="py-6 px-4 font-bold text-gray-900">Zhambyl 50MW 태양광 연계 변전소</td>
+                                        <td class="py-6 px-4 text-sm">20/20/220kV AIS</td>
+                                        <td class="py-6 px-4 text-sm">카자흐스탄</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Section: 에너지저장장치 (ESS) -->
+            <section id="sect-bess" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-cyan-600 font-bold tracking-widest uppercase mb-4">Battery Energy Storage System</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">에너지 효율 극대화를 위한<br>지능형 BESS 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-8">
+                                YPP는 배터리 에너지 저장시스템(BESS)에 대한 풍부한 사업 경험과 제품 신뢰성을 바탕으로 설계, 공급, 시공, 시운전 및 컨설팅 서비스를 제공하고 있습니다. 세계 Tier 1 배터리와 첨단 관리 시스템을 활용하여 최적의 에너지 솔루션을 제안합니다.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <span class="px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-bold"># Tier 1 Battery</span>
+                                <span class="px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-bold"># Advanced BMS/EMS</span>
+                                <span class="px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-bold"># Grid Stability</span>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="relative group">
+                                <div class="aspect-square bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl">
+                                    <img src="https://images.unsplash.com/photo-1620714223084-8dfca6df732d?auto=format&fit=crop&q=80&w=1000" alt="BESS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Components -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-32">
+                        <div class="bg-gray-50 p-8 rounded-3xl reveal">
+                            <div class="text-3xl mb-6">🔋</div>
+                            <h4 class="font-bold mb-2">BMS</h4>
+                            <p class="text-xs text-gray-500">Battery Management System: 배터리 상태 실시간 감시 및 최적화</p>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-3xl reveal delay-100">
+                            <div class="text-3xl mb-6">🔌</div>
+                            <h4 class="font-bold mb-2">PCS</h4>
+                            <p class="text-xs text-gray-500">Power Conversion System: 전력 변환 및 계통 연계 제어</p>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-3xl reveal delay-200">
+                            <div class="text-3xl mb-6">📊</div>
+                            <h4 class="font-bold mb-2">EMS</h4>
+                            <p class="text-xs text-gray-500">Energy Management System: 에너지 흐름 분석 및 효율 관리</p>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-3xl reveal delay-300">
+                            <div class="text-3xl mb-6">🛡️</div>
+                            <h4 class="font-bold mb-2">Safety</h4>
+                            <p class="text-xs text-gray-500">Fire Suppression: 다중 안전 장치 및 화재 예방 시스템</p>
+                        </div>
+                    </div>
+
+                    <!-- Capabilities -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">사업역량 및 경쟁력</h2>
+                            <p class="text-gray-500">YPP만의 차별화된 BESS 기술력과 파트너십</p>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="group flex flex-col md:flex-row gap-8 p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:border-cyan-200 transition-all reveal">
+                                <div class="md:w-1/3">
+                                    <h4 class="text-2xl font-black group-hover:text-cyan-600 transition-colors">다양한 사업 수행 경험</h4>
+                                </div>
+                                <div class="md:w-2/3">
+                                    <p class="text-gray-500 leading-relaxed">주파수 조정용, 신재생 연계, 수전해 연계 에너지 저장시스템 분야에서 국내외 다양한 사업 수행 경험을 보유하고 있습니다.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col md:flex-row gap-8 p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:border-cyan-200 transition-all reveal delay-100">
+                                <div class="md:w-1/3">
+                                    <h4 class="text-2xl font-black group-hover:text-cyan-600 transition-colors">글로벌 파트너십</h4>
+                                </div>
+                                <div class="md:w-2/3">
+                                    <p class="text-gray-500 leading-relaxed">전력 저장 및 관리에 특화된 고도화된 기술력과 세계 유수의 Tier 1 배터리 공급망과의 안정적 협력 관계를 유지합니다.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col md:flex-row gap-8 p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:border-cyan-200 transition-all reveal delay-200">
+                                <div class="md:w-1/3">
+                                    <h4 class="text-2xl font-black group-hover:text-cyan-600 transition-colors">전 주기 솔루션</h4>
+                                </div>
+                                <div class="md:w-2/3">
+                                    <p class="text-gray-500 leading-relaxed">설계부터 시공, 시운전, 컨설팅까지 전 주기 솔루션 제공 역량과 풍부한 실적, 전문 인력을 바탕으로 안정적인 서비스를 제공합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Status -->
+                    <div class="bg-cyan-900 rounded-[3rem] p-12 md:p-20 text-white reveal">
+                        <div class="flex flex-col md:flex-row justify-between items-start gap-16">
+                            <div class="md:w-1/2">
+                                <h3 class="text-cyan-400 font-bold uppercase tracking-widest mb-6">Project Status</h3>
+                                <h2 class="text-4xl font-black mb-8">주요 추진 실적</h2>
+                                <p class="text-cyan-100/60 leading-relaxed">YPP는 혁신적 에너지 저장 솔루션 개발과 친환경 에너지 시장 선도에 지속 매진하고 있습니다.</p>
+                            </div>
+                            <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <div class="text-xs opacity-60 mb-1">Wind Integration</div>
+                                    <div class="font-bold">화순 풍력 (4MW)</div>
+                                </div>
+                                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <div class="text-xs opacity-60 mb-1">Wind Integration</div>
+                                    <div class="font-bold">영흥 풍력 (12.8MW)</div>
+                                </div>
+                                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <div class="text-xs opacity-60 mb-1">Solar Integration</div>
+                                    <div class="font-bold">제주 태양광 (3MW)</div>
+                                </div>
+                                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <div class="text-xs opacity-60 mb-1">Solar Integration</div>
+                                    <div class="font-bold">신보령 태양광 (7MW)</div>
+                                </div>
+                                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm sm:col-span-2">
+                                    <div class="text-xs opacity-60 mb-1">Hydrogen Integration</div>
+                                    <div class="font-bold">안산 수전해 연계 (3MW)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Section: 데이터센터 (Data Center) -->
+            <section id="sect-datacenter" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-indigo-800 font-bold tracking-widest uppercase mb-4">Data Center Solutions</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">차세대 데이터센터를 위한<br>EPC 토탈 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                YPP는 전력 인프라, 제어·계측, 디지털 변전소 운영, 냉난방(HVAC) 설비 등 데이터센터 핵심 인프라 구축에 필요한 기술과 경험을 보유하고 있습니다. 국내외 발전소·변전소·군사기지에서 축적한 EPC 수행 능력을 기반으로 하이퍼스케일 데이터센터 시장을 선도합니다.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="px-6 py-3 bg-indigo-50 rounded-full text-indigo-800 font-bold text-sm"># 하이퍼스케일</div>
+                                <div class="px-6 py-3 bg-indigo-50 rounded-full text-indigo-800 font-bold text-sm"># 디지털트윈</div>
+                                <div class="px-6 py-3 bg-indigo-50 rounded-full text-indigo-800 font-bold text-sm"># 고효율냉각</div>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-square bg-gray-100 rounded-[4rem] overflow-hidden shadow-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1200" alt="Data Center" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/40 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Capabilities -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">핵심 기술 역량</h2>
+                            <p class="text-gray-500">데이터센터의 안정성과 효율성을 보장하는 YPP의 4대 핵심 기술</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <!-- Cap 1 -->
+                            <div class="bg-white p-10 rounded-[3rem] border border-gray-100 hover:border-indigo-200 hover:shadow-xl transition-all reveal">
+                                <div class="w-14 h-14 bg-indigo-900 text-white rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                                    <i class="fa-solid fa-bolt-lightning"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-6">전력공급 인프라</h4>
+                                <ul class="space-y-3 text-gray-500 text-sm">
+                                    <li>• GIS 변전소 설계·제작·시공</li>
+                                    <li>• 대용량 변압기 (TR)</li>
+                                    <li>• 보호계전기 (SWGR)</li>
+                                    <li>• 무정전 전원장치 (UPS)</li>
+                                </ul>
+                            </div>
+                            <!-- Cap 2 -->
+                            <div class="bg-white p-10 rounded-[3rem] border border-gray-100 hover:border-indigo-200 hover:shadow-xl transition-all reveal delay-100">
+                                <div class="w-14 h-14 bg-indigo-900 text-white rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-6">모니터링 및 자동화</h4>
+                                <ul class="space-y-3 text-gray-500 text-sm">
+                                    <li>• 실시간 상태 감시</li>
+                                    <li>• AI 기반 예측 진단</li>
+                                    <li>• 디지털 트윈 제어 시스템</li>
+                                    <li>• 통합 관제 솔루션</li>
+                                </ul>
+                            </div>
+                            <!-- Cap 3 -->
+                            <div class="bg-white p-10 rounded-[3rem] border border-gray-100 hover:border-indigo-200 hover:shadow-xl transition-all reveal delay-200">
+                                <div class="w-14 h-14 bg-indigo-900 text-white rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                                    <i class="fa-solid fa-wind"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-6">냉각·환경제어</h4>
+                                <ul class="space-y-3 text-gray-500 text-sm">
+                                    <li>• 고효율 HVAC 제어반</li>
+                                    <li>• 산업용 냉각 솔루션</li>
+                                    <li>• 에너지 최적화 알고리즘</li>
+                                    <li>• 정밀 환경 제어</li>
+                                </ul>
+                            </div>
+                            <!-- Cap 4 -->
+                            <div class="bg-white p-10 rounded-[3rem] border border-gray-100 hover:border-indigo-200 hover:shadow-xl transition-all reveal delay-300">
+                                <div class="w-14 h-14 bg-indigo-900 text-white rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                                    <i class="fa-solid fa-shield-lock"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-6">보안 및 안정성</h4>
+                                <ul class="space-y-3 text-gray-500 text-sm">
+                                    <li>• 이중화 전력망 구성</li>
+                                    <li>• 재해 복구 시스템</li>
+                                    <li>• 사이버 보안 통합 설계</li>
+                                    <li>• 원자력 수준 품질 관리</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Global Strategy -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+                        <div class="md:col-span-2 bg-indigo-900 rounded-[3rem] p-12 md:p-16 text-white reveal">
+                            <h3 class="text-indigo-300 font-bold uppercase tracking-widest mb-8">Global Expansion</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                <div>
+                                    <h4 class="text-2xl font-bold mb-4">미국 시장 진출</h4>
+                                    <p class="text-indigo-100/70 leading-relaxed text-sm">
+                                        텍사스 및 알래스카 지역 데이터센터를 대상으로 변전소, 전력·제어 설비, UPS, 모니터링 시스템을 포함한 EPC 패키지 공급을 준비하고 있습니다.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold mb-4">아시아 하이퍼스케일</h4>
+                                    <p class="text-indigo-100/70 leading-relaxed text-sm">
+                                        국내외 대형 클라우드 사업자 및 통신사와 협력하여 하이퍼스케일 데이터센터의 핵심 전력 인프라 구축 참여를 추진합니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-[3rem] p-12 reveal delay-200">
+                            <h4 class="text-xl font-bold mb-6">파트너십 전략</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                                글로벌 IT 기업 및 전문 데이터센터 설계사와 전략적 협업을 통해 EPC부터 MRO까지 통합 서비스를 제공합니다.
+                            </p>
+                            <div class="flex items-center gap-4 text-indigo-900 font-black">
+                                <span>EPC + MRO</span>
+                                <i class="fa-solid fa-plus"></i>
+                                <span>Partnership</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Differentiation Points -->
+                    <div class="reveal">
+                        <h2 class="text-3xl font-black mb-12 text-center">YPP의 차별화 포인트</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex gap-8 p-8 bg-white border border-gray-100 rounded-[2.5rem] items-start">
+                                <div class="text-4xl font-black text-indigo-100">01</div>
+                                <div>
+                                    <h5 class="font-bold mb-2">검증된 안정성 중심 설계</h5>
+                                    <p class="text-sm text-gray-500">발전·변전·군사시설에서 검증된 품질관리(CGID) 기준을 데이터센터에 적용합니다.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-8 p-8 bg-white border border-gray-100 rounded-[2.5rem] items-start">
+                                <div class="text-4xl font-black text-indigo-100">02</div>
+                                <div>
+                                    <h5 class="font-bold mb-2">대규모 프로젝트 수행 경험</h5>
+                                    <p class="text-sm text-gray-500">70여 개의 미군 기지 프로젝트를 포함한 대규모 전력 인프라 수행 노하우를 보유하고 있습니다.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-8 p-8 bg-white border border-gray-100 rounded-[2.5rem] items-start">
+                                <div class="text-4xl font-black text-indigo-100">03</div>
+                                <div>
+                                    <h5 class="font-bold mb-2">BIM·디지털 설계 활용</h5>
+                                    <p class="text-sm text-gray-500">EPC 전 과정에서 BIM을 활용하여 시공 효율을 극대화하고 품질을 정밀하게 관리합니다.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-8 p-8 bg-white border border-gray-100 rounded-[2.5rem] items-start">
+                                <div class="text-4xl font-black text-indigo-100">04</div>
+                                <div>
+                                    <h5 class="font-bold mb-2">One-Stop MRO 서비스</h5>
+                                    <p class="text-sm text-gray-500">완공 후 장기 유지보수 및 시스템 업그레이드까지 책임지는 생애주기 서비스를 제공합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 8. Section: 콘트롤밸브 (Control Valve) -->
+            <section id="sect-valve" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-orange-600 font-bold tracking-widest uppercase mb-4">High-Performance Control Valve</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">극한 환경에서도 안정적인<br>고성능 제어밸브 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                YPP Control Valve는 발전소, 석유화학, 제철 등 산업 플랜트의 고온·고압 환경에 최적화된 솔루션입니다. 설계부터 제작, 설치, 평가까지 전 과정을 독자 수행하며, 국내 유일하게 전 압력등급을 국산 기술로 공급합니다.
+                            </p>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="p-6 bg-gray-50 rounded-2xl">
+                                    <div class="text-3xl font-black text-orange-600 mb-1">565<span class="text-lg ml-1">℃</span></div>
+                                    <div class="text-xs text-gray-400 uppercase tracking-wider">Max Temperature</div>
+                                </div>
+                                <div class="p-6 bg-gray-50 rounded-2xl">
+                                    <div class="text-3xl font-black text-orange-600 mb-1">4500<span class="text-lg ml-1">Class</span></div>
+                                    <div class="text-xs text-gray-400 uppercase tracking-wider">Max Pressure</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-square bg-gray-100 rounded-[4rem] overflow-hidden shadow-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200" alt="Control Valve" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Valve Types & Features -->
+                    <div class="mb-32">
+                        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white reveal">
+                            <div class="max-w-3xl">
+                                <h4 class="text-orange-500 font-bold uppercase tracking-widest mb-6">Valve Types & Innovation</h4>
+                                <p class="text-2xl md:text-3xl font-light leading-relaxed mb-12">
+                                    총 78종의 제품군은 <span class="text-orange-400 font-bold">혁신제품, 성능인증제품, 우수발명품</span>으로 인정받았습니다. 보일러 급수제어부터 초저온 LNG 밸브까지, 고유 특허기술로 누설 차단과 캐비테이션 방지를 실현합니다.
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="flex items-start gap-4">
+                                        <i class="fa-solid fa-shield-check text-orange-500 mt-1"></i>
+                                        <div>
+                                            <h5 class="font-bold mb-2">원자력 안전등급 보유</h5>
+                                            <p class="text-sm text-slate-400">국내외 원자력 발전소에 공급 가능한 최고 수준의 안전 등급 밸브 라인업</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <i class="fa-solid fa-microchip text-orange-500 mt-1"></i>
+                                        <div>
+                                            <h5 class="font-bold mb-2">독자적 특허 기술</h5>
+                                            <p class="text-sm text-slate-400">저소음·저진동 특성 및 고차압 조건에서의 정밀 제어 기술 확보</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Showcase (Placeholders) -->
+                    <div class="mb-32 reveal">
+                        <h4 class="text-center text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-16">Product Lineup</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                            <div class="aspect-[3/4] bg-gray-50 rounded-3xl flex flex-col items-center justify-center p-6 text-center hover:bg-orange-50 transition-colors group">
+                                <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-gears text-orange-600 text-2xl"></i>
+                                </div>
+                                <span class="text-sm font-bold text-gray-700">Globe Control Valve</span>
+                            </div>
+                            <div class="aspect-[3/4] bg-gray-50 rounded-3xl flex flex-col items-center justify-center p-6 text-center hover:bg-orange-50 transition-colors group">
+                                <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-gears text-orange-600 text-2xl"></i>
+                                </div>
+                                <span class="text-sm font-bold text-gray-700">Butterfly Valve</span>
+                            </div>
+                            <div class="aspect-[3/4] bg-gray-50 rounded-3xl flex flex-col items-center justify-center p-6 text-center hover:bg-orange-50 transition-colors group">
+                                <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-gears text-orange-600 text-2xl"></i>
+                                </div>
+                                <span class="text-sm font-bold text-gray-700">Ball Valve</span>
+                            </div>
+                            <div class="aspect-[3/4] bg-gray-50 rounded-3xl flex flex-col items-center justify-center p-6 text-center hover:bg-orange-50 transition-colors group">
+                                <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-gears text-orange-600 text-2xl"></i>
+                                </div>
+                                <span class="text-sm font-bold text-gray-700">Cryogenic Valve</span>
+                            </div>
+                            <div class="aspect-[3/4] bg-gray-50 rounded-3xl flex flex-col items-center justify-center p-6 text-center hover:bg-orange-50 transition-colors group">
+                                <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-gears text-orange-600 text-2xl"></i>
+                                </div>
+                                <span class="text-sm font-bold text-gray-700">Special Purpose</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Control System & Maintenance -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+                        <div class="bg-white border border-gray-100 p-12 rounded-[3rem] reveal">
+                            <h4 class="text-2xl font-black mb-6">제어 시스템</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8 text-sm">
+                                공압식, 전동식, 전기-유압식 등 다양한 액추에이터와 정밀 포지셔너를 통해 미세 개도 제어를 구현합니다. HART 등 디지털 통신을 지원하여 플랜트 DCS와 완벽하게 연동됩니다.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-orange-50 text-orange-700 text-[10px] font-bold rounded-full">Pneumatic/Electric</span>
+                                <span class="px-3 py-1 bg-orange-50 text-orange-700 text-[10px] font-bold rounded-full">HART Communication</span>
+                                <span class="px-3 py-1 bg-orange-50 text-orange-700 text-[10px] font-bold rounded-full">Fail-safe Function</span>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-gray-100 p-12 rounded-[3rem] reveal delay-200">
+                            <h4 class="text-2xl font-black mb-6">유지보수 및 레트로핏</h4>
+                            <p class="text-gray-500 leading-relaxed mb-8 text-sm">
+                                정기점검 및 신속한 현장 대응은 물론, 기존 밸브의 성능을 극대화하는 '레트로핏 및 업그레이드' 프로그램을 통해 설비 가동률을 향상시키고 유지관리 비용을 절감합니다.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-[10px] font-bold rounded-full">Retrofit & Upgrade</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-[10px] font-bold rounded-full">24/7 Support</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-[10px] font-bold rounded-full">Life-cycle Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Supply Performance -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">공급 실적</h2>
+                            <p class="text-gray-500">국내외 주요 발전소 및 조선 분야에서 입증된 기술력</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="p-8 bg-gray-50 rounded-3xl reveal">
+                                <h5 class="font-bold text-orange-600 mb-4">국내 발전 분야</h5>
+                                <p class="text-sm text-gray-600 leading-relaxed">발전 5개사 및 지역난방공사에 수백 대의 고차압 제어밸브 공급</p>
+                            </div>
+                            <div class="p-8 bg-gray-50 rounded-3xl reveal delay-100">
+                                <h5 class="font-bold text-orange-600 mb-4">원자력 분야</h5>
+                                <p class="text-sm text-gray-600 leading-relaxed">국내 원전 200대 이상, UAE 바라카 원전 62대 공급 (한국 원전 수출 견인)</p>
+                            </div>
+                            <div class="p-8 bg-gray-50 rounded-3xl reveal delay-200">
+                                <h5 class="font-bold text-orange-600 mb-4">해양/조선 분야</h5>
+                                <p class="text-sm text-gray-600 leading-relaxed">조선 빅3(한화오션, 현대, 삼성) LNG 운반선용 초저온 밸브 납품</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- M&A Highlight & CTA -->
+                    <div class="bg-orange-600 rounded-[3rem] p-12 md:p-20 text-white reveal overflow-hidden relative">
+                        <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
+                            <div class="max-w-2xl">
+                                <div class="inline-block px-4 py-1 bg-white/20 rounded-full text-xs font-bold mb-6 uppercase tracking-widest">Strategic Acquisition</div>
+                                <h2 class="text-4xl md:text-5xl font-black mb-6">VIV 인수 완료 (2025.04.01)</h2>
+                                <p class="text-xl text-orange-100 font-light mb-10">
+                                    YPP는 VIV 인수를 통해 제어밸브 원천 기술력을 강화하고, 글로벌 시장 경쟁력을 한 단계 더 높였습니다.
+                                </p>
+                                <a href="http://vivenc.com/" target="_blank" class="inline-flex items-center gap-3 bg-white text-orange-600 px-8 py-4 rounded-full font-bold hover:bg-orange-50 transition-colors">
+                                    <span>공식 웹사이트 방문</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                            <div class="text-[12rem] opacity-10 absolute -right-10 -bottom-10 pointer-events-none">
+                                <i class="fa-solid fa-industry"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 9. Section: 미군기지 (U.S. Military Base) -->
+            <section id="sect-military" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro & Stats -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-slate-600 font-bold tracking-widest uppercase mb-4">U.S. Military Base Infrastructure</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">미군 기반시설의<br>전략적 기술 파트너</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                YPP는 지난 10년간 80건 이상의 주한미군 전력 및 기반시설 프로젝트를 수행해 왔습니다. 미국 육군 공병단(USACE) 기준을 완벽히 준수하며, 전력·통합 인프라 분야에서 미군의 신뢰받는 파트너로 자리매김하고 있습니다.
+                            </p>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                <div class="text-center p-4 bg-slate-50 rounded-2xl">
+                                    <div class="text-3xl font-black text-slate-800">80+</div>
+                                    <div class="text-[10px] text-gray-400 uppercase font-bold">Projects</div>
+                                </div>
+                                <div class="text-center p-4 bg-slate-50 rounded-2xl">
+                                    <div class="text-3xl font-black text-slate-800">10+</div>
+                                    <div class="text-[10px] text-gray-400 uppercase font-bold">Years</div>
+                                </div>
+                                <div class="text-center p-4 bg-slate-50 rounded-2xl">
+                                    <div class="text-3xl font-black text-slate-800">4+</div>
+                                    <div class="text-[10px] text-gray-400 uppercase font-bold">Major Bases</div>
+                                </div>
+                                <div class="text-center p-4 bg-slate-50 rounded-2xl">
+                                    <div class="text-3xl font-black text-slate-800">USACE</div>
+                                    <div class="text-[10px] text-gray-400 uppercase font-bold">Standard</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="relative">
+                                <div class="aspect-video bg-slate-200 rounded-[3rem] overflow-hidden shadow-2xl">
+                                    <img src="https://images.unsplash.com/photo-1590674154471-c6ca0218503e?auto=format&fit=crop&q=80&w=1200" alt="Military Base" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                                </div>
+                                <div class="absolute -bottom-6 -right-6 bg-white p-8 rounded-3xl shadow-xl border border-slate-100 hidden md:block">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 bg-slate-800 text-white rounded-full flex items-center justify-center">
+                                            <i class="fa-solid fa-shield-halved"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs text-gray-400 font-bold uppercase">Compliance</div>
+                                            <div class="font-black text-slate-800">MIL-STD Certified</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Major Bases -->
+                    <div class="mb-32 reveal">
+                        <h4 class="text-center text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-12">Major Military Installations</h4>
+                        <div class="flex flex-wrap justify-center gap-6 md:gap-12">
+                            <div class="px-8 py-4 bg-white border border-slate-200 rounded-2xl font-bold text-slate-700 hover:bg-slate-800 hover:text-white transition-colors cursor-default">캠프 험프리스 (Pyeongtaek)</div>
+                            <div class="px-8 py-4 bg-white border border-slate-200 rounded-2xl font-bold text-slate-700 hover:bg-slate-800 hover:text-white transition-colors cursor-default">오산 공군기지 (Osan AB)</div>
+                            <div class="px-8 py-4 bg-white border border-slate-200 rounded-2xl font-bold text-slate-700 hover:bg-slate-800 hover:text-white transition-colors cursor-default">군산 공군기지 (Kunsan AB)</div>
+                            <div class="px-8 py-4 bg-white border border-slate-200 rounded-2xl font-bold text-slate-700 hover:bg-slate-800 hover:text-white transition-colors cursor-default">캠프 헨리 (Daegu)</div>
+                        </div>
+                    </div>
+
+                    <!-- Capabilities Grid -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">사업역량 및 경쟁력</h2>
+                            <p class="text-gray-500">미군 프로젝트 수행을 위한 YPP만의 독보적인 인프라 솔루션</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Cap 1 -->
+                            <div class="group p-10 bg-slate-50 rounded-[3rem] hover:bg-slate-800 transition-all duration-500 reveal">
+                                <div class="flex items-start gap-8">
+                                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-2xl text-slate-800 group-hover:bg-slate-700 group-hover:text-white transition-colors">
+                                        <i class="fa-solid fa-globe"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">글로벌 기술 연계</h4>
+                                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-slate-400 transition-colors">
+                                            GE Digital Energy 공식 파트너로서 ATS, STS, UPS, MCC 등 고신뢰성 전력설비를 공급하며, MIL-STD 및 미국 연방 조달기준을 완벽히 준수합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Cap 2 -->
+                            <div class="group p-10 bg-slate-50 rounded-[3rem] hover:bg-slate-800 transition-all duration-500 reveal delay-100">
+                                <div class="flex items-start gap-8">
+                                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-2xl text-slate-800 group-hover:bg-slate-700 group-hover:text-white transition-colors">
+                                        <i class="fa-solid fa-trowel-bricks"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">EPC 수행 기반</h4>
+                                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-slate-400 transition-colors">
+                                            미국 내 주요 EPC사와의 긴밀한 파트너십을 바탕으로 설계, 공정, 시공관리 전 과정에서 미군 기지 특유의 엄격한 기준을 충족합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Cap 3 -->
+                            <div class="group p-10 bg-slate-50 rounded-[3rem] hover:bg-slate-800 transition-all duration-500 reveal">
+                                <div class="flex items-start gap-8">
+                                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-2xl text-slate-800 group-hover:bg-slate-700 group-hover:text-white transition-colors">
+                                        <i class="fa-solid fa-truck-ramp-box"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">경쟁력 있는 Supply Chain</h4>
+                                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-slate-400 transition-colors">
+                                            미국 현지 지사를 통한 유연한 조달 체계를 구축하여 전력, HVAC, 통신 등 전 분야의 장비를 신속하고 안정적으로 공급합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Cap 4 -->
+                            <div class="group p-10 bg-slate-50 rounded-[3rem] hover:bg-slate-800 transition-all duration-500 reveal delay-100">
+                                <div class="flex items-start gap-8">
+                                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-2xl text-slate-800 group-hover:bg-slate-700 group-hover:text-white transition-colors">
+                                        <i class="fa-solid fa-microchip"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-4 group-hover:text-white transition-colors">전력·제어 토탈 솔루션</h4>
+                                        <p class="text-gray-500 text-sm leading-relaxed group-hover:text-slate-400 transition-colors">
+                                            ECMS, 발전기 병렬제어, GIS 변전소 업그레이드 및 SCADA 시스템 등 고도의 기술력이 요구되는 통합 제어 솔루션을 제공합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Table -->
+                    <div class="mb-32 reveal">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                            <div>
+                                <h2 class="text-4xl font-black mb-4">주요 프로젝트</h2>
+                                <p class="text-gray-500">10년 이상 축적된 주한미군 설비공급 및 시공 실적</p>
+                            </div>
+                            <div class="text-sm font-bold text-slate-800 uppercase tracking-widest border-b-2 border-slate-800 pb-1">
+                                Track Record
+                            </div>
+                        </div>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b-2 border-slate-800">
+                                        <th class="py-6 px-4 text-sm font-black uppercase tracking-wider">프로젝트명</th>
+                                        <th class="py-6 px-4 text-sm font-black uppercase tracking-wider">공종</th>
+                                        <th class="py-6 px-4 text-sm font-black uppercase tracking-wider">기간</th>
+                                        <th class="py-6 px-4 text-sm font-black uppercase tracking-wider">상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-600">
+                                    <tr class="border-b border-gray-100 hover:bg-slate-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-slate-800">평택 미군기지 부지조성 및 조명설비</td>
+                                        <td class="py-6 px-4">전기</td>
+                                        <td class="py-6 px-4">2011~2017</td>
+                                        <td class="py-6 px-4"><span class="px-3 py-1 bg-slate-100 text-[10px] font-bold rounded-full">COMPLETED</span></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-slate-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-slate-800">미8군 차량정비시설</td>
+                                        <td class="py-6 px-4">전기, 외자재</td>
+                                        <td class="py-6 px-4">2013~2016</td>
+                                        <td class="py-6 px-4"><span class="px-3 py-1 bg-slate-100 text-[10px] font-bold rounded-full">COMPLETED</span></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-slate-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-slate-800">KORCOM OPS CENTER 전력설비</td>
+                                        <td class="py-6 px-4">전기</td>
+                                        <td class="py-6 px-4">2016~2020</td>
+                                        <td class="py-6 px-4"><span class="px-3 py-1 bg-slate-100 text-[10px] font-bold rounded-full">COMPLETED</span></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-slate-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-slate-800">위성통신시설 구축</td>
+                                        <td class="py-6 px-4">전기·기계</td>
+                                        <td class="py-6 px-4">2022~진행중</td>
+                                        <td class="py-6 px-4"><span class="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-full">IN PROGRESS</span></td>
+                                    </tr>
+                                    <tr class="border-b border-gray-100 hover:bg-slate-50 transition-colors">
+                                        <td class="py-6 px-4 font-bold text-slate-800">포항 원정대식당 시설</td>
+                                        <td class="py-6 px-4">통합(전기/기계/건축)</td>
+                                        <td class="py-6 px-4">2023~진행중</td>
+                                        <td class="py-6 px-4"><span class="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-full">IN PROGRESS</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Core Competencies -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+                        <div class="p-10 bg-slate-900 text-white rounded-[2.5rem] flex flex-col justify-between">
+                            <div>
+                                <div class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4">Competency 01</div>
+                                <h5 class="text-xl font-bold mb-6">USACE 기준 준수</h5>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">미국 육군 공병단 기준을 완벽히 준수한 시공 경험과 군사 표준 인증 보유</p>
+                        </div>
+                        <div class="p-10 bg-slate-100 rounded-[2.5rem] flex flex-col justify-between">
+                            <div>
+                                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Competency 02</div>
+                                <h5 class="text-xl font-bold mb-6">종합 설비 공급</h5>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed">전력설비부터 HVAC, 통신 시스템까지 아우르는 종합 공급 및 통합 역량</p>
+                        </div>
+                        <div class="p-10 bg-slate-100 rounded-[2.5rem] flex flex-col justify-between">
+                            <div>
+                                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Competency 03</div>
+                                <h5 class="text-xl font-bold mb-6">글로벌 파트너십</h5>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed">글로벌 기술 기업 및 미국 내 주요 EPC사와의 전략적 협력 네트워크</p>
+                        </div>
+                        <div class="p-10 bg-slate-100 rounded-[2.5rem] flex flex-col justify-between">
+                            <div>
+                                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Competency 04</div>
+                                <h5 class="text-xl font-bold mb-6">검증된 실적</h5>
+                            </div>
+                            <p class="text-gray-500 text-sm leading-relaxed">주요 미군기지 80건 이상의 성공적인 프로젝트 수행을 통한 신뢰성 입증</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 10. Section: SMR (Small Modular Reactor) -->
+            <section id="sect-smr" class="solution-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-purple-600 font-bold tracking-widest uppercase mb-4">Small Modular Reactor</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">미래 에너지 패러다임의 핵심<br>차세대 SMR 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                탄소중립과 에너지 안보를 동시에 충족시키는 SMR은 300MWe 이하의 소형 설계를 바탕으로 빠른 설치와 극대화된 안전성을 제공합니다. YPP는 상용화 시대에 대비한 '스마트 전기·제어 솔루션 패키지'를 통해 차세대 원자력 시장을 선도합니다.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="flex items-center gap-2 px-4 py-2 bg-purple-50 text-purple-700 rounded-xl font-bold text-sm">
+                                    <i class="fa-solid fa-leaf"></i>
+                                    <span>Carbon Neutral</span>
+                                </div>
+                                <div class="flex items-center gap-2 px-4 py-2 bg-purple-50 text-purple-700 rounded-xl font-bold text-sm">
+                                    <i class="fa-solid fa-shield-virus"></i>
+                                    <span>Enhanced Safety</span>
+                                </div>
+                                <div class="flex items-center gap-2 px-4 py-2 bg-purple-50 text-purple-700 rounded-xl font-bold text-sm">
+                                    <i class="fa-solid fa-cubes"></i>
+                                    <span>Modular Design</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-video bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl relative group">
+                                <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=1200" alt="SMR Technology" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <div class="text-purple-400 text-6xl mb-4"><i class="fa-solid fa-atom fa-spin-slow"></i></div>
+                                        <div class="text-white font-black tracking-tighter text-2xl">NEXT-GEN NUCLEAR</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Market Context -->
+                    <div class="mb-32 reveal">
+                        <div class="bg-gray-50 rounded-[3rem] p-12 md:p-20">
+                            <div class="flex flex-col md:flex-row gap-16 items-center">
+                                <div class="md:w-1/3">
+                                    <h4 class="text-2xl font-black mb-6">Global SMR<br>Development</h4>
+                                    <p class="text-gray-500 text-sm leading-relaxed">
+                                        현재 서방 선진국을 중심으로 3세대 및 4세대 SMR의 실증 단계가 활발히 진행 중입니다. YPP는 글로벌 표준에 부합하는 기술력을 바탕으로 시장 진입을 준비하고 있습니다.
+                                    </p>
+                                </div>
+                                <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                                        <div class="text-purple-600 font-black mb-2">NuScale</div>
+                                        <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">USA / 3rd Gen</div>
+                                    </div>
+                                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                                        <div class="text-purple-600 font-black mb-2">Holtec</div>
+                                        <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">USA / SMR-160</div>
+                                    </div>
+                                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                                        <div class="text-purple-600 font-black mb-2">TerraPower</div>
+                                        <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">USA / Natrium</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Capabilities -->
+                    <div class="mb-32">
+                        <div class="text-center mb-20 reveal">
+                            <h2 class="text-4xl font-black mb-4">SMR 대응 역량 및 실적</h2>
+                            <p class="text-gray-500">기존 원자력 분야의 검증된 기술력을 SMR 모듈화 전략에 확장 적용합니다.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Cap 1 -->
+                            <div class="bg-white border border-gray-100 p-12 rounded-[3rem] hover:shadow-2xl transition-all reveal">
+                                <div class="w-14 h-14 bg-purple-600 text-white rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <h4 class="text-2xl font-black mb-6">디지털 제어시스템 구축</h4>
+                                <p class="text-gray-500 leading-relaxed mb-8">
+                                    GE M60, F60 등 디지털 보호계전기 기반 시스템 구축 경험을 바탕으로 DCS/PLC, ECMS 시스템의 전력계통 통합 운영 및 예방진단 솔루션을 제공합니다.
+                                </p>
+                                <ul class="space-y-3 text-sm font-bold text-purple-600">
+                                    <li># 디지털 보호계전기 시스템</li>
+                                    <li># 전력계통 통합 운영</li>
+                                    <li># 지능형 예방진단 설계</li>
+                                </ul>
+                            </div>
+                            <!-- Cap 2 -->
+                            <div class="bg-white border border-gray-100 p-12 rounded-[3rem] hover:shadow-2xl transition-all reveal delay-200">
+                                <div class="w-14 h-14 bg-purple-600 text-white rounded-2xl flex items-center justify-center mb-8 text-2xl">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                                <h4 class="text-2xl font-black mb-6">CGID 기반 품질검증</h4>
+                                <p class="text-gray-500 leading-relaxed mb-8">
+                                    한빛, 고리, 신한울 등 주요 원전 대상 S/A/Q-Class 기기 검증 및 공급 실적을 보유하고 있으며, 전원공급기부터 컨트롤러까지 폭넓은 라인업을 확보하고 있습니다.
+                                </p>
+                                <ul class="space-y-3 text-sm font-bold text-purple-600">
+                                    <li># S/A/Q-Class 기기 검증</li>
+                                    <li># 원자력 등급 부품 공급</li>
+                                    <li># 엄격한 품질 관리 체계</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategic Fit -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+                        <div class="bg-purple-900 rounded-[3rem] p-12 text-white reveal">
+                            <h4 class="text-xl font-bold mb-6">SMR 패키지 적합성</h4>
+                            <p class="text-purple-100/70 text-sm leading-relaxed mb-8">
+                                소형화 및 고신뢰 설비에 최적화된 제어/보호/감시장비 라인업을 통해 SMR 특유의 모듈화 전략에 정합된 엔지니어링 솔루션을 제시합니다.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold">IEC 61508</span>
+                                <span class="px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold">IEC 61850</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900 rounded-[3rem] p-12 text-white reveal delay-100">
+                            <h4 class="text-xl font-bold mb-6">글로벌 파트너십</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                                GE, Schneider 등 글로벌 전력사와의 기술 협업을 바탕으로 해외 SMR 실증 프로젝트의 장비 공급 및 EPC Subcontractor 역할을 수행합니다.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-purple-400">
+                                    <i class="fa-solid fa-handshake"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-widest">Global Network</span>
+                            </div>
+                        </div>
+                        <div class="bg-purple-600 rounded-[3rem] p-12 text-white reveal delay-200">
+                            <h4 class="text-xl font-bold mb-6">모듈화 EPC 솔루션</h4>
+                            <p class="text-white/80 text-sm leading-relaxed mb-8">
+                                개별 유닛 단위로 구성 가능한 EPC 패키지를 통해 SMR 건설 기간 단축과 시공 효율 극대화에 기여합니다.
+                            </p>
+                            <div class="text-4xl opacity-30 text-right">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Future Vision -->
+                    <div class="text-center reveal">
+                        <h3 class="text-purple-600 font-bold uppercase tracking-widest mb-4">Future Vision</h3>
+                        <h2 class="text-4xl md:text-5xl font-black mb-12">SMR 상용화 시대를 여는<br>스마트 인프라의 표준</h2>
+                        <div class="max-w-3xl mx-auto">
+                            <p class="text-gray-500 leading-relaxed">
+                                YPP는 기존 대형 원전에서 검증된 안전 기술을 SMR의 유연성과 결합하여, 전 세계 어디서나 안전하고 깨끗한 에너지를 공급할 수 있는 지능형 전력 인프라를 구축해 나갈 것입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
-    </section>
+    </div>
 
     <div id="footer-placeholder"></div>
 
     <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function showSolutionSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.solution-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show target section
+            const targetSection = document.getElementById('sect-' + sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Activate target button
+            const targetBtn = document.getElementById('btn-' + sectionId);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+            
+            // Trigger reveal animations
+            setTimeout(() => {
+                window.dispatchEvent(new Event('scroll'));
+            }, 100);
+        }
+
+        // Handle URL hash for direct linking to tabs
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                showSolutionSection(hash);
+            }
+        });
+    </script>
 </body>
 </html>
+
