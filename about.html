@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT | YPP ENERGY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <div id="cursor-placeholder"></div>
+    <div id="menu-placeholder"></div>
+    <div id="nav-placeholder"></div>
+
+    <!-- Page: ABOUT -->
+    <div id="page-about" class="page-content">
+        <!-- Hero Header & Tab Navigation -->
+        <section class="pt-48 pb-10 px-8 md:px-16 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-8 reveal">ABOUT US.</h1>
+                
+                <!-- Local Tab Navigation Bar -->
+                <div class="flex flex-wrap gap-8 md:gap-16 border-b border-gray-100 pb-4 reveal">
+                    <button onclick="showAboutSection('greeting')" class="tab-btn active text-lg font-bold uppercase tracking-widest" id="btn-greeting">Greeting</button>
+                    <button onclick="showAboutSection('history')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-history">History</button>
+                    <button onclick="showAboutSection('partners')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-partners">Partners</button>
+                    <button onclick="showAboutSection('certs')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-certs">Certifications</button>
+                    <button onclick="showAboutSection('culture')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-culture">Culture</button>
+                    <button onclick="showAboutSection('rnd')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-rnd">R&D Center</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Content Container -->
+        <div class="min-h-[60vh]">
+            
+            <!-- 1. Section: Greeting (인사말) -->
+            <section id="sect-greeting" class="about-section active py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-10">CEO Greeting</h3>
+                        <p class="text-3xl md:text-5xl font-black leading-tight mb-8">"에너지의 가치를 더하고,<br>기술의 한계를 넘어서겠습니다."</p>
+                        <div class="space-y-6 text-xl text-gray-500 font-light leading-relaxed">
+                            <p>YPP ENERGY는 지난 30여 년간 대한민국 전력 산업의 역사와 함께해 왔습니다. 우리는 단순히 시스템을 제어하는 것을 넘어, 에너지의 안전과 효율을 보장하는 신뢰의 인프라를 구축합니다.</p>
+                            <p>급변하는 에너지 전환의 시대, 우리는 디지털 기술과 엔지니어링 역량을 결합하여 지속 가능한 미래를 선도하는 글로벌 파트너가 될 것을 약속드립니다.</p>
+                        </div>
+                        <div class="mt-12 border-t border-gray-100 pt-8">
+                            <p class="text-2xl font-bold italic text-blue-500">YPP ENERGY CEO & TEAM</p>
+                        </div>
+                    </div>
+                    <div class="aspect-[4/5] bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=1200" alt="CEO" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Section: History (연혁) -->
+            <section id="sect-history" class="about-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-24">
+                        <h2 class="text-6xl font-black mb-8 md:mb-0 uppercase italic tracking-tighter">Heritage<br>& Growth.</h2>
+                        <p class="max-w-sm text-gray-500 text-xl font-light">1982년부터 이어온 에너지 기술의 역사, YPP ENERGY가 걸어온 혁신의 발자취입니다.</p>
+                    </div>
+                    <!-- Timeline Items -->
+                    <div class="space-y-24">
+                        <!-- 2020 - 2025 -->
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <span class="text-4xl font-black text-blue-600 min-w-[200px]">2020 — 2025</span>
+                            <div class="flex-grow pb-12 border-b border-gray-100">
+                                <div class="space-y-8">
+                                    <div>
+                                        <h5 class="text-blue-600 font-bold mb-2">2025</h5>
+                                        <ul class="text-lg text-gray-600 space-y-1 list-disc list-inside font-light">
+                                            <li>이집트 El-Dabaa: Turbine I&C Package, Level Indicator 공급</li>
+                                            <li>카자흐스탄 정부와 ‘그린 에너지 콤플렉스’ 건설 기본 합의 체결 (최대 31억 달러 규모)</li>
+                                            <li>VISION 2030 선포</li>
+                                            <li>Control Valve 사업 양수 (VIV)</li>
+                                            <li>YPP 백종만 회장님 대통령 표창 수상 (제26회 중소기업 기술·경영·혁신대전)</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-blue-600 font-bold mb-2">2024</h5>
+                                        <ul class="text-lg text-gray-600 space-y-1 list-disc list-inside font-light">
+                                            <li>미군기지 23-U-서부배전체계 개선 시설공사 전기외자설비</li>
+                                            <li>스페인 ARTECHE(아르테체) 그룹 파트너십</li>
+                                            <li>한국전기연구원(KERI) 업무협약 (분산전원 계통지원 솔루션 개발)</li>
+                                            <li>미국 Rockwell Automation 파트너십</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-blue-600 font-bold mb-2">2023</h5>
+                                        <ul class="text-lg text-gray-600 space-y-1 list-disc list-inside font-light">
+                                            <li>튀르키예 Akkuyu: Turbine I&C Package, Level Indicator 공급</li>
+                                            <li>가산 YPP 아르센타워 준공 및 본사/연구소/공장 이전</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-blue-600 font-bold mb-2">2022</h5>
+                                        <ul class="text-lg text-gray-600 space-y-1 list-disc list-inside font-light">
+                                            <li>ESG(환경, 사회, 지배구조) 우수기업 인증</li>
+                                            <li>창사 40주년</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-blue-600 font-bold mb-2">2020</h5>
+                                        <ul class="text-lg text-gray-600 space-y-1 list-disc list-inside font-light">
+                                            <li>VISION 2025 선포</li>
+                                            <li>한국수력원자력㈜ 유자격(CGID) 등록</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2010 - 2019 -->
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <span class="text-4xl font-black text-gray-300 min-w-[200px]">2010 — 2019</span>
+                            <div class="flex-grow pb-12 border-b border-gray-100">
+                                <div class="space-y-8">
+                                    <div>
+                                        <h5 class="text-gray-400 font-bold mb-2">2019</h5>
+                                        <ul class="text-lg text-gray-500 space-y-1 list-disc list-inside font-light">
+                                            <li>GE社 Hydro 채널 파트너 협정 체결</li>
+                                            <li>한수원(주) 갑종보호계전기 및 전력설비 보호계통 시험용역 유자격 취득 (Q, A등급)</li>
+                                            <li>한수원(주) 전자/PLC 모듈 예비품공급 유자격 취득</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-gray-400 font-bold mb-2">2018</h5>
+                                        <ul class="text-lg text-gray-500 space-y-1 list-disc list-inside font-light">
+                                            <li>한수원(주) 발전기 차단기(GCB) 유지보수 A등급 유자격 등록</li>
+                                            <li>대한전기협회 원자력 전기(KEPIC-EN) Q등급 인증 취득</li>
+                                            <li>한국전력기술(주) 원자력계측분야설계 유자격 취득</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-gray-400 font-bold mb-2">2016 - 2017</h5>
+                                        <ul class="text-lg text-gray-500 space-y-1 list-disc list-inside font-light">
+                                            <li>전력계통 통합 지능형 예방진단 시스템 개발</li>
+                                            <li>발전기 예방진단시스템(GMDS) 및 지능형 종합예방진단 시스템(IGDS) 개발</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-gray-400 font-bold mb-2">2011 - 2015</h5>
+                                        <ul class="text-lg text-gray-500 space-y-1 list-disc list-inside font-light">
+                                            <li>ESS 신사업 진출 및 품질경영 선포</li>
+                                            <li>제50회 무역의날 '1천만불 수출의 탑' 수상</li>
+                                            <li>국내 최초 전력계통 전문가 양성 과정(PSAC) 개강</li>
+                                            <li>청와대 선정 100대 강한 중소기업</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 1982 - 2009 -->
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <span class="text-4xl font-black text-gray-300 min-w-[200px]">1982 — 2009</span>
+                            <div class="flex-grow pb-12 border-b border-gray-100">
+                                <div class="space-y-8">
+                                    <div>
+                                        <h5 class="text-gray-400 font-bold mb-2">2000 - 2009</h5>
+                                        <ul class="text-lg text-gray-500 space-y-1 list-disc list-inside font-light">
+                                            <li>2009: 상호변경 '와이피피㈜'</li>
+                                            <li>2008: 사우디아라비아 변전자동화시스템(ECMS) 납품</li>
+                                            <li>2006: 원자력발전소 3중화 갑종 디지털 보호계전기반 개발</li>
+                                            <li>2002: 345kV / 765kV 송전선 보호반 개발</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-gray-400 font-bold mb-2">1982 - 1999</h5>
+                                        <ul class="text-lg text-gray-500 space-y-1 list-disc list-inside font-light">
+                                            <li>1999: 벤처기업 지정</li>
+                                            <li>1994: 기업부설연구소(YPP 중앙연구소) 설립</li>
+                                            <li>1982: GENERAL ELECTRIC CO. Partner 및 영풍물산 설립</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Section: Partners (파트너사) -->
+            <section id="sect-partners" class="about-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Major Partners: Suppliers -->
+                    <div class="mb-32">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
+                            <div>
+                                <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-4">Major Partners</h3>
+                                <h2 class="text-5xl font-black italic uppercase">Suppliers</h2>
+                            </div>
+                            <p class="text-gray-400 font-light max-w-xs text-right hidden md:block">글로벌 에너지 솔루션 리더들과의 강력한 파트너십을 통해 최상의 기술을 제공합니다.</p>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                            <div class="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+                                <img src="https://via.placeholder.com/200x80/f9fafb/0022ff?text=GE+VERNOVA" alt="GE VERNOVA" class="h-12 object-contain grayscale group-hover:grayscale-0 transition-all">
+                                <span class="mt-4 text-[10px] font-bold tracking-widest text-gray-300 group-hover:text-blue-600">GE VERNOVA</span>
+                            </div>
+                            <div class="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+                                <img src="https://via.placeholder.com/200x80/f9fafb/0022ff?text=AMETEK" alt="AMETEK" class="h-12 object-contain grayscale group-hover:grayscale-0 transition-all">
+                                <span class="mt-4 text-[10px] font-bold tracking-widest text-gray-300 group-hover:text-blue-600">AMETEK</span>
+                            </div>
+                            <div class="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+                                <img src="https://via.placeholder.com/200x80/f9fafb/0022ff?text=SCHNEIDER" alt="SCHNEIDER" class="h-12 object-contain grayscale group-hover:grayscale-0 transition-all">
+                                <span class="mt-4 text-[10px] font-bold tracking-widest text-gray-300 group-hover:text-blue-600">SCHNEIDER</span>
+                            </div>
+                            <div class="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+                                <img src="https://via.placeholder.com/200x80/f9fafb/0022ff?text=ABB" alt="ABB" class="h-12 object-contain grayscale group-hover:grayscale-0 transition-all">
+                                <span class="mt-4 text-[10px] font-bold tracking-widest text-gray-300 group-hover:text-blue-600">ABB</span>
+                            </div>
+                            <div class="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+                                <img src="https://via.placeholder.com/200x80/f9fafb/0022ff?text=Arteche" alt="Arteche" class="h-12 object-contain grayscale group-hover:grayscale-0 transition-all">
+                                <span class="mt-4 text-[10px] font-bold tracking-widest text-gray-300 group-hover:text-blue-600">ARTECHE</span>
+                            </div>
+                            <div class="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+                                <img src="https://via.placeholder.com/200x80/f9fafb/0022ff?text=AGG" alt="AGG" class="h-12 object-contain grayscale group-hover:grayscale-0 transition-all">
+                                <span class="mt-4 text-[10px] font-bold tracking-widest text-gray-300 group-hover:text-blue-600">AGG</span>
+                            </div>
+                            <div class="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+                                <img src="https://via.placeholder.com/200x80/f9fafb/0022ff?text=Green+Power" alt="Green Power" class="h-12 object-contain grayscale group-hover:grayscale-0 transition-all">
+                                <span class="mt-4 text-[10px] font-bold tracking-widest text-gray-300 group-hover:text-blue-600">GREEN POWER</span>
+                            </div>
+                            <div class="bg-gray-50 p-8 rounded-2xl flex flex-col items-center justify-center group hover:bg-white hover:shadow-xl transition-all duration-500">
+                                <img src="https://via.placeholder.com/200x80/f9fafb/0022ff?text=Rockwell" alt="Rockwell Automation" class="h-12 object-contain grayscale group-hover:grayscale-0 transition-all">
+                                <span class="mt-4 text-[10px] font-bold tracking-widest text-gray-300 group-hover:text-blue-600">ROCKWELL AUTOMATION</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Major Customers -->
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
+                            <div>
+                                <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-4">Major Customers</h3>
+                                <h2 class="text-5xl font-black italic uppercase">Our Clients</h2>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-16">
+                            <!-- Public -->
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
+                                <div class="min-w-[200px]">
+                                    <h4 class="text-2xl font-bold border-l-4 border-blue-600 pl-4 uppercase tracking-tighter">공기업</h4>
+                                    <p class="text-sm text-gray-400 mt-2 font-light">Public Sector</p>
+                                </div>
+                                <div class="flex-grow bg-gray-50 p-10 rounded-3xl flex flex-wrap gap-8 items-center justify-center border border-gray-100">
+                                    <p class="text-gray-400 font-light italic">수많은 공기업 고객사 로고 또는 리스트가 이곳에 나열됩니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- Private -->
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
+                                <div class="min-w-[200px]">
+                                    <h4 class="text-2xl font-bold border-l-4 border-blue-600 pl-4 uppercase tracking-tighter">민간기업</h4>
+                                    <p class="text-sm text-gray-400 mt-2 font-light">Private Sector</p>
+                                </div>
+                                <div class="flex-grow bg-gray-50 p-10 rounded-3xl flex flex-wrap gap-8 items-center justify-center border border-gray-100">
+                                    <p class="text-gray-400 font-light italic">수많은 민간기업 고객사 로고 또는 리스트가 이곳에 나열됩니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- Overseas -->
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
+                                <div class="min-w-[200px]">
+                                    <h4 class="text-2xl font-bold border-l-4 border-blue-600 pl-4 uppercase tracking-tighter">해외기업</h4>
+                                    <p class="text-sm text-gray-400 mt-2 font-light">Global Clients</p>
+                                </div>
+                                <div class="flex-grow bg-gray-50 p-10 rounded-3xl flex flex-wrap gap-8 items-center justify-center border border-gray-100">
+                                    <p class="text-gray-400 font-light italic">수많은 해외기업 고객사 로고 또는 리스트가 이곳에 나열됩니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- Research -->
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
+                                <div class="min-w-[200px]">
+                                    <h4 class="text-2xl font-bold border-l-4 border-blue-600 pl-4 uppercase tracking-tighter">정부산하 연구기관</h4>
+                                    <p class="text-sm text-gray-400 mt-2 font-light">Research Institutes</p>
+                                </div>
+                                <div class="flex-grow bg-gray-50 p-10 rounded-3xl flex flex-wrap gap-8 items-center justify-center border border-gray-100">
+                                    <p class="text-gray-400 font-light italic">정부산하 연구기관 로고 또는 리스트가 이곳에 나열됩니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- Non-profit -->
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-20 items-start">
+                                <div class="min-w-[200px]">
+                                    <h4 class="text-2xl font-bold border-l-4 border-blue-600 pl-4 uppercase tracking-tighter">비영리단체</h4>
+                                    <p class="text-sm text-gray-400 mt-2 font-light">Non-Profit Organizations</p>
+                                </div>
+                                <div class="flex-grow bg-gray-50 p-10 rounded-3xl flex flex-wrap gap-8 items-center justify-center border border-gray-100">
+                                    <p class="text-gray-400 font-light italic">비영리단체 로고 또는 리스트가 이곳에 나열됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Section: Certifications (인허가/인증) -->
+            <section id="sect-certs" class="about-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Part 1: Licenses -->
+                    <div class="mb-32">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
+                            <div>
+                                <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-4">Certifications</h3>
+                                <h2 class="text-5xl font-black italic uppercase">Licenses</h2>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                            <!-- Item 1 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=600" alt="ISO Certification" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">ISO 9001 / 14001</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">국제 표준 품질 및 환경 경영 시스템 인증.</p>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=600" alt="KEPIC Certification" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">KEPIC Certification</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">대한전기협회 원자력 전기 Q등급 인증.</p>
+                                </div>
+                            </div>
+                            <!-- Dummy 3-8 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">License Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">License Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 인증 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">License Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">License Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 인증 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">License Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">License Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 인증 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">License Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">License Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 인증 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">License Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">License Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 인증 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">License Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">License Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 인증 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Part 2: Qualification -->
+                    <div class="mb-32">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
+                            <div>
+                                <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-4">Expertise</h3>
+                                <h2 class="text-5xl font-black italic uppercase">Qualification</h2>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                            <!-- Item 1 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=600" alt="Nuclear Qualification" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Nuclear Qualification</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">원자력 발전소 핵심 설비 정비 및 공급 유자격.</p>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e778?auto=format&fit=crop&q=80&w=600" alt="R&D Center" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">R&D Center</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">기업부설 기술연구소 특허 및 원천 기술 보유.</p>
+                                </div>
+                            </div>
+                            <!-- Dummy 3-8 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Qual Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Qualification Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 자격 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Qual Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Qualification Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 자격 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Qual Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Qualification Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 자격 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Qual Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Qualification Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 자격 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Qual Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Qualification Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 자격 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Qual Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Qualification Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 자격 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Part 3: Awards -->
+                    <div>
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
+                            <div>
+                                <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-4">Recognition</h3>
+                                <h2 class="text-5xl font-black italic uppercase">Awards</h2>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                            <!-- Item 1 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=600" alt="Award 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">대통령 표창</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">제26회 중소기업 기술·경영·혁신대전 수상.</p>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1569928219047-04562312f782?auto=format&fit=crop&q=80&w=600" alt="Award 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">1천만불 수출의 탑</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">제50회 무역의 날 기념 수출 증대 공로.</p>
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Award 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">ESG 우수기업</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">환경·사회·지배구조 경영 성과 인증.</p>
+                                </div>
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e778?auto=format&fit=crop&q=80&w=600" alt="Award 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                    <div class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">100대 강한 중소기업</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">청와대 선정 국가 대표 강소기업.</p>
+                                </div>
+                            </div>
+                            <!-- Dummy 5-8 -->
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Award Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Award Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 수상 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Award Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Award Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 수상 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Award Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Award Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 수상 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                            <div class="group bg-gray-50 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-transparent hover:border-blue-600 transition-all duration-500">
+                                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400 italic text-[10px] md:text-xs">Award Image</div>
+                                <div class="p-4 md:p-8">
+                                    <h4 class="text-sm md:text-lg font-bold mb-1 md:mb-2 uppercase tracking-tighter">Award Title</h4>
+                                    <p class="text-gray-500 font-light leading-relaxed text-[10px] md:text-xs">상세 수상 내용이 이곳에 표시됩니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Section: Culture (조직문화 및 사회공헌) -->
+            <section id="sect-culture" class="about-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Mission & Vision -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mb-32">
+                        <div class="reveal">
+                            <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-8">Mission</h3>
+                            <h2 class="text-4xl md:text-5xl font-black italic mb-6 uppercase">Your Permanent Partner!</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed">에너지분야 선도적 기술과 신뢰를 바탕으로 고객만족과 더불어 발전하는 회사</p>
+                        </div>
+                        <div class="reveal">
+                            <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-8">Vision</h3>
+                            <div class="space-y-4">
+                                <p class="text-2xl font-bold text-gray-800">기술로 공헌하는 에너지 솔루션 전문기업</p>
+                                <p class="text-xl text-gray-500 font-light">국내 최고수준의 직원가치제안(EVP)을 추구하는</p>
+                                <p class="text-4xl md:text-5xl font-black italic text-blue-600 uppercase tracking-tighter">Total Energy Solution Group</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value & Behavior -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
+                        <div class="bg-gray-50 rounded-[3rem] p-12 reveal">
+                            <h3 class="text-2xl font-black uppercase italic mb-10 border-b border-gray-200 pb-4">Core Value</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                                <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+                                    <span class="block text-lg font-bold">주인정신</span>
+                                </div>
+                                <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+                                    <span class="block text-lg font-bold">공동체의식</span>
+                                </div>
+                                <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+                                    <span class="block text-lg font-bold">변화추구</span>
+                                </div>
+                                <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+                                    <span class="block text-lg font-bold">사회적책임</span>
+                                </div>
+                                <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+                                    <span class="block text-lg font-bold">고객만족</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-600 rounded-[3rem] p-12 text-white reveal">
+                            <h3 class="text-2xl font-black uppercase italic mb-10 border-b border-blue-400 pb-4">Behavioral Standard</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                                <div class="text-center p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <span class="block text-lg font-bold">책임성</span>
+                                </div>
+                                <div class="text-center p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <span class="block text-lg font-bold">협업성</span>
+                                </div>
+                                <div class="text-center p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <span class="block text-lg font-bold">혁신성</span>
+                                </div>
+                                <div class="text-center p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <span class="block text-lg font-bold">윤리성</span>
+                                </div>
+                                <div class="text-center p-6 bg-white/10 rounded-2xl backdrop-blur-sm">
+                                    <span class="block text-lg font-bold">전문성</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organizational Culture -->
+                    <div class="mb-32 reveal">
+                        <div class="text-center mb-20">
+                            <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-6">Organizational Culture</h3>
+                            <h2 class="text-4xl md:text-5xl font-black mb-8">"고품격 직원가치를 통한 고객가치의 창조"</h2>
+                            <div class="max-w-3xl mx-auto text-xl text-gray-500 font-light leading-relaxed space-y-4">
+                                <p>와이피피에너지㈜는 고객과 직원이 함께 가치를 만들어 가는 회사입니다.</p>
+                                <p>변화를 추구하며, 기술을 중시하고, 신의를 추구합니다.</p>
+                                <p>고객의 기대 이상의 만족과 감동을 제공함으로써 행복을 느끼는 회사입니다.</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                            <div class="p-8 bg-white border border-gray-100 rounded-3xl hover:border-blue-600 transition-colors group">
+                                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                                    <i class="fa-solid fa-comments text-blue-600 group-hover:text-white"></i>
+                                </div>
+                                <h4 class="font-bold mb-3">소통과 협력</h4>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed">수평적 소통 문화와 부서 간 협력을 통해 시너지를 창출합니다.</p>
+                            </div>
+                            <div class="p-8 bg-white border border-gray-100 rounded-3xl hover:border-blue-600 transition-colors group">
+                                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                                    <i class="fa-solid fa-chart-line text-blue-600 group-hover:text-white"></i>
+                                </div>
+                                <h4 class="font-bold mb-3">성장과 발전</h4>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed">직원 개개인의 성장을 지원하고 전문성 향상을 도모합니다.</p>
+                            </div>
+                            <div class="p-8 bg-white border border-gray-100 rounded-3xl hover:border-blue-600 transition-colors group">
+                                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                                    <i class="fa-solid fa-scale-balanced text-blue-600 group-hover:text-white"></i>
+                                </div>
+                                <h4 class="font-bold mb-3">일과 삶의 균형</h4>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed">건강한 직장 문화를 통해 일과 삶의 균형을 추구합니다.</p>
+                            </div>
+                            <div class="p-8 bg-white border border-gray-100 rounded-3xl hover:border-blue-600 transition-colors group">
+                                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                                    <i class="fa-solid fa-lightbulb text-blue-600 group-hover:text-white"></i>
+                                </div>
+                                <h4 class="font-bold mb-3">창의와 혁신</h4>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed">자유로운 아이디어 제안과 창의적 사고를 장려합니다.</p>
+                            </div>
+                            <div class="p-8 bg-white border border-gray-100 rounded-3xl hover:border-blue-600 transition-colors group">
+                                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                                    <i class="fa-solid fa-hand-holding-heart text-blue-600 group-hover:text-white"></i>
+                                </div>
+                                <h4 class="font-bold mb-3">사회공헌</h4>
+                                <p class="text-xs text-gray-500 font-light leading-relaxed">기업시민으로서 책임을 다합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Contribution -->
+                    <div class="reveal">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
+                            <div>
+                                <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-4">Social Responsibility</h3>
+                                <h2 class="text-5xl font-black italic uppercase">Social Contribution</h2>
+                            </div>
+                            <p class="max-w-md text-gray-500 font-light text-right hidden md:block">와이피피에너지㈜는 나눔을 통해 얻어지는 존경과 신뢰야말로 기업의 가장 중요한 자산이라 믿습니다.</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Activity 1 -->
+                            <div class="group">
+                                <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden mb-6">
+                                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" alt="Social Support" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">소외계층 지원 활동</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed">소년소녀가장, 독거노인 등 사회적으로 소외된 분들에게 사랑을 실천함으로써 기업의 사회적 책임을 다합니다.</p>
+                            </div>
+                            <!-- Activity 2 -->
+                            <div class="group">
+                                <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden mb-6">
+                                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800" alt="Volunteering" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">봉사활동</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed">고아원, 양로원 등을 방문하여 행복나눔을 실천하며 지역사회와 함께 호흡합니다.</p>
+                            </div>
+                            <!-- Activity 3 -->
+                            <div class="group">
+                                <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden mb-6">
+                                    <img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b0cd?auto=format&fit=crop&q=80&w=800" alt="Education Support" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">교육 지원 활동</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed">전력산업의 차기전력기술 고급인력 양성을 위해 교육센터를 운영하고 있습니다.</p>
+                            </div>
+                            <!-- Activity 4 -->
+                            <div class="group">
+                                <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden mb-6">
+                                    <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=800" alt="Missionary Work" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">선교사업 활동</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed">복음화 실천을 위한 선교사 및 교회를 후원하여 직장선교에 앞장섭니다.</p>
+                            </div>
+                            <!-- Activity 5 -->
+                            <div class="group">
+                                <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden mb-6">
+                                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80&w=800" alt="Donation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">각종 단체 후원 활동</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed">자선예방협회 및 새터민학교 후원을 통해 생명의 가치를 지키고 대한민국의 미래를 지원합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Section: R&D Center (중앙연구소) -->
+            <section id="sect-rnd" class="about-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Intro -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-6">Innovation Hub</h3>
+                            <h2 class="text-5xl md:text-6xl font-black mb-8 uppercase italic tracking-tighter">중앙연구소</h2>
+                            <p class="text-2xl font-bold text-gray-800 mb-6">전력 및 보호 시스템 기술혁신의 중심</p>
+                            <div class="space-y-6 text-lg text-gray-500 font-light leading-relaxed">
+                                <p>YPP ENERGY 중앙연구소는 전력·원자력 산업 전반의 보호계전, 진단, 제어 시스템 분야에서 핵심 기술을 개발하고 이를 선도해 나가는 조직으로, 회사의 기술 경쟁력을 뒷받침하는 중추적 역할을 수행하고 있습니다.</p>
+                                <p>총 27명의 전문 연구 인력이 상주하며, 연 매출의 5% 이상을 R&D에 투자함으로써, 국내외 파트너와의 협력을 기반으로 지속적인 기술 역량을 강화하고 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="aspect-square bg-gray-100 rounded-[3rem] overflow-hidden reveal">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="R&D Center" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                        </div>
+                    </div>
+
+                    <!-- Key R&D Areas -->
+                    <div class="mb-32 reveal">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
+                            <div>
+                                <h3 class="text-sm uppercase tracking-[0.3em] text-blue-600 font-bold mb-4">Research Focus</h3>
+                                <h2 class="text-5xl font-black italic uppercase">주요 연구 개발 분야</h2>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="p-10 bg-gray-50 rounded-[2.5rem] hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+                                <h4 class="text-xl font-bold mb-4 group-hover:text-white">3중화 디지털 보호계전기(TRIUMP)</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-white/80">원자력 안전등급 대응이 가능한 고신뢰성 계전기 시스템</p>
+                            </div>
+                            <div class="p-10 bg-gray-50 rounded-[2.5rem] hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+                                <h4 class="text-xl font-bold mb-4 group-hover:text-white">YPP 독자 플랫폼 보호계전기</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-white/80">모터, 피더, 변압기, 발전기용으로 다양한 발전소 환경에 적용 가능</p>
+                            </div>
+                            <div class="p-10 bg-gray-50 rounded-[2.5rem] hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+                                <h4 class="text-xl font-bold mb-4 group-hover:text-white">발전기 통합 예방진단 시스템(GMDS)</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-white/80">실시간 데이터 기반 예측형 진단 솔루션</p>
+                            </div>
+                            <div class="p-10 bg-gray-50 rounded-[2.5rem] hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+                                <h4 class="text-xl font-bold mb-4 group-hover:text-white">디지털 변전소 시스템</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-white/80">IEC 61850 기반의 지능형 전력 보호제어 시스템</p>
+                            </div>
+                            <div class="p-10 bg-gray-50 rounded-[2.5rem] hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+                                <h4 class="text-xl font-bold mb-4 group-hover:text-white">차세대 ECMS 시스템</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-white/80">AI 및 디지털 트윈 기술이 접목된 차세대 전력 관제 시스템</p>
+                            </div>
+                            <div class="p-10 bg-gray-50 rounded-[2.5rem] hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+                                <h4 class="text-xl font-bold mb-4 group-hover:text-white">산업용 UPS 및 전원장치</h4>
+                                <p class="text-gray-500 font-light text-sm leading-relaxed group-hover:text-white/80">원자력 전원 신뢰성 기준 충족 및 방사선감시 전원장치</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capabilities -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
+                        <!-- Hardware -->
+                        <div class="border border-gray-100 rounded-[3rem] p-12 hover:border-blue-600 transition-colors">
+                            <div class="flex items-center gap-4 mb-10">
+                                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <h3 class="text-2xl font-black uppercase italic">Hardware 역량</h3>
+                            </div>
+                            <ul class="space-y-6">
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">01</span>
+                                    <p class="text-gray-600 font-light">고신뢰도 다중화 보호 플랫폼 설계 기술</p>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">02</span>
+                                    <p class="text-gray-600 font-light">SBC 및 DSP 기반 고속 아날로그/디지털 회로 설계</p>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">03</span>
+                                    <p class="text-gray-600 font-light">MW급 인버터 및 드라이버 설계 기술</p>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">04</span>
+                                    <p class="text-gray-600 font-light">최신 EMI/EMS 규격 대응 설계</p>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">05</span>
+                                    <p class="text-gray-600 font-light">IEC61508 기반 Safety 대응 신뢰성 확보</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Software -->
+                        <div class="border border-gray-100 rounded-[3rem] p-12 hover:border-blue-600 transition-colors">
+                            <div class="flex items-center gap-4 mb-10">
+                                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <h3 class="text-2xl font-black uppercase italic">Software 역량</h3>
+                            </div>
+                            <ul class="space-y-6">
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">01</span>
+                                    <p class="text-gray-600 font-light">보호 알고리즘 및 Firmware 설계·구현 기술</p>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">02</span>
+                                    <p class="text-gray-600 font-light">전력설비 종합 진단 알고리즘 및 딥러닝 시스템</p>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">03</span>
+                                    <p class="text-gray-600 font-light">전력 진단·감시·제어 시스템 Software 기술</p>
+                                </li>
+                                <li class="flex gap-4">
+                                    <span class="text-blue-600 font-bold">04</span>
+                                    <p class="text-gray-600 font-light">실시간 신호처리 및 프로그래머블 로직 제어 기술</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * About 페이지 내부의 탭 전환을 관리하는 함수
+         * @param {string} sectionId - 전환하고자 하는 섹션의 키워드 ('greeting', 'history', etc.)
+         */
+        function showAboutSection(sectionId) {
+            // 모든 어바웃 섹션 숨기기
+            document.querySelectorAll('.about-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // 모든 탭 버튼 비활성화
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // 타겟 섹션 및 버튼 활성화
+            const targetSection = document.getElementById('sect-' + sectionId);
+            const targetBtn = document.getElementById('btn-' + sectionId);
+            
+            if (targetSection && targetBtn) {
+                targetSection.classList.add('active');
+                targetBtn.classList.add('active');
+                
+                // 탭 전환 후 등장 애니메이션 재실행을 위해 스크롤 이벤트 강제 트리거
+                window.dispatchEvent(new Event('scroll'));
+            }
+        }
+    </script>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

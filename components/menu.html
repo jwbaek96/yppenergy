@@ -1,0 +1,80 @@
+<!-- Full Screen Menu Overlay -->
+<div id="menu-overlay">
+    <div id="menu-bg-circle"></div>
+    <div id="menu-content" class="max-w-6xl mx-auto flex flex-col min-h-screen">
+        <button id="close-menu" class="fixed top-8 right-8 text-white text-xl font-bold uppercase tracking-widest hover:opacity-50 transition-opacity z-[300]">Close</button>
+        
+        <div class="flex-grow flex flex-col gap-12 pt-12 pb-12">
+            <!-- Navigation -->
+            <div class="flex flex-col gap-6">
+                <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Navigation</span>
+                <div class="flex flex-col">
+                    <a href="index.html" class="menu-item menu-link">HOME</a>
+                    <a href="about.html" class="menu-item menu-link">ABOUT</a>
+                    <a href="services.html" class="menu-item menu-link">SERVICES</a>
+                    <a href="solutions.html" class="menu-item menu-link">SOLUTIONS</a>
+                    <a href="community.html" class="menu-item menu-link">COMMUNITY</a>
+                    <a href="academy.html" class="menu-item menu-link">ACADEMY</a>
+                    <a href="esg.html" class="menu-item menu-link">ESG</a>
+                    <a href="contact.html" class="menu-item menu-link">CONTACT</a>
+                </div>
+            </div>
+
+            <!-- Expertise Solutions -->
+            <div class="flex flex-col gap-6 pt-12 border-t border-white/10">
+                <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Our Expertise Solutions</span>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                    <div class="solution-grid-item menu-link-grid" data-index="0">
+                        <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=400&auto=format&fit=crop" alt="Nuclear">
+                        <div class="solution-grid-label">Nuclear</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="1">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95281773ad90?w=400&auto=format&fit=crop" alt="Thermal">
+                        <div class="solution-grid-label">Thermal</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="2">
+                        <img src="https://images.unsplash.com/photo-1509391366360-fe5bb65830bb?w=400&auto=format&fit=crop" alt="Renewable">
+                        <div class="solution-grid-label">Renewable</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="3">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&auto=format&fit=crop" alt="Hydrogen">
+                        <div class="solution-grid-label">Hydrogen</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="4">
+                        <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=400&auto=format&fit=crop" alt="Substation">
+                        <div class="solution-grid-label">Substation</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="5">
+                        <img src="https://images.unsplash.com/photo-1620714223084-8dfca6df732d?w=400&auto=format&fit=crop" alt="BESS">
+                        <div class="solution-grid-label">BESS</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="6">
+                        <img src="https://images.unsplash.com/photo-1534701938983-983d97f3ad3a?w=400&auto=format&fit=crop" alt="Valve">
+                        <div class="solution-grid-label">Valve</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="7">
+                        <img src="https://images.unsplash.com/photo-1590633325283-143621415277?w=400&auto=format&fit=crop" alt="Military">
+                        <div class="solution-grid-label">Military</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="8">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?w=400&auto=format&fit=crop" alt="Data Center">
+                        <div class="solution-grid-label">Data Center</div>
+                    </div>
+                    <div class="solution-grid-item menu-link-grid" data-index="9">
+                        <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?w=400&auto=format&fit=crop" alt="SMR">
+                        <div class="solution-grid-label">SMR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Language Switcher in Menu (Bottom Position) -->
+        <div class="pb-12 pt-12 border-t border-white/10 flex items-center justify-between">
+            <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Region & Language</span>
+            <div class="flex gap-2">
+                <button class="lang-btn active" onclick="toggleLang('KR')">KR</button>
+                <button class="lang-btn inactive" onclick="toggleLang('EN')">EN</button>
+            </div>
+        </div>
+    </div>
+</div>
