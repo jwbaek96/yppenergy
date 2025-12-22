@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육 일정 - YPP ACADEMY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Montserrat:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/academy.css">
+</head>
+<body class="bg-[#f3f4f6] text-gray-900 selection:bg-blue-600 selection:text-white">
+
+    <!-- Mobile Header Placeholder -->
+    <div id="mobile-header-placeholder"></div>
+
+    <!-- Mobile Menu Placeholder -->
+    <div id="mobile-menu-placeholder"></div>
+
+    <div class="flex flex-col lg:flex-row h-screen lg:overflow-hidden pt-[72px] lg:pt-0">
+        
+        <!-- [LEFT] Sidebar Navigation Placeholder -->
+        <div id="sidebar-left-placeholder"></div>
+
+        <!-- [CENTER] Main Content Area -->
+        <main class="flex-1 overflow-y-auto bg-white lg:m-4 lg:rounded-[2.5rem] shadow-sm border border-gray-100 relative custom-scrollbar">
+            
+            <div class="p-8 lg:p-16 max-w-5xl mx-auto">
+                <header class="mb-12 reveal">
+                    <h1 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">교육 일정</h1>
+                    <p class="text-gray-500">2025년 YPP ACADEMY의 연간 교육 일정을 안내해 드립니다.</p>
+                </header>
+
+                <!-- Google Calendar Section -->
+                <section class="mb-16 reveal">
+                    <h2 class="text-xl font-black text-gray-900 mb-6 flex items-center gap-3">
+                        <span class="w-8 h-1 bg-blue-600 rounded-full"></span>
+                        Academy Calendar
+                    </h2>
+                    <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm aspect-video lg:aspect-[21/9]">
+                        <!-- Google Calendar Embed Placeholder -->
+                        <div class="w-full h-full bg-gray-50 flex flex-col items-center justify-center text-gray-400 p-8 text-center">
+                            <i class="fa-regular fa-calendar-days text-5xl mb-4 opacity-20"></i>
+                            <p class="text-sm font-medium">Google Calendar가 이곳에 표시됩니다.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tabs Navigation -->
+                <div class="flex border-b border-gray-200 mb-12 overflow-x-auto custom-scrollbar reveal">
+                    <button class="tab-btn active px-8 py-4 text-sm font-bold text-blue-600 border-b-2 border-blue-600 whitespace-nowrap transition-all" onclick="switchTab(event, 'relay-schedule')">Relay School</button>
+                    <button class="tab-btn px-8 py-4 text-sm font-medium text-gray-500 hover:text-blue-600 whitespace-nowrap transition-all" onclick="switchTab(event, 'psac-schedule')">PSAC</button>
+                </div>
+
+                <div id="tab-contents">
+                    <!-- Relay School Schedule Tab -->
+                    <div id="relay-schedule" class="tab-pane space-y-20">
+                        
+                        <!-- 1. 디지털릴레이 기본반 -->
+                        <section class="reveal">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-2xl font-black text-gray-900">디지털릴레이 기본반 <span class="text-blue-600 text-lg font-bold ml-2">(UR, 8-Series)</span></h3>
+                                <span class="px-4 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full uppercase tracking-wider">정규 과정</span>
+                            </div>
+
+                            <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm text-center border-collapse">
+                                        <thead>
+                                            <tr class="bg-gray-50 border-b border-gray-100">
+                                                <th class="px-4 py-4 font-bold text-gray-900 w-32">시간</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">수</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">목</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">금</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-50">
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">1교시<br><span class="text-[10px]">09:10-10:00</span></td>
+                                                <td class="px-4 py-6" rowspan="3">
+                                                    <p class="font-bold text-gray-900 mb-1">전력계통보호 기술의 기초</p>
+                                                    <p class="text-xs text-blue-600">이 진</p>
+                                                </td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">8-Series 디지털릴레이 개론</p>
+                                                    <p class="text-xs text-blue-600">김지원</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="7">
+                                                    <p class="font-bold text-gray-900 mb-1">디지털릴레이 실습(기본):</p>
+                                                    <p class="text-xs text-gray-500 mb-2">운영, 시험, 유지보수</p>
+                                                    <p class="text-xs text-blue-600">박영준</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">2교시<br><span class="text-[10px]">10:10-11:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">디지털 보호릴레이의 동작원리</p>
+                                                    <p class="text-xs text-blue-600">이 진</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">3교시<br><span class="text-[10px]">11:10-12:00</span></td>
+                                            </tr>
+                                            <tr class="bg-gray-50/30">
+                                                <td class="px-4 py-2 text-[10px] font-bold text-gray-400" colspan="4">LUNCH BREAK (12:00 - 13:10)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">4교시<br><span class="text-[10px]">13:10-14:00</span></td>
+                                                <td class="px-4 py-6" rowspan="3">
+                                                    <p class="font-bold text-gray-900 mb-1">UR의 구조와 기능</p>
+                                                    <p class="text-xs text-blue-600">최대진</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">UR Set up & Setting</p>
+                                                    <p class="text-xs text-blue-600">이태호</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">5교시<br><span class="text-[10px]">14:10-15:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">6교시<br><span class="text-[10px]">15:10-16:00</span></td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">UR 통신</p>
+                                                    <p class="text-xs text-blue-600">김치환</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">7교시<br><span class="text-[10px]">16:10-17:00</span></td>
+                                                <td class="px-4 py-6 text-xs text-gray-400 italic" colspan="3">※대표강사: 유영식 와이피피에너지㈜ 기술총괄본부장</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-calendar-check text-blue-600"></i> 교육 정보
+                                    </h4>
+                                    <ul class="space-y-4 text-xs">
+                                        <li class="flex justify-between items-start border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육기간</span>
+                                            <span class="font-bold text-gray-900 text-right">1회: 03월 19일 ~ 21일<br>2회: 09월 17일 ~ 19일 (연 2회)</span>
+                                        </li>
+                                        <li class="flex justify-between items-center border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육비</span>
+                                            <span class="font-bold text-blue-600">70만원 (VAT 별도)</span>
+                                        </li>
+                                        <li class="flex flex-col gap-2">
+                                            <span class="text-gray-500">학습목표</span>
+                                            <p class="text-gray-700 leading-relaxed">전력계통 보호기술 학습을 기본으로 하고, 디지털보호릴레이 최고급 기술을 보유한 GE社의 UR과 8-Series의 개론 및 운용 방법을 습득</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-list-ul text-blue-600"></i> 교육 내용
+                                    </h4>
+                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-gray-600">
+                                        <p>• 전력계통보호 기술의 기초</p>
+                                        <p>• 디지털 보호릴레이의 동작원리</p>
+                                        <p>• UR의 구조와 기능</p>
+                                        <p>• 8-Series 디지털릴레이 개론</p>
+                                        <p>• UR Set up</p>
+                                        <p>• UR Setting</p>
+                                        <p>• UR 통신</p>
+                                        <p>• 디지털릴레이 실습(기본)</p>
+                                    </div>
+                                    <div class="mt-6 pt-6 border-t border-gray-200">
+                                        <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-3">강사 소개</h5>
+                                        <div class="space-y-1 text-[10px] text-gray-500">
+                                            <p><span class="font-bold text-gray-700">이 진</span> - 중앙연구소장(사장)</p>
+                                            <p><span class="font-bold text-gray-700">김치환</span> - 기술총괄본부 기술2팀장(이사)</p>
+                                            <p><span class="font-bold text-gray-700">최대진</span> - 기술총괄본부 기술1팀장(이사)</p>
+                                            <p><span class="font-bold text-gray-700">이태호</span> - 기술총괄본부 T&D팀장(부장)</p>
+                                            <p><span class="font-bold text-gray-700">박영춘</span> - 기술총괄본부 시험검사팀장(부장)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 2. 디지털릴레이 고급반 -->
+                        <section class="reveal">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-2xl font-black text-gray-900">디지털릴레이 고급반 <span class="text-blue-600 text-lg font-bold ml-2">(UR, 8-Series)</span></h3>
+                                <span class="px-4 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full uppercase tracking-wider">정규 과정</span>
+                            </div>
+
+                            <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm text-center border-collapse">
+                                        <thead>
+                                            <tr class="bg-gray-50 border-b border-gray-100">
+                                                <th class="px-4 py-4 font-bold text-gray-900 w-32">시간</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">수</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">목</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">금</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-50">
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">1교시<br><span class="text-[10px]">09:10-10:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">UR 디지털 보호릴레이 개론</p>
+                                                    <p class="text-xs text-blue-600">김영도</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">발전기보호(G60)</p>
+                                                    <p class="text-xs text-blue-600">유영식</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="7">
+                                                    <p class="font-bold text-gray-900 mb-1">디지털릴레이 실습(고급):</p>
+                                                    <p class="text-xs text-gray-500 mb-2">운영, 시험, 유지보수</p>
+                                                    <p class="text-xs text-blue-600">박영춘</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">2교시<br><span class="text-[10px]">10:10-11:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">3교시<br><span class="text-[10px]">11:10-12:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">UR송전선보호(L90, D60)</p>
+                                                    <p class="text-xs text-blue-600">이태호</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">피더보호(F60, 850)</p>
+                                                    <p class="text-xs text-blue-600">최정환</p>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-gray-50/30">
+                                                <td class="px-4 py-2 text-[10px] font-bold text-gray-400" colspan="1">LUNCH BREAK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">4교시<br><span class="text-[10px]">13:10-14:00</span></td>
+                                                <td class="px-4 py-6" rowspan="3">
+                                                    <p class="font-bold text-gray-900 mb-1">UR변압기보호(T60)</p>
+                                                    <p class="text-xs text-blue-600">정승연</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="3">
+                                                    <p class="font-bold text-gray-900 mb-1">전동기보호(M60, 869, 339)</p>
+                                                    <p class="text-xs text-blue-600">최정환</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">5교시<br><span class="text-[10px]">14:10-15:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">6교시<br><span class="text-[10px]">15:10-16:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">7교시<br><span class="text-[10px]">16:10-17:00</span></td>
+                                                <td class="px-4 py-6 text-xs text-gray-400 italic" colspan="3">※대표강사: 유영식 와이피피에너지㈜ 기술총괄본부장</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-calendar-check text-blue-600"></i> 교육 정보
+                                    </h4>
+                                    <ul class="space-y-4 text-xs">
+                                        <li class="flex justify-between items-start border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육기간</span>
+                                            <span class="font-bold text-gray-900 text-right">1회: 04월 16일 ~ 18일<br>2회: 10월 22일 ~ 24일 (연 2회)</span>
+                                        </li>
+                                        <li class="flex justify-between items-center border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육비</span>
+                                            <span class="font-bold text-blue-600">70만원 (VAT 별도)</span>
+                                        </li>
+                                        <li class="flex flex-col gap-2">
+                                            <span class="text-gray-500">학습목표</span>
+                                            <p class="text-gray-700 leading-relaxed">디지털릴레이의 기본적인 사항을 이해하고, 송전/변압/발전/피더/전동기 보호의 전반적인 기능적 요소를 학습함으로써 실제 운영에 필요한 제반 사항을 습득</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-list-ul text-blue-600"></i> 교육 내용
+                                    </h4>
+                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-gray-600">
+                                        <p>• UR 디지털 보호릴레이 개론</p>
+                                        <p>• UR송전선보호 (L90, D60)</p>
+                                        <p>• UR변압기보호 (T60)</p>
+                                        <p>• UR발전기보호 (G60)</p>
+                                        <p>• 피더보호 (F60, 850)</p>
+                                        <p>• 전동기보호 (M30, 869, 339)</p>
+                                        <p>• 디지털릴레이 실습(고급)</p>
+                                    </div>
+                                    <div class="mt-6 pt-6 border-t border-gray-200">
+                                        <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-3">강사 소개</h5>
+                                        <div class="space-y-1 text-[10px] text-gray-500">
+                                            <p><span class="font-bold text-gray-700">유영식</span> - 기술총괄본부장(사장)</p>
+                                            <p><span class="font-bold text-gray-700">정승연</span> - 기술총괄본부 설계팀장(상무)</p>
+                                            <p><span class="font-bold text-gray-700">최정환</span> - 기술총괄본부 설계팀(부장)</p>
+                                            <p><span class="font-bold text-gray-700">이태호</span> - 기술총괄본부 T&D팀장(부장)</p>
+                                            <p><span class="font-bold text-gray-700">김영도</span> - 기술총괄본부 설계팀(과장)</p>
+                                            <p><span class="font-bold text-gray-700">박영춘</span> - 기술총괄본부 시험검사팀장(부장)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 3. 고장분석반 -->
+                        <section class="reveal">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-2xl font-black text-gray-900">고장분석반</h3>
+                                <span class="px-4 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full uppercase tracking-wider">전문 과정</span>
+                            </div>
+
+                            <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm text-center border-collapse">
+                                        <thead>
+                                            <tr class="bg-gray-50 border-b border-gray-100">
+                                                <th class="px-4 py-4 font-bold text-gray-900 w-32">시간</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">수</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">목</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">금</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-50">
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">1교시<br><span class="text-[10px]">09:10-10:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">전력설비 계통의 고장현상과 특성</p>
+                                                    <p class="text-xs text-blue-600">이 진</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">보호릴레이 동작원리</p>
+                                                    <p class="text-xs text-blue-600">이 진</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="7">
+                                                    <p class="font-bold text-gray-900 mb-1">디지털릴레이 트러블 슈팅 사례</p>
+                                                    <p class="text-xs text-gray-500 mb-2">(Trouble Shooting)</p>
+                                                    <p class="text-xs text-blue-600">이태호</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">2교시<br><span class="text-[10px]">10:10-11:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">3교시<br><span class="text-[10px]">11:10-12:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">고장계산 기본사항 및 해석·계산법</p>
+                                                    <p class="text-xs text-blue-600">장화윤</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">보호릴레이 동작 상황분석</p>
+                                                    <p class="text-xs text-blue-600">유영식</p>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-gray-50/30">
+                                                <td class="px-4 py-2 text-[10px] font-bold text-gray-400" colspan="1">LUNCH BREAK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">4교시<br><span class="text-[10px]">13:10-14:00</span></td>
+                                                <td class="px-4 py-6" rowspan="3">
+                                                    <p class="font-bold text-gray-900 mb-1">고장계산 실습</p>
+                                                    <p class="text-xs text-blue-600">장화윤</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="3">
+                                                    <p class="text-xs text-gray-400 italic">보호릴레이 동작 상황분석 (계속)</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">5교시<br><span class="text-[10px]">14:10-15:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">6교시<br><span class="text-[10px]">15:10-16:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">7교시<br><span class="text-[10px]">16:10-17:00</span></td>
+                                                <td class="px-4 py-6 text-xs text-gray-400 italic" colspan="3">※대표강사: 유영식 와이피피에너지㈜ 기술총괄본부장</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-calendar-check text-blue-600"></i> 교육 정보
+                                    </h4>
+                                    <ul class="space-y-4 text-xs">
+                                        <li class="flex justify-between items-start border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육기간</span>
+                                            <span class="font-bold text-gray-900 text-right">1회: 05월 21일 ~ 23일<br>2회: 11월 19일 ~ 21일 (연 2회)</span>
+                                        </li>
+                                        <li class="flex justify-between items-center border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육비</span>
+                                            <span class="font-bold text-blue-600">70만원 (VAT 별도)</span>
+                                        </li>
+                                        <li class="flex flex-col gap-2">
+                                            <span class="text-gray-500">학습목표</span>
+                                            <p class="text-gray-700 leading-relaxed">전력계통에서 발생하는 각종 고장에 대한 해석과 계산 방법, 계산 실습을 학습함과 동시에 전력설비 고장기록장치의 이론과 분석방법, 보호릴레이 동작상황 분석 및 디지털릴레이의 자체 트러블 슈팅 등을 종합적으로 학습함으로써 전력계통 고장해석 능력을 배양하는데 목표를 둠.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-list-ul text-blue-600"></i> 교육 내용
+                                    </h4>
+                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-gray-600">
+                                        <p>• 전력설비 계통의 고장현상과 특성</p>
+                                        <p>• 고장계산 기본사항 및 해석‧계산법</p>
+                                        <p>• 고장계산 실습</p>
+                                        <p>• 보호릴레이 동작원리</p>
+                                        <p>• 보호릴레이 동작 상황분석</p>
+                                        <p>• 디지털릴레이 트러블 슈팅 사례분석</p>
+                                    </div>
+                                    <div class="mt-6 pt-6 border-t border-gray-200">
+                                        <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-3">강사 소개</h5>
+                                        <div class="space-y-1 text-[10px] text-gray-500">
+                                            <p><span class="font-bold text-gray-700">이 진</span> - 중앙연구소장(사장)</p>
+                                            <p><span class="font-bold text-gray-700">유영식</span> - 기술총괄본부 본부장(사장)</p>
+                                            <p><span class="font-bold text-gray-700">장화윤</span> - 기술총괄본부 C&E팀 팀장(부장)</p>
+                                            <p><span class="font-bold text-gray-700">이태호</span> - 기술총괄본부 T&D팀 팀장(부장)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 4. ECMS운영반 -->
+                        <section class="reveal">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-2xl font-black text-gray-900">ECMS운영반</h3>
+                                <span class="px-4 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full uppercase tracking-wider">전문 과정</span>
+                            </div>
+
+                            <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm text-center border-collapse">
+                                        <thead>
+                                            <tr class="bg-gray-50 border-b border-gray-100">
+                                                <th class="px-4 py-4 font-bold text-gray-900 w-32">시간</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">수</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">목</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">금</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-50">
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">1교시<br><span class="text-[10px]">09:10-10:00</span></td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">ECMS의 개념 및 기능</p>
+                                                    <p class="text-xs text-blue-600">김치환</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">Project 및 Point 생성(실습)</p>
+                                                    <p class="text-xs text-blue-600">김치환</p>
+                                                </td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">UR Set-up 접속 및 Status확인</p>
+                                                    <p class="text-xs text-blue-600">장우철</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">2교시<br><span class="text-[10px]">10:10-11:00</span></td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">ECMS H/W 및 S/W</p>
+                                                    <p class="text-xs text-blue-600">김치환</p>
+                                                </td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">Viewpoint Monitoring</p>
+                                                    <p class="text-xs text-blue-600">장우철</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">3교시<br><span class="text-[10px]">11:10-12:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">Graphic Design(실습)</p>
+                                                    <p class="text-xs text-blue-600">장우철</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="text-xs text-gray-400 italic">Project 및 Point 생성 (계속)</p>
+                                                </td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">ECMS 유지보수</p>
+                                                    <p class="text-xs text-blue-600">장우철</p>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-gray-50/30">
+                                                <td class="px-4 py-2 text-[10px] font-bold text-gray-400" colspan="1">LUNCH BREAK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">4교시<br><span class="text-[10px]">13:10-14:00</span></td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">ECMS의 통신(Protocol)</p>
+                                                    <p class="text-xs text-blue-600">김치환</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1 leading-tight">Logging, Trending & Tag Scripting, Alarm Viewer, History</p>
+                                                    <p class="text-xs text-blue-600 mt-1">장우철</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="4">
+                                                    <p class="text-xs text-gray-400 italic">실습 및 종합 토의</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">5교시<br><span class="text-[10px]">14:10-15:00</span></td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">Network구성</p>
+                                                    <p class="text-xs text-blue-600">김치환</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">6교시<br><span class="text-[10px]">15:10-16:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">Project 및 Point 생성(실습)</p>
+                                                    <p class="text-xs text-blue-600">김치환</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">ECMS조작방법 및 화면설명</p>
+                                                    <p class="text-xs text-blue-600">장우철</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">7교시<br><span class="text-[10px]">16:10-17:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500"></td>
+                                                <td class="px-4 py-6 text-xs text-gray-400 italic" colspan="3">※대표강사: 유영식 와이피피에너지㈜ 기술총괄본부장</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-calendar-check text-blue-600"></i> 교육 정보
+                                    </h4>
+                                    <ul class="space-y-4 text-xs">
+                                        <li class="flex justify-between items-start border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육기간</span>
+                                            <span class="font-bold text-gray-900 text-right">1회: 06월 18일 ~ 20일 (연 1회)</span>
+                                        </li>
+                                        <li class="flex justify-between items-center border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육비</span>
+                                            <span class="font-bold text-blue-600">70만원 (VAT 별도)</span>
+                                        </li>
+                                        <li class="flex flex-col gap-2">
+                                            <span class="text-gray-500">학습목표</span>
+                                            <p class="text-gray-700 leading-relaxed">YPP ENERGY가 미국 GE와 기술 제휴하여 공급하고 있는 전력설비 종합감시제어시스템(ECMS)의 운영과 관련된 사항을 중심으로, 주로 ECMS의 기본적인 개념, 기능과 구성, 실제 운영에 필요한 사항, 유지보수 등에 대한 내용을 학습함으로써 ECMS운영을 위한 전반적인 사항을 습득하기 위함</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-list-ul text-blue-600"></i> 교육 내용
+                                    </h4>
+                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-gray-600">
+                                        <p>• ECMS의 개념 및 기능</p>
+                                        <p>• ECMS H/W 및 S/W</p>
+                                        <p>• ECMS의 통신(Protocol), Network구성</p>
+                                        <p>• Project, Point생성, Graphic Design</p>
+                                        <p>• Logging, Trending & Tag Scripting</p>
+                                        <p>• ECMS조작방법 및 화면설명</p>
+                                        <p>• UR Set-up 접속 및 Status확인방법</p>
+                                        <p>• ECMS 유지보수</p>
+                                    </div>
+                                    <div class="mt-6 pt-6 border-t border-gray-200">
+                                        <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-3">강사 소개</h5>
+                                        <div class="space-y-1 text-[10px] text-gray-500">
+                                            <p><span class="font-bold text-gray-700">김치환</span> - 기술총괄본부 기술2팀장(이사)</p>
+                                            <p><span class="font-bold text-gray-700">장우철</span> - 기술총괄본부 설계팀(부장)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 5. 원자력 특성화반 -->
+                        <section class="reveal">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-2xl font-black text-gray-900">원자력 특성화반</h3>
+                                <span class="px-4 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full uppercase tracking-wider">특성화 과정</span>
+                            </div>
+
+                            <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm text-center border-collapse">
+                                        <thead>
+                                            <tr class="bg-gray-50 border-b border-gray-100">
+                                                <th class="px-4 py-4 font-bold text-gray-900 w-32">시간</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">수</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">목</th>
+                                                <th class="px-4 py-4 font-bold text-gray-900">금</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-50">
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">1교시<br><span class="text-[10px]">09:10-10:00</span></td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">발전기 보호</p>
+                                                    <p class="text-xs text-blue-600">유영식</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1">CGID수행절차</p>
+                                                    <p class="text-xs text-blue-600">선현규</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="7">
+                                                    <p class="font-bold text-gray-900 mb-1">UR Set up & Setting</p>
+                                                    <p class="text-xs text-blue-600">이태호</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">2교시<br><span class="text-[10px]">10:10-11:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1 leading-tight">전력계통 보호기술 개론</p>
+                                                    <p class="text-[10px] text-gray-400 mt-1">10:00~12:30 (150분)</p>
+                                                    <p class="text-xs text-blue-600 mt-1">이 진</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">3교시<br><span class="text-[10px]">11:10-12:00</span></td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">변압기 보호</p>
+                                                    <p class="text-xs text-blue-600">정승연</p>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-gray-50/30">
+                                                <td class="px-4 py-2 text-[10px] font-bold text-gray-400" colspan="1">LUNCH BREAK</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">4교시<br><span class="text-[10px]">13:10-14:00</span></td>
+                                                <td class="px-4 py-6" rowspan="2">
+                                                    <p class="font-bold text-gray-900 mb-1 leading-tight">디지털 보호릴레이 개론</p>
+                                                    <p class="text-[10px] text-gray-400 mt-1">13:30~15:00 (90분)</p>
+                                                    <p class="text-xs text-blue-600 mt-1">이태호</p>
+                                                </td>
+                                                <td class="px-4 py-6" rowspan="3">
+                                                    <p class="font-bold text-gray-900 mb-1 leading-tight">Relay전자파 적합성검증</p>
+                                                    <p class="text-[10px] text-gray-400 mt-1">(EMI/RFI, Surge)</p>
+                                                    <p class="text-xs text-blue-600 mt-1">송이철</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">5교시<br><span class="text-[10px]">14:10-15:00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">6교시<br><span class="text-[10px]">15:10-16:00</span></td>
+                                                <td class="px-4 py-6">
+                                                    <p class="font-bold text-gray-900 mb-1">전동기 보호</p>
+                                                    <p class="text-xs text-blue-600">정승연</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-6 bg-gray-50/50 font-medium text-gray-500">7교시<br><span class="text-[10px]">16:10-17:00</span></td>
+                                                <td class="px-4 py-6 text-xs text-gray-400 italic" colspan="3">※대표강사: 이 진 와이피피에너지㈜ 중앙연구소장</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-calendar-check text-blue-600"></i> 교육 정보
+                                    </h4>
+                                    <ul class="space-y-4 text-xs">
+                                        <li class="flex justify-between items-start border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육기간</span>
+                                            <span class="font-bold text-gray-900 text-right">1회: 07월 16일 ~ 18일</span>
+                                        </li>
+                                        <li class="flex justify-between items-center border-b border-gray-200 pb-3">
+                                            <span class="text-gray-500">교육비</span>
+                                            <span class="font-bold text-blue-600">100만원 (VAT 별도)</span>
+                                        </li>
+                                        <li class="flex flex-col gap-2">
+                                            <span class="text-gray-500">학습목표</span>
+                                            <p class="text-gray-700 leading-relaxed">원자력 발전소의 설비운영, 정비, 유지보수 등에 종사하는 엔지니어의 직무능력 향상과 원자력 발전의 안정화를 유지하고 신뢰도를 향상시키기 전문성 확보</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-list-ul text-blue-600"></i> 교육 내용
+                                    </h4>
+                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-gray-600">
+                                        <p>• 전력계통 보호기술 개론</p>
+                                        <p>• 디지털 보호릴레이 개론</p>
+                                        <p>• 발전기/변압기/전동기보호</p>
+                                        <p>• CGID수행절차</p>
+                                        <p>• Relay전자파 적합성검증</p>
+                                    </div>
+                                    <div class="mt-6 pt-6 border-t border-gray-200">
+                                        <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-3">강사 소개</h5>
+                                        <div class="space-y-1 text-[10px] text-gray-500">
+                                            <p><span class="font-bold text-gray-700">이 진</span> - 중앙연구소장(사장)</p>
+                                            <p><span class="font-bold text-gray-700">유영식</span> - 기술총괄본부 본부장(사장)</p>
+                                            <p><span class="font-bold text-gray-700">정승연</span> - 기술총괄본부 설계팀장(상무)</p>
+                                            <p><span class="font-bold text-gray-700">이태호</span> - 기술총괄본부 T&D팀장(부장)</p>
+                                            <p><span class="font-bold text-gray-700">선현규</span> - 기술본부 CGID팀(전무)</p>
+                                            <p><span class="font-bold text-gray-700">송이철</span> - ㈜원택 TC5 Div. 품질보증팀(이사)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <!-- PSAC Schedule Tab -->
+                    <div id="psac-schedule" class="tab-pane hidden space-y-20">
+                        
+                        <!-- PSAC Overview -->
+                        <section class="reveal">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-2xl font-black text-gray-900">PSAC 10주 과정 전체 일정</h3>
+                                <span class="px-4 py-1 bg-blue-600 text-white text-[10px] font-bold rounded-full uppercase tracking-wider">Professional Course</span>
+                            </div>
+                            <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm text-left border-collapse">
+                                        <thead>
+                                            <tr class="bg-gray-50 border-b border-gray-100">
+                                                <th class="px-6 py-4 font-bold text-gray-900">교육기간</th>
+                                                <th class="px-6 py-4 font-bold text-gray-900">주차</th>
+                                                <th class="px-6 py-4 font-bold text-gray-900">주제</th>
+                                                <th class="px-6 py-4 font-bold text-gray-900">담당 강사</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-50">
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">9.2(화)~4(목)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">1주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">전력계통 해석의 기본 이론</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">김대균, 박종배, 송태용, 남순열, 최면송, 송경빈, 김철환, 심현보, 허 견</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">9.8(월)~11(목)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">2주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">전력계통(설비) 보호기술</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">이 진, 이동규, 유영식, 김일동, 강상욱, 차동철, 권영진</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">9.22(월)~24(수)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">3주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">동기발전기 기술</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">정성우, 정일엽, 안선주, 원동준, 이상호, 김동준, 임익헌</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">9.29(월)~30(화)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">4주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">무효전력 운영과 전압제어</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">송화창, 한상욱, 곽은섭</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">10.14(화)~17(금)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">5주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">전력설비의 동특성 (계통안정도)</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">송화창, 윤민한, 김수배, 국경수, 정주용, 김재경, 정인주, 한상욱, 조윤성, 신정훈</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">10.28(화)~31(금)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">6주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">분산에너지 시스템 기술</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">김형중, 최동희, 이성은, 전진홍, 이태의, 조성민, 원동준, 이수형, 이효섭, 김윤수, 안현승, 이진오</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">11.4(화)~6(목)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">7주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">보호릴레이 정정법과 보호협조 기술</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">이상영, 김일동, 김세환, 노대석, 강상욱</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">11.11(화)~14(금)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">8주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">HVDC, MVDC, LVDC 및 FACTS기술</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">한병문, 윤민한, 심재웅, 강재식, 김희진, 전상준, 정재정, 심정욱, 강성혁, 권기현</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">11.24(월)~27(목)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">9주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">에너지 전환기의 전력계통 계획과 운영 / 에너지 시장과 신사업 모델</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">김준한, 이성규, 주 원, 최영민, 송태용, 허성일, 박종배, 이상엽, 이창호, 채우규, 손병헌, 김성철, 박기준</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 text-gray-500">12.2(화)~5(금)</td>
+                                                <td class="px-6 py-4 font-bold text-blue-600">10주차</td>
+                                                <td class="px-6 py-4 font-medium text-gray-900">신재생에너지 계통연계 기술</td>
+                                                <td class="px-6 py-4 text-xs text-gray-500">이길송, 이병윤, 오휘명, 김홍석, 김재동, 박정극, 류지윤, 정용호, 조성수, 노대석</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Weekly Details -->
+                        <div class="space-y-24">
+                            <!-- 1주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    1주차 : 전력계통 해석의 기본 이론
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-400">월 (9.1)</td>
+                                                    <td class="px-4 py-6 text-gray-300 italic" colspan="7">개강일 9.2 (화) ~ 4 (목)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (9.2)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력계통의 패러다임 전환</p>
+                                                        <p class="text-[10px] text-blue-600">김대균</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력산업과 시장, 전력계통</p>
+                                                        <p class="text-[10px] text-blue-600">박종배</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">계통운영과 계통해석 실무핵심</p>
+                                                        <p class="text-[10px] text-blue-600">송태용</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (9.3)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력계통 해석의 기본이론</p>
+                                                        <p class="text-[10px] text-blue-600">남순열</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력계통설비 모델링</p>
+                                                        <p class="text-[10px] text-blue-600">최면송</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">전력계통 조류해석</p>
+                                                        <p class="text-[10px] text-blue-600">송경빈</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">목 (9.4)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력계통 고장 해석</p>
+                                                        <p class="text-[10px] text-blue-600">김철환</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력계통의 신뢰도</p>
+                                                        <p class="text-[10px] text-blue-600">심현보</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">HVDC 및 FACTS</p>
+                                                        <p class="text-[10px] text-blue-600">허 견</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">김대균</span> - 한국전력기술㈜ 사장(CEO)</p>
+                                        <p><span class="font-bold text-gray-700">박종배</span> - 건국대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">송태용</span> - 전력거래소 계통운영처 계통기술팀 팀장</p>
+                                        <p><span class="font-bold text-gray-700">남순열</span> - 명지대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">최면송</span> - 명지대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">송경빈</span> - 숭실대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">김철환</span> - 성균관대학교 전자전기공학부 교수</p>
+                                        <p><span class="font-bold text-gray-700">심현보</span> - 인하솔라시티㈜ 대표이사</p>
+                                        <p><span class="font-bold text-gray-700">허 견</span> - 연세대학교 전기전자공학부 교수</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 2주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    2주차 : 전력계통(설비) 보호기술
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">월 (9.8)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">디지털보호릴레이의 원리, 적용, 전망</p>
+                                                        <p class="text-[10px] text-blue-600">이 진</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">계기용 변성기의 원리와 적용</p>
+                                                        <p class="text-[10px] text-blue-600">이동규</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">전력용변압기 보호기술</p>
+                                                        <p class="text-[10px] text-blue-600">유영식</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (9.9)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">송전선 보호기술</p>
+                                                        <p class="text-[10px] text-blue-600">유영식</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="4">
+                                                        <p class="font-bold text-gray-900 mb-1">피더 / 전동기 보호기술</p>
+                                                        <p class="text-[10px] text-blue-600">김일동</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (9.10)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">발전기 보호기술</p>
+                                                        <p class="text-[10px] text-blue-600">강상욱</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">모선보호기술</p>
+                                                        <p class="text-[10px] text-blue-600">유영식</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">전력계통안정화 보호 시스템기술</p>
+                                                        <p class="text-[10px] text-blue-600">차동철</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">목 (9.11)</td>
+                                                    <td class="px-2 py-6" colspan="7">
+                                                        <p class="font-bold text-gray-900 mb-1">보호릴레이와 IEC61850</p>
+                                                        <p class="text-[10px] text-blue-600">권영진</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">이 진</span> - 와이피피에너지㈜ 중앙연구소 사장</p>
+                                        <p><span class="font-bold text-gray-700">이동규</span> - 효성중공업㈜ 전력PU 신송전시스템설계팀 팀장</p>
+                                        <p><span class="font-bold text-gray-700">유영식</span> - 와이피피에너지㈜ 기술총괄본부 사장</p>
+                                        <p><span class="font-bold text-gray-700">김일동</span> - 그리드솔루션㈜ 연구소장</p>
+                                        <p><span class="font-bold text-gray-700">강상욱</span> - 전력거래소 계통운영처 계통보호팀 차장</p>
+                                        <p><span class="font-bold text-gray-700">차동철</span> - 전력거래소 계통운영처 계통보호팀 팀장</p>
+                                        <p><span class="font-bold text-gray-700">권영진</span> - ㈜효성 중공업연구소 계통제어팀 팀장</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 3주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    3주차 : 동기발전기 기술
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-400">일 (9.21)</td>
+                                                    <td class="px-4 py-6 text-gray-300 italic" colspan="7">개강일 9.22(월) ~ 24(수)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">월 (9.22)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">동기발전기 구조‧설계‧제작 및 운전기술</p>
+                                                        <p class="text-[10px] text-blue-600">정성우</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">회로 및 시스템 기초</p>
+                                                        <p class="text-[10px] text-blue-600">정일엽</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">동기발전기 이론과 모델링</p>
+                                                        <p class="text-[10px] text-blue-600">안선주</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (9.23)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">동기기 시정수와 안정도 모델</p>
+                                                        <p class="text-[10px] text-blue-600">원동준</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">동기발전기의 주파수‧유효전력제어</p>
+                                                        <p class="text-[10px] text-blue-600">이상호</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">발전기 특성시험과 모델 정수</p>
+                                                        <p class="text-[10px] text-blue-600">김동준</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (9.24)</td>
+                                                    <td class="px-2 py-6" colspan="7">
+                                                        <p class="font-bold text-gray-900 mb-1">동기기 여자시스템 제어 알고리즘</p>
+                                                        <p class="text-[10px] text-blue-600">임익헌</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">정성우</span> - 와이피피에너지㈜ 고문</p>
+                                        <p><span class="font-bold text-gray-700">정일엽</span> - 국민대학교 전자공학부 교수</p>
+                                        <p><span class="font-bold text-gray-700">안선주</span> - 전남대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">원동준</span> - 인하대학교 전기전자공학부 교수</p>
+                                        <p><span class="font-bold text-gray-700">이상호</span> - 한국전기연구원 센터장</p>
+                                        <p><span class="font-bold text-gray-700">김동준</span> - 한국전기연구원 책임연구원</p>
+                                        <p><span class="font-bold text-gray-700">임익헌</span> - ㈜이투에스 연구소 소장</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 4주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    4주차 : 무효전력 운영과 전압제어
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-400">일 (9.28)</td>
+                                                    <td class="px-4 py-6 text-gray-300 italic" colspan="7">개강일 9.29(화) ~ 30(목)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">월 (9.29)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">무효전력의 개념 및 전력전송 특성</p>
+                                                        <p class="text-[10px] text-blue-600">송화창</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="4">
+                                                        <p class="font-bold text-gray-900 mb-1">직렬 및 병렬 무효전력 보상기술</p>
+                                                        <p class="text-[10px] text-blue-600">한상욱</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (9.30)</td>
+                                                    <td class="px-2 py-6" colspan="7">
+                                                        <p class="font-bold text-gray-900 mb-1">무효전력 보상설비의 실계통 적응</p>
+                                                        <p class="text-[10px] text-blue-600">곽은섭</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">송화창</span> - 서울과학기술대학교 교수</p>
+                                        <p><span class="font-bold text-gray-700">한상욱</span> - 가천대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">곽은섭</span> - 한국전력공사 대구본부 처장</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 5주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    5주차 : 전력설비의 동특성(계통안정도)
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (10.14)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">안정도 해석 개요 / 전압안정도 해석</p>
+                                                        <p class="text-[10px] text-blue-600">송화창</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">과도안정도 해석</p>
+                                                        <p class="text-[10px] text-blue-600">윤민한</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">미소신호안정도 해석</p>
+                                                        <p class="text-[10px] text-blue-600">김수배</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (10.15)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">주파수안정도 해석 / 재생E ESS안정화</p>
+                                                        <p class="text-[10px] text-blue-600">국경수</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력변환장치 안정도</p>
+                                                        <p class="text-[10px] text-blue-600">정주용</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">재생E 모델링 (동특성 해석용)</p>
+                                                        <p class="text-[10px] text-blue-600">김재경</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">목 (10.16)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">과도안정도 시뮬레이션</p>
+                                                        <p class="text-[10px] text-blue-600">정인주</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전압안정도 시뮬레이션</p>
+                                                        <p class="text-[10px] text-blue-600">한상욱</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">주파수 안정도 시뮬레이션</p>
+                                                        <p class="text-[10px] text-blue-600">조윤성</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">금 (10.17)</td>
+                                                    <td class="px-2 py-6" colspan="7">
+                                                        <p class="font-bold text-gray-900 mb-1">미소신호안정도 시뮬레이션</p>
+                                                        <p class="text-[10px] text-blue-600">신정후</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">송화창</span> - 서울과학기술대학교 교수</p>
+                                        <p><span class="font-bold text-gray-700">윤민환</span> - 광운대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">김수배</span> - 경북대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">국경수</span> - 전북대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">정주용</span> - ㈜효성 전력계통연구팀 PM</p>
+                                        <p><span class="font-bold text-gray-700">김재경</span> - 한국전기연구원 선임연구원</p>
+                                        <p><span class="font-bold text-gray-700">정인주</span> - 한전 전력연구원 선임연구원</p>
+                                        <p><span class="font-bold text-gray-700">한상욱</span> - 가천대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">조윤성</span> - 대구가톨릭대학교 교수</p>
+                                        <p><span class="font-bold text-gray-700">신정훈</span> - 한전 전력연구원 소장</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 6주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    6주차 : 분산에너지 시스템기술
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (10.28)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">분산에너지 현황/특별법/특화지역</p>
+                                                        <p class="text-[10px] text-blue-600">김형중</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">신재생E (태양광, 풍력, 연료전지)</p>
+                                                        <p class="text-[10px] text-blue-600">최동희</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">ESS설계 및 실증, 운영</p>
+                                                        <p class="text-[10px] text-blue-600">이성은</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (10.29)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">분산에너지 연계 (인버터, Grid code)</p>
+                                                        <p class="text-[10px] text-blue-600">전진홍</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">섹터커플링의 이해와 활용</p>
+                                                        <p class="text-[10px] text-blue-600">이태의</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">분산에너지 운영 (DERMS, ADMS)</p>
+                                                        <p class="text-[10px] text-blue-600">조성민</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">목 (10.30)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">분산에너지 시장 및 거래</p>
+                                                        <p class="text-[10px] text-blue-600">원동준</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">마이크로그리드</p>
+                                                        <p class="text-[10px] text-blue-600">이수형</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">통합발전소(VPP)</p>
+                                                        <p class="text-[10px] text-blue-600">이효섭</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">금 (10.31)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">배전망 운영자(DSO)</p>
+                                                        <p class="text-[10px] text-blue-600">김윤수</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">장기 배전계획</p>
+                                                        <p class="text-[10px] text-blue-600">안형승</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">NWAs, CCA</p>
+                                                        <p class="text-[10px] text-blue-600">이진오</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">김형중</span> - 한국에너지공단 실장</p>
+                                        <p><span class="font-bold text-gray-700">최동희</span> - 공주대학교 교수</p>
+                                        <p><span class="font-bold text-gray-700">이성은</span> - 한전 전력연구원 선임연구원</p>
+                                        <p><span class="font-bold text-gray-700">전진홍</span> - 한국전기연구원 센터장</p>
+                                        <p><span class="font-bold text-gray-700">이태의</span> - 에너지경제연구원 실장</p>
+                                        <p><span class="font-bold text-gray-700">조성민</span> - 한전 전력연구원 팀장</p>
+                                        <p><span class="font-bold text-gray-700">원동준</span> - 인하대학교 교수</p>
+                                        <p><span class="font-bold text-gray-700">이수형</span> - 공주대학교 교수</p>
+                                        <p><span class="font-bold text-gray-700">이효섭</span> - ㈜인코어드테크놀로지스 부사장</p>
+                                        <p><span class="font-bold text-gray-700">김윤수</span> - 광주과학기술원 교수</p>
+                                        <p><span class="font-bold text-gray-700">안형승</span> - 한국전력공사 부장</p>
+                                        <p><span class="font-bold text-gray-700">이진오</span> - 한국에너지공과대학교 교수</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 7주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    7주차 : 보호릴레이 정정법과 보호협조 기술
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-400">월 (11.3)</td>
+                                                    <td class="px-4 py-6 text-gray-300 italic" colspan="7">개강일 11.4(화) ~ 6(목)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (11.4)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">전력용 변압기, 모선보호릴레이 정정사례</p>
+                                                        <p class="text-[10px] text-blue-600">이상영</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="4">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">전동기 보호릴레이 정정법과 보호협조 사례</p>
+                                                        <p class="text-[10px] text-blue-600">김일동</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (11.5)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">송전선 보호릴레이 정정법과 보호협조 사례</p>
+                                                        <p class="text-[10px] text-blue-600">김세환</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="4">
+                                                        <p class="font-bold text-gray-900 mb-1">신재생 연계계통 보호협조기술</p>
+                                                        <p class="text-[10px] text-blue-600">노대석</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">목 (11.6)</td>
+                                                    <td class="px-2 py-6" colspan="7">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">발전기 보호릴레이 정정법과 보호협조 사례</p>
+                                                        <p class="text-[10px] text-blue-600">강상욱</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">이상영</span> - 한국전력공사 차장</p>
+                                        <p><span class="font-bold text-gray-700">김일동</span> - 그리드솔루션㈜ 연구소장</p>
+                                        <p><span class="font-bold text-gray-700">김세환</span> - 한국전력공사 인재개발원 차장</p>
+                                        <p><span class="font-bold text-gray-700">노대석</span> - 한국기술교육대학교 교수</p>
+                                        <p><span class="font-bold text-gray-700">강상욱</span> - 전력거래소 계통보호팀 차장</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 8주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    8주차 : HVDC, MVDC, LVDC 및 FACTS기술
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (11.11)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">전류형 HVDC동작원리, 제어 및 실계통 적용</p>
+                                                        <p class="text-[10px] text-blue-600">한병문</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="4">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">전류형 HVDC실계통 운영시뮬레이션</p>
+                                                        <p class="text-[10px] text-blue-600">윤민한</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (11.12)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">전압형 HVDC동작원리, 제어 및 실계통 적용</p>
+                                                        <p class="text-[10px] text-blue-600">심재웅</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">MMC-HVDC동작원리, 제어 및 실계통 응용</p>
+                                                        <p class="text-[10px] text-blue-600">강재식</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">전압형 HVDC실계통 운영시뮬레이션</p>
+                                                        <p class="text-[10px] text-blue-600">김희진</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">목 (11.13)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">FACTS기술</p>
+                                                        <p class="text-[10px] text-blue-600">전상준</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">계통연계 인버터의 계통 접속 안정도</p>
+                                                        <p class="text-[10px] text-blue-600">정재정</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">고압직류 차단기술의 이해</p>
+                                                        <p class="text-[10px] text-blue-600">심정욱</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">금 (11.14)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">MVDC시스템기술현황</p>
+                                                        <p class="text-[10px] text-blue-600">강성현</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="4">
+                                                        <p class="font-bold text-gray-900 mb-1">LVDC시스템기술현황</p>
+                                                        <p class="text-[10px] text-blue-600">권기현</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">한병문</span> - 가천대학교 석좌교수</p>
+                                        <p><span class="font-bold text-gray-700">윤민한</span> - 광운대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">심재웅</span> - 상명대학교 전기공학전공 교수</p>
+                                        <p><span class="font-bold text-gray-700">강재식</span> - 한국전기연구원 선임연구원</p>
+                                        <p><span class="font-bold text-gray-700">김희진</span> - ㈜업텍 대표이사</p>
+                                        <p><span class="font-bold text-gray-700">전상준</span> - 한전 전력연구원 책임연구원</p>
+                                        <p><span class="font-bold text-gray-700">정재정</span> - 경북대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">심정욱</span> - 스마트파워㈜ 스마트연구원 원장</p>
+                                        <p><span class="font-bold text-gray-700">강성현</span> - 한전 전력연구원 선임연구원</p>
+                                        <p><span class="font-bold text-gray-700">권기현</span> - 연암공과대학교 교수</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 9주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    9주차 : 에너지 전환기의 전력계통 계획과 운영 / 에너지 시장과 신사업 모델
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">월 (11.24)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">발전설비 계획</p>
+                                                        <p class="text-[10px] text-blue-600">김준한</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">계통설비 계획</p>
+                                                        <p class="text-[10px] text-blue-600">이성규</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">전력계통 안정도 해석 및 신재생 영향</p>
+                                                        <p class="text-[10px] text-blue-600">주 원</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (11.25)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">실시간전력계통 제어기술(EMS)의 진화</p>
+                                                        <p class="text-[10px] text-gray-400">09:00~11:30 (150분)</p>
+                                                        <p class="text-[10px] text-blue-600">최영민</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력계통 상태추정</p>
+                                                        <p class="text-[10px] text-gray-400">12:30~14:00 (90분)</p>
+                                                        <p class="text-[10px] text-blue-600">송태용</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력수급 예측 및 운영</p>
+                                                        <p class="text-[10px] text-blue-600">허성일</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (11.26)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">전력시장의 이해와 발전방향</p>
+                                                        <p class="text-[10px] text-blue-600">박종배</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">배출권 거래시장</p>
+                                                        <p class="text-[10px] text-blue-600">이상엽</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">에너지 정책과 전력산업 / 분산에너지 특성</p>
+                                                        <p class="text-[10px] text-blue-600">이창호</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">목 (11.27)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">마이크로 그리드 기술</p>
+                                                        <p class="text-[10px] text-gray-400">09:00~10:30 (90분)</p>
+                                                        <p class="text-[10px] text-blue-600">채우규</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">마이크로 그리드 경제성/안정성평가</p>
+                                                        <p class="text-[10px] text-gray-400">10:30~12:00 (90분)</p>
+                                                        <p class="text-[10px] text-blue-600">손병헌</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">DR자원 운용모델</p>
+                                                        <p class="text-[10px] text-gray-400">13:00~14:30 (90분)</p>
+                                                        <p class="text-[10px] text-blue-600">김성철</p>
+                                                    </td>
+                                                    <td class="px-2 py-6">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">EV충전시스템과 전력시장</p>
+                                                        <p class="text-[10px] text-gray-400">14:30~16:00 (90분)</p>
+                                                        <p class="text-[10px] text-blue-600">박기준</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">김준한</span> - 전력거래소 에너지계획팀 팀장</p>
+                                        <p><span class="font-bold text-gray-700">이성규</span> - 한국전력공사 계통기술실 실장</p>
+                                        <p><span class="font-bold text-gray-700">주 원</span> - 전력거래소 계통기술팀 차장</p>
+                                        <p><span class="font-bold text-gray-700">최영민</span> - 전력거래소 차기IT추진실 실장</p>
+                                        <p><span class="font-bold text-gray-700">송태용</span> - 전력거래소 계통기술팀 팀장</p>
+                                        <p><span class="font-bold text-gray-700">허성일</span> - 전력거래소 수급운영팀 팀장</p>
+                                        <p><span class="font-bold text-gray-700">박종배</span> - 건국대학교 전기공학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">이상엽</span> - 한국환경연구원 선임연구위원</p>
+                                        <p><span class="font-bold text-gray-700">이창호</span> - 가천대학교 연구교수</p>
+                                        <p><span class="font-bold text-gray-700">채우규</span> - 한전 전력연구원 팀장</p>
+                                        <p><span class="font-bold text-gray-700">손병헌</span> - 한국전력공사 부장</p>
+                                        <p><span class="font-bold text-gray-700">김성철</span> - 파란에너지㈜ 대표이사</p>
+                                        <p><span class="font-bold text-gray-700">박기준</span> - 한전 전력연구원 수석연구원</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 10주차 -->
+                            <section class="reveal">
+                                <h4 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                    <span class="w-2 h-6 bg-blue-600 rounded-full"></span>
+                                    10주차 : 신재생에너지 계통연계 기술
+                                </h4>
+                                <div class="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm mb-8">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-xs text-center border-collapse">
+                                            <thead>
+                                                <tr class="bg-gray-50 border-b border-gray-100">
+                                                    <th class="px-4 py-4 font-bold text-gray-900 w-20">요일</th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">1교시<br><span class="text-[10px] font-normal">09:10-10:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">2교시<br><span class="text-[10px] font-normal">10:10-11:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">3교시<br><span class="text-[10px] font-normal">11:10-12:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">4교시<br><span class="text-[10px] font-normal">13:10-14:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">5교시<br><span class="text-[10px] font-normal">14:10-15:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">6교시<br><span class="text-[10px] font-normal">15:10-16:00</span></th>
+                                                    <th class="px-2 py-4 font-bold text-gray-900">7교시<br><span class="text-[10px] font-normal">16:10-17:00</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-50">
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">화 (12.2)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">태양광 발전사업의 최신기술과 비즈니스동향</p>
+                                                        <p class="text-[10px] text-blue-600">이길송</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">디지털 트윈 기술의 플랫폼</p>
+                                                        <p class="text-[10px] text-blue-600">이병윤</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">재생에너지와 디지털 트윈</p>
+                                                        <p class="text-[10px] text-blue-600">오휘명</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">수 (12.3)</td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1">전력시스템에서의 AI 기술 응용</p>
+                                                        <p class="text-[10px] text-blue-600">김홍석</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">연료전지 발전시스템 기술</p>
+                                                        <p class="text-[10px] text-blue-600">김재동</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">무탄소(수소, 암모니아) 발전기술 현황</p>
+                                                        <p class="text-[10px] text-blue-600">박정극</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">목 (12.4)</td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1">풍력발전시스템 엔지니어링</p>
+                                                        <p class="text-[10px] text-blue-600">류지윤</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="2">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">신재생E (ESS포함) PCS기술</p>
+                                                        <p class="text-[10px] text-blue-600">정용호</p>
+                                                    </td>
+                                                    <td class="px-2 py-6" colspan="3">
+                                                        <p class="font-bold text-gray-900 mb-1 leading-tight">신재생 발전시스템 계통망 연계기술</p>
+                                                        <p class="text-[10px] text-blue-600">조성수</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-4 py-6 bg-gray-50/50 font-bold text-gray-900">금 (12.5)</td>
+                                                    <td class="px-2 py-6" colspan="7">
+                                                        <p class="font-bold text-gray-900 mb-1">ESS개요 및 안전, 시험, 인증</p>
+                                                        <p class="text-[10px] text-blue-600">노대석</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+                                    <h5 class="text-[10px] font-bold text-gray-400 uppercase mb-4">강사 소개</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2 text-[10px] text-gray-500">
+                                        <p><span class="font-bold text-gray-700">이길송</span> - ㈜에쓰와트 전무이사(CTO)</p>
+                                        <p><span class="font-bold text-gray-700">이병윤</span> - 한국전기연구원 센터장</p>
+                                        <p><span class="font-bold text-gray-700">오휘명</span> - 한국전기연구원 책임연구원</p>
+                                        <p><span class="font-bold text-gray-700">김홍석</span> - 서강대학교 인공지능학과 교수</p>
+                                        <p><span class="font-bold text-gray-700">김재동</span> - 범한퓨어셀㈜ 상무</p>
+                                        <p><span class="font-bold text-gray-700">박정극</span> - 한전 전력연구원 책임연구원</p>
+                                        <p><span class="font-bold text-gray-700">류지윤</span> - ㈜원에너지시스템즈 대표이사</p>
+                                        <p><span class="font-bold text-gray-700">정용호</span> - LS ELECTRIC㈜ 기술고문</p>
+                                        <p><span class="font-bold text-gray-700">조성수</span> - 한전 전력연구원 수석연구원</p>
+                                        <p><span class="font-bold text-gray-700">노대석</span> - 한국기술교육대학교 교수</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Switch Script -->
+                <script>
+                    function switchTab(event, tabId) {
+                        // Hide all tab panes
+                        document.querySelectorAll('.tab-pane').forEach(pane => {
+                            pane.classList.add('hidden');
+                        });
+                        
+                        // Remove active class from all buttons
+                        document.querySelectorAll('.tab-btn').forEach(btn => {
+                            btn.classList.remove('active', 'text-blue-600', 'border-b-2', 'border-blue-600');
+                            btn.classList.add('text-gray-500', 'font-medium');
+                        });
+                        
+                        // Show target tab pane
+                        document.getElementById(tabId).classList.remove('hidden');
+                        
+                        // Add active class to clicked button
+                        event.currentTarget.classList.add('active', 'text-blue-600', 'border-b-2', 'border-blue-600');
+                        event.currentTarget.classList.remove('text-gray-500', 'font-medium');
+                        
+                        // Re-trigger reveal animations for the new tab
+                        if (typeof initRevealAnimation === 'function') {
+                            initRevealAnimation();
+                        }
+                    }
+                </script>
+            </div>
+
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+        </main>
+
+        <!-- [RIGHT] Sidebar Info Placeholder -->
+        <div id="sidebar-right-placeholder"></div>
+
+    </div>
+
+    <!-- Academy Loader -->
+    <script src="js/academy-loader.js"></script>
+</body>
+</html>

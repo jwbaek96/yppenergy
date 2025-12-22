@@ -1,0 +1,20 @@
+/* Academy Specific Styles */
+body { font-family: 'Noto Sans KR', sans-serif; }
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+.reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Custom Scrollbar for Desktop */
+@media (min-width: 1024px) {
+    .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #d1d5db; }
+}
+
+.nav-item.active { background-color: #eff6ff; color: #2563eb; }
+.nav-item.active i { color: #2563eb; }
+
+/* Glass effect for mobile nav */
+.glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }

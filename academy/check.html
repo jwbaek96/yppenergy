@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신청 확인 - YPP ACADEMY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Montserrat:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/academy.css">
+</head>
+<body class="bg-[#f3f4f6] text-gray-900 selection:bg-blue-600 selection:text-white">
+
+    <div id="mobile-header-placeholder"></div>
+    <div id="mobile-menu-placeholder"></div>
+
+    <div class="flex flex-col lg:flex-row h-screen lg:overflow-hidden pt-[72px] lg:pt-0">
+        
+        <div id="sidebar-left-placeholder"></div>
+
+        <!-- [CENTER] Main Content Area -->
+        <main class="flex-1 overflow-y-auto bg-white lg:m-4 lg:rounded-[2.5rem] shadow-sm border border-gray-100 relative custom-scrollbar">
+            
+            <div class="p-8 lg:p-16 max-w-3xl mx-auto">
+                <header class="mb-12 reveal">
+                    <h1 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">신청 확인</h1>
+                    <p class="text-gray-500">신청하신 교육 과정의 상태를 확인하실 수 있습니다.</p>
+                </header>
+
+                <div class="bg-gray-50 rounded-[2rem] p-8 lg:p-12 border border-gray-100 reveal">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <label class="text-sm font-bold text-gray-900">이름</label>
+                            <input type="text" placeholder="신청 시 입력한 성함" class="w-full px-6 py-4 bg-white border border-gray-100 rounded-2xl focus:outline-none focus:border-blue-600 transition-all">
+                        </div>
+                        <div class="space-y-4">
+                            <label class="text-sm font-bold text-gray-900">연락처</label>
+                            <input type="tel" placeholder="010-0000-0000" class="w-full px-6 py-4 bg-white border border-gray-100 rounded-2xl focus:outline-none focus:border-blue-600 transition-all">
+                        </div>
+                        <button class="w-full py-5 bg-gray-900 text-white font-black rounded-2xl hover:bg-black transition-all shadow-xl">
+                            조회하기
+                        </button>
+                    </div>
+
+                    <div class="mt-12 pt-12 border-t border-gray-200 text-center">
+                        <p class="text-sm text-gray-400">
+                            신청 내역이 확인되지 않거나 수정이 필요한 경우<br>
+                            <a href="mailto:academy@yppenergy.com" class="text-blue-600 font-bold hover:underline">academy@yppenergy.com</a>으로 문의해 주세요.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="sidebar-right-placeholder"></div>
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/academy-loader.js"></script>
+</body>
+</html>

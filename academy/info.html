@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육 정보 - YPP ACADEMY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Montserrat:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/academy.css">
+</head>
+<body class="bg-[#f3f4f6] text-gray-900 selection:bg-blue-600 selection:text-white">
+
+    <!-- Mobile Header Placeholder -->
+    <div id="mobile-header-placeholder"></div>
+
+    <!-- Mobile Menu Placeholder -->
+    <div id="mobile-menu-placeholder"></div>
+
+    <div class="flex flex-col lg:flex-row h-screen lg:overflow-hidden pt-[72px] lg:pt-0">
+        
+        <!-- [LEFT] Sidebar Navigation Placeholder -->
+        <div id="sidebar-left-placeholder"></div>
+
+        <!-- [CENTER] Main Content Area -->
+        <main class="flex-1 overflow-y-auto bg-white lg:m-4 lg:rounded-[2.5rem] shadow-sm border border-gray-100 relative custom-scrollbar">
+            
+            <div class="p-8 lg:p-16 max-w-5xl mx-auto">
+                <header class="mb-12 reveal">
+                    <h1 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">교육 정보</h1>
+                    <p class="text-gray-500">YPP ACADEMY에서 제공하는 전문 교육 과정을 소개합니다.</p>
+                </header>
+
+                <!-- Tabs Navigation -->
+                <div class="flex border-b border-gray-200 mb-12 overflow-x-auto custom-scrollbar reveal">
+                    <button class="tab-btn active px-8 py-4 text-sm font-bold text-blue-600 border-b-2 border-blue-600 whitespace-nowrap transition-all" onclick="switchTab(event, 'relay')">Relay School</button>
+                    <button class="tab-btn px-8 py-4 text-sm font-medium text-gray-500 hover:text-blue-600 whitespace-nowrap transition-all" onclick="switchTab(event, 'psac')">PSAC</button>
+                    <button class="tab-btn px-8 py-4 text-sm font-medium text-gray-500 hover:text-blue-600 whitespace-nowrap transition-all" onclick="switchTab(event, 'special')">특별 과정</button>
+                </div>
+
+                <div id="tab-contents">
+                    <!-- Relay School Tab -->
+                    <div id="relay" class="tab-pane space-y-16">
+                        <section class="reveal">
+                            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                                <div class="flex-1">
+                                    <div class="inline-block px-4 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Professional Course</div>
+                                    <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
+                                        Relay School<br>
+                                        <span class="text-blue-600 text-2xl lg:text-3xl">디지털 보호계전기 전문가 양성</span>
+                                    </h2>
+                                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                                        <p>Relay School은 국내 유일의 전력계통 보호기술 전문 교육기관입니다.</p>
+                                        <p>2008년 설립 이래 국내 전력회사/발전사, 플랜트, 연구기관, 대학과 더불어 해외의 일본, 대만, UAE 등 수많은 국내외 전기기술 인력을 양성함으로써 우리나라가 전력기술의 강국으로 자리매김하는데 일조하고 있습니다.</p>
+                                        <p>핵심 교육 과정은 총 6개의 반으로 구성되어 있으며, 매년 교육내용과 수준을 지속적으로 개선해 나아가고 있습니다.</p>
+                                    </div>
+                                </div>
+                                <div class="w-full lg:w-80 bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100">
+                                    <h3 class="text-sm font-bold text-gray-900 mb-6 flex items-center gap-2">
+                                        <i class="fa-solid fa-bullseye text-blue-600"></i> 교육 목표
+                                    </h3>
+                                    <ul class="space-y-4">
+                                        <li class="flex gap-3">
+                                            <span class="w-5 h-5 bg-blue-600 text-white text-[10px] flex items-center justify-center rounded-full flex-shrink-0 mt-0.5">1</span>
+                                            <p class="text-xs text-gray-600 leading-relaxed">디지털 보호계전기에 정통한 계통보호 전문가 양성</p>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="w-5 h-5 bg-blue-600 text-white text-[10px] flex items-center justify-center rounded-full flex-shrink-0 mt-0.5">2</span>
+                                            <p class="text-xs text-gray-600 leading-relaxed">실무 중심의 교육 서비스 제공</p>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="w-5 h-5 bg-blue-600 text-white text-[10px] flex items-center justify-center rounded-full flex-shrink-0 mt-0.5">3</span>
+                                            <p class="text-xs text-gray-600 leading-relaxed">전력계통 및 설비의 신뢰성 확보 역량 강화</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Course Overview Grid -->
+                        <section class="reveal">
+                            <h3 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                <span class="w-8 h-1 bg-blue-600 rounded-full"></span>
+                                과정 개요
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="p-8 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:shadow-blue-50 transition-all group">
+                                    <div class="w-12 h-12 bg-gray-50 text-gray-400 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <i class="fa-solid fa-microchip"></i>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 mb-2">디지털 보호릴레이(UR)</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">UR 시리즈의 개념과 기능, 운용 및 접속 방법 습득</p>
+                                </div>
+                                <div class="p-8 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:shadow-blue-50 transition-all group">
+                                    <div class="w-12 h-12 bg-gray-50 text-gray-400 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <i class="fa-solid fa-bolt"></i>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 mb-2">발전기/송전선 보호</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">발전기 및 송전선로의 보호 방식과 계전기 적용 기술</p>
+                                </div>
+                                <div class="p-8 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:shadow-blue-50 transition-all group">
+                                    <div class="w-12 h-12 bg-gray-50 text-gray-400 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <i class="fa-solid fa-tower-broadcast"></i>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 mb-2">변압기/배전선/모터 보호</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">주요 전력 설비별 최적화된 보호 알고리즘 이해</p>
+                                </div>
+                                <div class="p-8 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:shadow-blue-50 transition-all group">
+                                    <div class="w-12 h-12 bg-gray-50 text-gray-400 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 mb-2">고장 분석</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">고장 현상 특성 분석 및 고장 계산 기초 역량 강화</p>
+                                </div>
+                                <div class="p-8 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:shadow-blue-50 transition-all group">
+                                    <div class="w-12 h-12 bg-gray-50 text-gray-400 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <i class="fa-solid fa-network-wired"></i>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 mb-2">ECMS 운영</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">에너지 제어 및 모니터링 시스템의 개념과 실무 운용</p>
+                                </div>
+                                <div class="p-8 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:shadow-blue-50 transition-all group">
+                                    <div class="w-12 h-12 bg-gray-50 text-gray-400 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <i class="fa-solid fa-atom"></i>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 mb-2">원자력 특성화</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">CGID 수행 및 EMC 검증 등 원자력 발전 전문성 확보</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Schedule & Pricing Table -->
+                        <section class="reveal">
+                            <h3 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                <span class="w-8 h-1 bg-blue-600 rounded-full"></span>
+                                2025년 정규과정 교육 일정 및 비용
+                            </h3>
+                            <div class="overflow-x-auto custom-scrollbar bg-white border border-gray-100 rounded-[2rem] shadow-sm">
+                                <table class="w-full text-sm text-left border-collapse">
+                                    <thead>
+                                        <tr class="bg-gray-50 border-b border-gray-100">
+                                            <th class="px-6 py-5 font-bold text-gray-900 whitespace-nowrap">개설과정</th>
+                                            <th class="px-4 py-5 font-bold text-gray-900 text-center">일수</th>
+                                            <th class="px-4 py-5 font-bold text-gray-900 text-center">시간</th>
+                                            <th class="px-6 py-5 font-bold text-gray-900 text-center whitespace-nowrap">수강료(만원)</th>
+                                            <th class="px-4 py-5 font-bold text-blue-600 text-center">3월</th>
+                                            <th class="px-4 py-5 font-bold text-blue-600 text-center">4월</th>
+                                            <th class="px-4 py-5 font-bold text-blue-600 text-center">5월</th>
+                                            <th class="px-4 py-5 font-bold text-blue-600 text-center">6월</th>
+                                            <th class="px-4 py-5 font-bold text-blue-600 text-center">7월</th>
+                                            <th class="px-4 py-5 font-bold text-blue-600 text-center">9월</th>
+                                            <th class="px-4 py-5 font-bold text-blue-600 text-center">10월</th>
+                                            <th class="px-4 py-5 font-bold text-blue-600 text-center">11월</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-50">
+                                        <tr class="hover:bg-blue-50/30 transition-colors">
+                                            <td class="px-6 py-5 font-bold text-gray-900">디지털릴레이 기본반</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">3</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">17</td>
+                                            <td class="px-6 py-5 text-center text-gray-600">77</td>
+                                            <td class="px-4 py-5 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-bold">19~21</span></td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-bold">17~19</span></td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                        </tr>
+                                        <tr class="hover:bg-blue-50/30 transition-colors">
+                                            <td class="px-6 py-5 font-bold text-gray-900">디지털릴레이 고급반</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">3</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">17</td>
+                                            <td class="px-6 py-5 text-center text-gray-600">77</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-bold">16~18</span></td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-bold">22~24</span></td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                        </tr>
+                                        <tr class="hover:bg-blue-50/30 transition-colors">
+                                            <td class="px-6 py-5 font-bold text-gray-900">고장분석반</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">3</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">17</td>
+                                            <td class="px-6 py-5 text-center text-gray-600">77</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-bold">21~23</span></td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-bold">19~21</span></td>
+                                        </tr>
+                                        <tr class="hover:bg-blue-50/30 transition-colors">
+                                            <td class="px-6 py-5 font-bold text-gray-900">ECMS 운영반</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">3</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">17</td>
+                                            <td class="px-6 py-5 text-center text-gray-600">77</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-bold">18~20</span></td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                        </tr>
+                                        <tr class="hover:bg-blue-50/30 transition-colors">
+                                            <td class="px-6 py-5 font-bold text-gray-900">원자력 특성화반</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">3</td>
+                                            <td class="px-4 py-5 text-center text-gray-600">17</td>
+                                            <td class="px-6 py-5 text-center text-gray-600">110</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-bold">16~18</span></td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                            <td class="px-4 py-5 text-center">-</td>
+                                        </tr>
+                                        <tr class="bg-gray-50/50">
+                                            <td class="px-6 py-5 font-bold text-gray-900">특별과정반</td>
+                                            <td colspan="11" class="px-6 py-5 text-center text-gray-500 font-medium italic">연중 상시 운영 (별도 협의)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="mt-4 text-[10px] text-gray-400 text-right">* 모든 교육비는 부가세(VAT) 포함 가격입니다.</p>
+                        </section>
+
+                        <!-- Regular Course Info -->
+                        <section class="reveal">
+                            <div class="bg-gray-900 rounded-[2.5rem] p-8 lg:p-12 text-white shadow-2xl shadow-gray-200">
+                                <h3 class="text-xl font-black mb-8 flex items-center gap-3">
+                                    <i class="fa-solid fa-circle-info text-blue-400"></i> 정규과정 기본 정보
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                    <div class="space-y-6">
+                                        <div>
+                                            <h4 class="text-[10px] uppercase tracking-widest text-blue-400 font-bold mb-2">교육 장소</h4>
+                                            <p class="text-sm leading-relaxed">RelaySchool 교육실 (서울시 금천구 가산디지털2로 24 가산YPP ENERGY아르센타워 8층)</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-[10px] uppercase tracking-widest text-blue-400 font-bold mb-2">신청 방법</h4>
+                                            <p class="text-sm leading-relaxed">홈페이지(www.ypp.co.kr) → 교육신청 또는 이메일(yppedu@ypp.co.kr) 접수</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-[10px] uppercase tracking-widest text-blue-400 font-bold mb-2">결제 방법</h4>
+                                            <p class="text-sm leading-relaxed">계좌이체 (기업은행 137-031847-04-013) 또는 현장 카드 결제</p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-6">
+                                        <div>
+                                            <h4 class="text-[10px] uppercase tracking-widest text-blue-400 font-bold mb-2">문의처</h4>
+                                            <p class="text-sm leading-relaxed">YPP ENERGY(주) 교육팀 (TEL: 02-2104-8720, 4683)</p>
+                                        </div>
+                                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                                            <ul class="space-y-2 text-[11px] text-gray-400">
+                                                <li class="flex gap-2"><i class="fa-solid fa-circle-exclamation text-blue-400 mt-0.5"></i> 본 과정은 비환급 과정입니다.</li>
+                                                <li class="flex gap-2"><i class="fa-solid fa-circle-exclamation text-blue-400 mt-0.5"></i> 계좌이체 시 세금계산서 발행이 가능합니다.</li>
+                                                <li class="flex gap-2"><i class="fa-solid fa-circle-exclamation text-blue-400 mt-0.5"></i> 접수 마감: 개강 전주 금요일 17:00까지</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- PSAC Tab -->
+                    <div id="psac" class="tab-pane hidden space-y-16">
+                        <section class="reveal">
+                            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                                <div class="flex-1">
+                                    <div class="inline-block px-4 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Advanced Course</div>
+                                    <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
+                                        PSAC<br>
+                                        <span class="text-blue-600 text-2xl lg:text-3xl">전력시스템 Ai 및 분산에너지 기술</span>
+                                    </h2>
+                                    <p class="text-gray-600 leading-relaxed mb-8">
+                                        에너지 전환과 디지털 변환시대에 필요한 전력계통 분야의 최고의 기술교육을 제공합니다. 전력계통 기술분야의 고급 인력을 양성하기 위한 10주간의 집중 교육 과정입니다.
+                                    </p>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                                            <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-2">교육 기간</h4>
+                                            <p class="text-sm font-bold text-gray-900">2025.09.02 ~ 12.05 (10주)</p>
+                                        </div>
+                                        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                                            <h4 class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-2">교육 대상</h4>
+                                            <p class="text-sm font-bold text-gray-900">엔지니어, 연구원, 대학(원)생</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full lg:w-80 bg-gray-900 rounded-[2.5rem] p-8 text-white shadow-xl">
+                                    <h3 class="text-sm font-bold mb-6 flex items-center gap-2 text-blue-400">
+                                        <i class="fa-solid fa-location-dot"></i> 교육 장소
+                                    </h3>
+                                    <p class="text-xs leading-relaxed mb-6 opacity-80">
+                                        서울시 금천구 가산디지털2로 24<br>
+                                        가산YPP ENERGY아르센타워 8층 교육실
+                                    </p>
+                                    <div class="space-y-4 pt-6 border-t border-white/10">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-train text-blue-400"></i>
+                                            <span class="text-[11px]">가산디지털단지역 도보 18분</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-train text-blue-400"></i>
+                                            <span class="text-[11px]">독산역(1호선) 도보 10분</span>
+                                        </div>
+                                    </div>
+                                    <p class="mt-6 text-[10px] text-gray-400 italic">* 주차 지원이 불가하오니 대중교통 이용을 권장합니다.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- PSAC Weekly Pricing -->
+                        <section class="reveal">
+                            <h3 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                <span class="w-8 h-1 bg-blue-600 rounded-full"></span>
+                                주차별 교육 일정 및 비용
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                                <!-- Week 1-10 Cards -->
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 01</span>
+                                    <p class="text-xs text-gray-400 mt-1">9.2(화)~4(목)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">110<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 02</span>
+                                    <p class="text-xs text-gray-400 mt-1">9.8(월)~11(목)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">120<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 03</span>
+                                    <p class="text-xs text-gray-400 mt-1">9.22(월)~24(수)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">100<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 04</span>
+                                    <p class="text-xs text-gray-400 mt-1">9.29(월)~30(화)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">80<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 05</span>
+                                    <p class="text-xs text-gray-400 mt-1">10.14(화)~17(금)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">120<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 06</span>
+                                    <p class="text-xs text-gray-400 mt-1">10.28(화)~31(금)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">130<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 07</span>
+                                    <p class="text-xs text-gray-400 mt-1">11.4(화)~6(목)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">100<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 08</span>
+                                    <p class="text-xs text-gray-400 mt-1">11.11(화)~14(금)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">120<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 09</span>
+                                    <p class="text-xs text-gray-400 mt-1">11.24(월)~27(목)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">130<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                                <div class="p-5 bg-white border border-gray-100 rounded-2xl hover:border-blue-600 transition-all">
+                                    <span class="text-[10px] font-bold text-blue-600">WEEK 10</span>
+                                    <p class="text-xs text-gray-400 mt-1">12.2(화)~5(금)</p>
+                                    <p class="text-lg font-black text-gray-900 mt-2">120<span class="text-xs font-normal ml-1">만원</span></p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 p-8 bg-blue-50 rounded-[2rem] border border-blue-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                                <div>
+                                    <h4 class="text-lg font-black text-blue-900">1~10주 전체 수강 패키지</h4>
+                                    <p class="text-sm text-blue-700">전 과정을 통합 수강하실 경우 특별 할인 혜택이 적용됩니다.</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-3xl font-black text-blue-600">900<span class="text-sm font-normal ml-1">만원</span></span>
+                                    <p class="text-[10px] text-blue-400 mt-1">* VAT 별도</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- PSAC Registration & Accommodation -->
+                        <section class="reveal">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <!-- Registration -->
+                                <div class="bg-gray-50 rounded-[2.5rem] p-10 border border-gray-100">
+                                    <h3 class="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                                        <i class="fa-solid fa-file-signature text-blue-600"></i> 신청 및 결제
+                                    </h3>
+                                    <div class="space-y-6">
+                                        <div>
+                                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">접수 기간</h4>
+                                            <p class="text-sm font-bold text-gray-900">2025.07.01 ~ 각 교육 시작 2주 전까지</p>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">개인 신청</h4>
+                                                <p class="text-xs text-gray-600 leading-relaxed">홈페이지(www.ypp.co.kr) → 교육신청</p>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">단체 신청</h4>
+                                                <p class="text-xs text-gray-600 leading-relaxed">이메일 신청서 송부 후 전화 접수</p>
+                                            </div>
+                                        </div>
+                                        <div class="pt-6 border-t border-gray-200">
+                                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">결제 방법</h4>
+                                            <p class="text-sm text-gray-900 font-bold">계좌이체 또는 개강일 현장 카드 결제</p>
+                                            <p class="text-[11px] text-gray-500 mt-1">기업은행 137-031847-04-013 (예금주: 와이피피㈜)</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accommodation -->
+                                <div class="bg-blue-600 rounded-[2.5rem] p-10 text-white shadow-xl shadow-blue-100">
+                                    <h3 class="text-xl font-black mb-8 flex items-center gap-3">
+                                        <i class="fa-solid fa-hotel"></i> 숙박 안내 (제휴)
+                                    </h3>
+                                    <div class="space-y-6">
+                                        <div>
+                                            <h4 class="text-[10px] font-bold text-blue-200 uppercase tracking-widest mb-2">제휴 호텔</h4>
+                                            <p class="text-lg font-black">골드 리버 호텔 (Gold River Hotel)</p>
+                                            <p class="text-xs opacity-80 mt-1">서울 금천구 서부샛길 584</p>
+                                        </div>
+                                        <div class="flex gap-8">
+                                            <div>
+                                                <h4 class="text-[10px] font-bold text-blue-200 uppercase tracking-widest mb-2">연락처</h4>
+                                                <p class="text-sm font-bold">02-6021-8100</p>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-[10px] font-bold text-blue-200 uppercase tracking-widest mb-2">주차</h4>
+                                                <p class="text-sm font-bold">가능</p>
+                                            </div>
+                                        </div>
+                                        <div class="p-4 bg-white/10 rounded-xl border border-white/10">
+                                            <p class="text-[11px] leading-relaxed">
+                                                <i class="fa-solid fa-circle-info mr-1"></i> 
+                                                예약 시 <span class="font-bold text-blue-200">"YPP ENERGY 제휴가"</span>로 문의해 주시기 바랍니다. (가격 변동 가능)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Special Course Tab -->
+                    <div id="special" class="tab-pane hidden space-y-12">
+                        <section class="reveal">
+                            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                                <div class="flex-1">
+                                    <div class="inline-block px-4 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Customized Course</div>
+                                    <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
+                                        특별 과정<br>
+                                        <span class="text-blue-600 text-2xl lg:text-3xl">수요중심의 맞춤형 교육</span>
+                                    </h2>
+                                    <div class="space-y-8">
+                                        <div class="flex gap-6">
+                                            <div class="w-12 h-12 bg-white border border-gray-100 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm">
+                                                <i class="fa-solid fa-users-gear text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-900 mb-2">기관/단체 맞춤형 운영</h4>
+                                                <p class="text-sm text-gray-500 leading-relaxed">10명 이상의 단체 신청 시, 학습 내용에 따라 기간과 일정을 협의하여 최적화된 교육을 진행합니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-6">
+                                            <div class="w-12 h-12 bg-white border border-gray-100 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm">
+                                                <i class="fa-solid fa-calendar-check text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-900 mb-2">유연한 일정 관리</h4>
+                                                <p class="text-sm text-gray-500 leading-relaxed">정규 과정 외에도 별도의 일정 개설이 가능하며, 교육 과목과 강사 일정에 따라 유연하게 조정됩니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-6">
+                                            <div class="w-12 h-12 bg-white border border-gray-100 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm">
+                                                <i class="fa-solid fa-handshake-angle text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-900 mb-2">신청 및 확정 프로세스</h4>
+                                                <p class="text-sm text-gray-500 leading-relaxed">교육 인원, 내용, 일정을 확정한 후 최종 교육비를 산정합니다. 최소 30일 전 신청을 권장합니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full lg:w-80 space-y-6">
+                                    <div class="bg-blue-600 rounded-[2.5rem] p-8 text-white shadow-xl shadow-blue-100">
+                                        <h3 class="text-sm font-bold mb-6 flex items-center gap-2">
+                                            <i class="fa-solid fa-file-pen"></i> 신청 안내
+                                        </h3>
+                                        <div class="space-y-4 text-xs leading-relaxed opacity-90">
+                                            <p>개설 희망 기간 최소 3개월 전 접수 필요</p>
+                                            <p>주제, 학습내용, 기간, 인원 접수 후 담당자 협의</p>
+                                            <p>확정된 일정과 인원에 따라 교육비 책정</p>
+                                        </div>
+                                        <a href="apply.html" class="mt-8 block w-full py-4 bg-white text-blue-600 text-center font-black rounded-2xl hover:bg-blue-50 transition-all">
+                                            특별과정 문의하기
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Tab Switch Script -->
+                <script>
+                    function switchTab(event, tabId) {
+                        // Hide all tab panes
+                        document.querySelectorAll('.tab-pane').forEach(pane => {
+                            pane.classList.add('hidden');
+                        });
+                        
+                        // Remove active class from all buttons
+                        document.querySelectorAll('.tab-btn').forEach(btn => {
+                            btn.classList.remove('active', 'text-blue-600', 'border-b-2', 'border-blue-600');
+                            btn.classList.add('text-gray-500', 'font-medium');
+                        });
+                        
+                        // Show target tab pane
+                        document.getElementById(tabId).classList.remove('hidden');
+                        
+                        // Add active class to clicked button
+                        event.currentTarget.classList.add('active', 'text-blue-600', 'border-b-2', 'border-blue-600');
+                        event.currentTarget.classList.remove('text-gray-500', 'font-medium');
+                        
+                        // Re-trigger reveal animations for the new tab
+                        if (typeof initRevealAnimation === 'function') {
+                            initRevealAnimation();
+                        }
+                    }
+                </script>
+            </div>
+
+            <!-- Footer Placeholder -->
+            <div id="footer-placeholder"></div>
+        </main>
+
+        <!-- [RIGHT] Sidebar Info Placeholder -->
+        <div id="sidebar-right-placeholder"></div>
+
+    </div>
+
+    <!-- Academy Loader -->
+    <script src="js/academy-loader.js"></script>
+</body>
+</html>
