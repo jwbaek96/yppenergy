@@ -14,7 +14,7 @@ function initUI() {
     const closeBtn = document.getElementById('close-menu');
     const overlay = document.getElementById('menu-overlay');
     const bgCircle = document.getElementById('menu-bg-circle');
-    const menuLinks = document.querySelectorAll('.menu-link');
+    const menuLinks = document.querySelectorAll('.menu-link, .menu-link-grid');
 
     if (openBtn && overlay && bgCircle) {
         openBtn.addEventListener('click', (e) => {

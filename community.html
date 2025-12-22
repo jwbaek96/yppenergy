@@ -7,71 +7,670 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .community-section { display: none; }
+        .community-section.active { display: block; }
+        .tab-btn { position: relative; opacity: 0.4; transition: all 0.3s ease; }
+        .tab-btn:hover { opacity: 1; color: #000; }
+        .tab-btn.active { opacity: 1; }
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .tab-btn.active::after { width: 100%; }
+        
+        /* Custom scrollbar for horizontal tabs on mobile */
+        .tabs-container::-webkit-scrollbar { display: none; }
+        .tabs-container { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 <body class="selection:bg-blue-600 selection:text-white">
 
-    <div class="custom-cursor hidden md:block" id="cursor"></div>
+    <div id="cursor-placeholder"></div>
+    <div id="menu-placeholder"></div>
+    <div id="nav-placeholder"></div>
 
-    <!-- Full Screen Menu Overlay -->
-    <div id="menu-overlay">
-        <div id="menu-bg-circle"></div>
-        <div id="menu-content" class="max-w-6xl mx-auto flex flex-col min-h-screen">
-            <button id="close-menu" class="fixed top-8 right-8 text-white text-xl font-bold uppercase tracking-widest hover:opacity-50 transition-opacity z-[300]">Close</button>
+    <!-- Page: Community -->
+    <div id="page-community" class="page-content">
+        <!-- Hero Header & Tab Navigation -->
+        <section class="pt-48 pb-10 px-8 md:px-16 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-12 reveal">COMMUNITY.</h1>
+                
+                <!-- Local Tab Navigation Bar Wrapper -->
+                <div class="relative group reveal">
+                    <!-- Left Arrow -->
+                    <button onclick="scrollTabs('left')" class="absolute -left-6 md:-left-8 top-1/2 -translate-y-[calc(50%+12px)] z-10 bg-white/90 p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-50" id="tab-scroll-left" style="display: none;">
+                        <i class="fa-solid fa-chevron-left text-blue-800"></i>
+                    </button>
+                    
+                    <!-- Tab Container -->
+                    <div id="tabs-scroll-container" class="tabs-container flex overflow-x-auto gap-8 md:gap-12 border-b border-gray-100 pb-4 whitespace-nowrap scroll-smooth no-scrollbar">
+                        <button onclick="showCommunitySection('news')" class="tab-btn active text-lg font-bold uppercase tracking-widest" id="btn-news">뉴스 및 공지사항</button>
+                        <button onclick="showCommunitySection('media')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-media">미디어센터</button>
+                        <button onclick="showCommunitySection('gallery')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-gallery">갤러리</button>
+                        <button onclick="showCommunitySection('ci')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-ci">CI</button>
+                    </div>
+
+                    <!-- Right Arrow -->
+                    <button onclick="scrollTabs('right')" class="absolute -right-6 md:-right-8 top-1/2 -translate-y-[calc(50%+12px)] z-10 bg-white/90 p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-50" id="tab-scroll-right">
+                        <i class="fa-solid fa-chevron-right text-blue-800"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Content Container -->
+        <div class="min-h-[60vh]">
             
-            <div class="flex-grow flex flex-col gap-12 pt-12 pb-12">
-                <!-- Navigation -->
-                <div class="flex flex-col gap-6">
-                    <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Navigation</span>
-                    <div class="flex flex-col">
-                        <a href="index.html" class="menu-item menu-link">HOME</a>
-                        <a href="about.html" class="menu-item menu-link">ABOUT</a>
-                        <a href="solutions.html" class="menu-item menu-link">SOLUTIONS</a>
-                        <a href="community.html" class="menu-item menu-link">COMMUNITY</a>
-                        <a href="academy.html" class="menu-item menu-link">ACADEMY</a>
-                        <a href="esg.html" class="menu-item menu-link">ESG</a>
-                        <a href="contact.html" class="menu-item menu-link">CONTACT</a>
+            <!-- 1. Section: 뉴스 및 공지사항 (News & Notice) -->
+            <section id="sect-news" class="community-section active py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+                        <div>
+                            <h2 class="text-5xl font-black mb-4">News & Notice</h2>
+                            <p class="text-gray-500">YPP ENERGY의 새로운 소식과 공지사항을 전해드립니다.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="px-6 py-2 rounded-full bg-black text-white text-sm font-bold">전체</button>
+                            <button class="px-6 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-bold hover:bg-gray-200 transition-colors">보도자료</button>
+                            <button class="px-6 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-bold hover:bg-gray-200 transition-colors">공지사항</button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1 border-t border-gray-100 reveal">
+                        <!-- News Item 1 -->
+                        <a href="#" class="group flex flex-col md:flex-row md:items-center justify-between py-10 border-b border-gray-100 hover:bg-gray-50 transition-colors px-4">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
+                                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest w-24">보도자료</span>
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">YPP ENERGY, 카자흐스탄 그린수소 프로젝트 본계약 체결</h3>
+                            </div>
+                            <span class="text-gray-400 text-sm mt-4 md:mt-0">2025.12.20</span>
+                        </a>
+                        <!-- News Item 2 -->
+                        <a href="#" class="group flex flex-col md:flex-row md:items-center justify-between py-10 border-b border-gray-100 hover:bg-gray-50 transition-colors px-4">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
+                                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest w-24">공지사항</span>
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">2026년 상반기 신입 및 경력사원 공개 채용 안내</h3>
+                            </div>
+                            <span class="text-gray-400 text-sm mt-4 md:mt-0">2025.12.15</span>
+                        </a>
+                        <!-- News Item 3 -->
+                        <a href="#" class="group flex flex-col md:flex-row md:items-center justify-between py-10 border-b border-gray-100 hover:bg-gray-50 transition-colors px-4">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
+                                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest w-24">보도자료</span>
+                                <h3 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">원자력 품질 시스템 ISO 19443 인증 갱신 완료</h3>
+                            </div>
+                            <span class="text-gray-400 text-sm mt-4 md:mt-0">2025.11.28</span>
+                        </a>
+                    </div>
+
+                    <div class="mt-16 flex justify-center reveal">
+                        <button class="px-12 py-4 border border-gray-200 rounded-full font-bold hover:bg-black hover:text-white transition-all">더보기</button>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Language Switcher in Menu (Bottom Position) -->
-            <div class="pb-12 pt-12 border-t border-white/10 flex items-center justify-between">
-                <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Region & Language</span>
-                <div class="flex gap-2">
-                    <button class="lang-btn active" onclick="toggleLang('KR')">KR</button>
-                    <button class="lang-btn inactive" onclick="toggleLang('EN')">EN</button>
+            <!-- 2. Section: 미디어센터 (Media Center) -->
+            <section id="sect-media" class="community-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="mb-24 reveal">
+                        <h2 class="text-5xl font-black mb-4">Media Center</h2>
+                        <p class="text-gray-500">YPP ENERGY의 다양한 미디어 컨텐츠를 확인하세요.</p>
+                    </div>
+
+                    <!-- Promotional Videos -->
+                    <div class="mb-32 reveal">
+                        <h3 class="text-2xl font-black mb-12 flex items-center">
+                            홍보 영상 <span class="ml-4 w-12 h-1 bg-blue-600"></span>
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div class="group cursor-pointer">
+                                <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden relative mb-6">
+                                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200" alt="Video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-play text-blue-600 text-2xl ml-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">YPP ENERGY 기업 홍보 영상 (2025)</h4>
+                                <p class="text-gray-400 text-sm">에너지의 미래를 여는 기술, YPP ENERGY의 비전을 만나보세요.</p>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden relative mb-6">
+                                    <img src="https://images.unsplash.com/photo-1466611653911-95282fc365d5?auto=format&fit=crop&q=80&w=1200" alt="Video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                                            <i class="fa-solid fa-play text-blue-600 text-2xl ml-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">그린수소 프로젝트 현장 스케치</h4>
+                                <p class="text-gray-400 text-sm">카자흐스탄 그린수소 콤플렉스 건설 현장의 생생한 기록입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brochure & Links -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 reveal">
+                        <!-- Brochure Download -->
+                        <div class="bg-slate-900 rounded-[3rem] p-12 text-white flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-3xl font-black mb-6">Brochure</h3>
+                                <p class="text-gray-400 mb-12 leading-relaxed">
+                                    YPP ENERGY의 사업 영역과 기술력을 상세히 담은 <br>
+                                    최신 브로슈어를 다운로드하실 수 있습니다.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#" class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all">
+                                    국문 브로슈어 (PDF) <i class="fa-solid fa-download ml-2"></i>
+                                </a>
+                                <a href="#" class="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full transition-all">
+                                    ENG Brochure (PDF) <i class="fa-solid fa-download ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- External Links -->
+                        <div class="bg-gray-50 rounded-[3rem] p-12 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-3xl font-black mb-6">External Links</h3>
+                                <p class="text-gray-500 mb-12 leading-relaxed">
+                                    YPP ENERGY에 대한 더 많은 정보를 <br>
+                                    외부 채널에서도 확인해 보세요.
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="https://youtube.com" target="_blank" class="flex items-center justify-between p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-600 transition-colors group">
+                                    <span class="font-bold">YouTube</span>
+                                    <i class="fa-brands fa-youtube text-red-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                                </a>
+                                <a href="https://namu.wiki" target="_blank" class="flex items-center justify-between p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-600 transition-colors group">
+                                    <span class="font-bold">나무위키</span>
+                                    <i class="fa-solid fa-book text-green-600 text-2xl group-hover:scale-110 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- 3. Section: 갤러리 (Gallery) -->
+            <section id="sect-gallery" class="community-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+                        <div>
+                            <h2 class="text-5xl font-black mb-4">Gallery</h2>
+                            <p class="text-gray-500">YPP ENERGY의 활동 모습을 이미지와 영상으로 만나보세요.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button class="px-6 py-2 rounded-full bg-black text-white text-sm font-bold">전체</button>
+                            <button class="px-6 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-bold hover:bg-gray-200 transition-colors">이미지</button>
+                            <button class="px-6 py-2 rounded-full bg-gray-100 text-gray-600 text-sm font-bold hover:bg-gray-200 transition-colors">비디오</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+                        <!-- Gallery Item 1 -->
+                        <div class="group cursor-pointer">
+                            <div class="aspect-square bg-gray-100 rounded-[2rem] overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-gray-900">2025 국제 에너지 박람회 참가</h4>
+                            <p class="text-xs text-gray-400 mt-1">2025.11.15</p>
+                        </div>
+                        <!-- Gallery Item 2 -->
+                        <div class="group cursor-pointer">
+                            <div class="aspect-square bg-gray-100 rounded-[2rem] overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <i class="fa-solid fa-play text-white text-3xl"></i>
+                                </div>
+                                <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">VIDEO</div>
+                            </div>
+                            <h4 class="font-bold text-gray-900">스마트 그리드 통합 제어 시스템 시연</h4>
+                            <p class="text-xs text-gray-400 mt-1">2025.10.22</p>
+                        </div>
+                        <!-- Gallery Item 3 -->
+                        <div class="group cursor-pointer">
+                            <div class="aspect-square bg-gray-100 rounded-[2rem] overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-white text-3xl"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-gray-900">글로벌 파트너십 데이 행사</h4>
+                            <p class="text-xs text-gray-400 mt-1">2025.09.10</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Section: CI (Corporate Identity) -->
+            <section id="sect-ci" class="community-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="mb-24 reveal">
+                        <h2 class="text-5xl font-black mb-4">Corporate Identity</h2>
+                        <p class="text-gray-500">YPP ENERGY의 브랜드 가치와 정체성을 소개합니다.</p>
+                    </div>
+
+                    <!-- Symbol Mark & Brand Identity -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start mb-32 reveal">
+                        <div class="space-y-12">
+                            <div>
+                                <h3 class="text-3xl font-black mb-8 border-l-4 border-blue-600 pl-6">심볼마크 (Symbol Mark)</h3>
+                                <p class="text-gray-600 leading-relaxed mb-6">
+                                    와이피피에너지(주)의 심볼마크는 슬로건인 <strong class="text-blue-600">‘Your Permanent Partner'</strong>의 약자인 YPP의 영문표기와 상징적 이미지를 조합한 것입니다.
+                                </p>
+                                <p class="text-gray-600 leading-relaxed mb-8">
+                                    'Y'자 시작 부분의 <span class="text-red-600 font-bold">붉은 원</span>은 ‘영원과 합일, 완전’ 등을 의미하며 원은 큰 조화를 뜻하는 어울림의 상징으로 자연환경과 사람과 기계기술 사이의 조화를 의미합니다. 또한, 와이피피에너지(주)가 하나 된 공동체로 조직 구성원들이 서로 사랑하며, 인화단결을 통해 서로 감싸 안고, 어우러짐으로써 21세기 꿈과 미래가 있는 새로운 에너지 분야의 종합 솔루션 선도기업으로 나아가는 모습을 형상화한 것입니다.
+                                </p>
+                                <div class="flex gap-4">
+                                    <a href="#" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded-xl transition-all text-sm">JPG 다운로드</a>
+                                    <a href="#" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all text-sm">AI 다운로드</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-3xl font-black mb-8 border-l-4 border-blue-600 pl-6">브랜드 아이덴티티</h3>
+                                <p class="text-gray-600 leading-relaxed mb-6">
+                                    와이피피에너지(주)의 심볼은 완벽한 시스템과 신뢰감으로 고객의 행복을 추구하며, 고객과의 신뢰와 약속을 상징적으로 표현합니다.
+                                </p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    주인정신과 공동체의식으로 새로운 변화를 추구하여 사회적 책임을 다하는 기업 이미지를 현대적 감각으로 표현하여 초일류 기업으로 발전 하려는 경영전략을 반영하고, 고객 지향적인 의지와 발전 지향적인 이미지를 담고 있습니다.
+                                </p>
+                                <p class="mt-6 text-xs text-red-500 font-medium italic">
+                                    ※ 모든 시그니처는 와이피피에너지(주)의 공식표시이므로 어떠한 경우라도 변형되어 사용 되어서는 안됩니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-[3rem] p-12 md:p-20 flex items-center justify-center shadow-2xl shadow-blue-900/5 border border-gray-50">
+                            <img src="logo/logo.png" alt="YPP Symbol Mark" class="max-w-full h-auto">
+                        </div>
+                    </div>
+
+                    <!-- Logo Types -->
+                    <div class="mb-32 reveal">
+                        <h3 class="text-3xl font-black mb-12">로고타입 (Logo Types)</h3>
+                        
+                        <div class="space-y-16">
+                            <!-- 한글 가로형 (2개) -->
+                            <div>
+                                <h4 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-6 px-4">한글 가로형</h4>
+                                <div class="grid grid-cols-2 gap-4 md:gap-8">
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글 가로형 01</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글 가로형 02</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 한글 세로형 (2개) -->
+                            <div>
+                                <h4 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-6 px-4">한글 세로형</h4>
+                                <div class="grid grid-cols-2 gap-4 md:gap-8">
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글 세로형 01</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글 세로형 02</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 영문 가로형 (3개) -->
+                            <div>
+                                <h4 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-6 px-4">영문 가로형</h4>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">영문 가로형 01</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">영문 가로형 02</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">영문 가로형 03</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 심볼 + 슬로건 (2개) -->
+                            <div>
+                                <h4 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-6 px-4">심볼 + 슬로건</h4>
+                                <div class="grid grid-cols-2 gap-4 md:gap-8">
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">영문 슬로건 상하조합형 01</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">영문 슬로건 상하조합형 02</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 심볼 + 로고타입 (8개) -->
+                            <div>
+                                <h4 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-6 px-4">심볼 + 로고타입</h4>
+                                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글좌우 조합형 S-01</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글좌우 조합형 S-02</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글좌우 조합형 S-03</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글좌우 조합형 S-04</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글상하 조합형 S-01</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">한글상하 조합형 S-02</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">영문좌우 조합형 S-01</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100">
+                                        <h5 class="text-[10px] md:text-xs font-bold text-gray-400 mb-4">영문상하 조합형 S-01</h5>
+                                        <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4">
+                                            <span class="text-gray-300 text-[10px] md:text-xs">Preview Image</span>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <a href="#" class="flex-1 py-2 bg-white border border-gray-200 text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-gray-50">JPG</a>
+                                            <a href="#" class="flex-1 py-2 bg-blue-600 text-white text-center text-[10px] md:text-xs font-bold rounded-lg hover:bg-blue-700">AI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color System -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-black mb-12">컬러 시스템 (Color System)</h3>
+                        
+                        <!-- Main Colors -->
+                        <div class="mb-16">
+                            <h4 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-8">Main Colors</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                                <div class="space-y-4">
+                                    <div class="h-32 bg-[#005595] rounded-2xl shadow-lg"></div>
+                                    <div>
+                                        <h5 class="font-bold text-sm">군청 (Navy)</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE 294C / #005595</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="h-32 bg-[#ef4135] rounded-2xl shadow-lg"></div>
+                                    <div>
+                                        <h5 class="font-bold text-sm">빨강 (Red)</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE Red 032C / #EF4135</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="h-32 bg-[#a8996e] rounded-2xl shadow-lg"></div>
+                                    <div>
+                                        <h5 class="font-bold text-sm">골드 (Gold)</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE 873C / #A8996E</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="h-32 bg-[#a7a9ac] rounded-2xl shadow-lg"></div>
+                                    <div>
+                                        <h5 class="font-bold text-sm">실버 (Silver)</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE 877C / #A7A9AC</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="h-32 bg-[#000000] rounded-2xl shadow-lg"></div>
+                                    <div>
+                                        <h5 class="font-bold text-sm">블랙 (Black)</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">Black 100 / #000000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sub Colors -->
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Sub Colors</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                                <div class="space-y-4">
+                                    <div class="h-24 bg-[#c5c19d] rounded-2xl"></div>
+                                    <div>
+                                        <h5 class="font-bold text-xs">회밤</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE 2310C / #C5C19D</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="h-24 bg-[#fdb913] rounded-2xl"></div>
+                                    <div>
+                                        <h5 class="font-bold text-xs">노랑</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE 130C / #FDB913</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="h-24 bg-[#403e2e] rounded-2xl"></div>
+                                    <div>
+                                        <h5 class="font-bold text-xs">암녹갈</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE 329-2C / #403E2E</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="h-24 bg-[#c2c4e0] rounded-2xl"></div>
+                                    <div>
+                                        <h5 class="font-bold text-xs">연보라</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE 665C / #C2C4E0</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="h-24 bg-[#569bbe] rounded-2xl"></div>
+                                    <div>
+                                        <h5 class="font-bold text-xs">하늘</h5>
+                                        <p class="text-[10px] text-gray-400 uppercase">PANTONE 549C / #569BBE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-[100] mix-blend-difference text-white p-8 flex justify-between items-center"
-    style="background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
-        <a href="index.html" class="text-2xl font-black tracking-tighter">YPP ENERGY</a>
-        <div class="space-x-12 flex font-bold uppercase text-sm tracking-widest items-center">
-            <a href="about.html" class="hidden md:inline-block hover:opacity-50 transition-opacity">About</a>
-            <a href="solutions.html" class="hidden md:inline-block hover:opacity-50 transition-opacity">Expertise</a>
-            <button id="open-menu" class="bg-white text-black px-4 py-1 rounded-full hover:bg-blue-600 hover:text-white transition-all">MORE</button>
-        </div>
-    </nav>
+    <div id="footer-placeholder"></div>
 
-    <!-- Content Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center p-8 md:p-16 pt-32">
-        <div class="reveal active text-center">
-            <h1 class="text-6xl md:text-8xl font-black mb-8 uppercase">COMMUNITY</h1>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto">YPP ENERGY의 커뮤니티 페이지입니다. 현재 콘텐츠 준비 중입니다.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="p-8 md:p-16 flex flex-col gap-12 bg-white">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <img src="logo/logo.png" alt="YPP ENERGY" class="h-10 w-auto">
-            <div class="text-sm text-gray-400">© 2025 ALL RIGHTS RESERVED.</div>
-        </div>
-    </footer>
-
+    <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function scrollTabs(direction) {
+            const container = document.getElementById('tabs-scroll-container');
+            const scrollAmount = 300;
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        function updateArrowVisibility() {
+            const container = document.getElementById('tabs-scroll-container');
+            const leftArrow = document.getElementById('tab-scroll-left');
+            const rightArrow = document.getElementById('tab-scroll-right');
+            
+            if (!container || !leftArrow || !rightArrow) return;
+
+            const isAtStart = container.scrollLeft <= 0;
+            const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 1;
+
+            leftArrow.style.display = isAtStart ? 'none' : 'block';
+            rightArrow.style.display = isAtEnd ? 'none' : 'block';
+        }
+
+        window.addEventListener('load', () => {
+            const container = document.getElementById('tabs-scroll-container');
+            if (container) {
+                container.addEventListener('scroll', updateArrowVisibility);
+                setTimeout(updateArrowVisibility, 100);
+            }
+        });
+
+        function showCommunitySection(sectionId) {
+            document.querySelectorAll('.community-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const targetSection = document.getElementById('sect-' + sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            const targetBtn = document.getElementById('btn-' + sectionId);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+            
+            setTimeout(() => {
+                window.dispatchEvent(new Event('scroll'));
+            }, 100);
+        }
+
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                showCommunitySection(hash);
+            }
+        });
+    </script>
 </body>
 </html>

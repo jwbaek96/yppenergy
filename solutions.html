@@ -43,18 +43,31 @@
             <div class="max-w-7xl mx-auto">
                 <h1 class="text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-12 reveal">SOLUTIONS.</h1>
                 
-                <!-- Local Tab Navigation Bar -->
-                <div class="tabs-container flex overflow-x-auto gap-8 md:gap-12 border-b border-gray-100 pb-4 reveal whitespace-nowrap">
-                    <button onclick="showSolutionSection('nuclear')" class="tab-btn active text-lg font-bold uppercase tracking-widest" id="btn-nuclear">원자력</button>
-                    <button onclick="showSolutionSection('combined')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-combined">복합화력</button>
-                    <button onclick="showSolutionSection('renewable')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-renewable">신재생에너지</button>
-                    <button onclick="showSolutionSection('hydrogen')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-hydrogen">그린수소/암모니아</button>
-                    <button onclick="showSolutionSection('substation')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-substation">변전소</button>
-                    <button onclick="showSolutionSection('bess')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-bess">BESS</button>
-                    <button onclick="showSolutionSection('datacenter')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-datacenter">데이터센터</button>
-                    <button onclick="showSolutionSection('valve')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-valve">콘트롤밸브</button>
-                    <button onclick="showSolutionSection('military')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-military">미군기지</button>
-                    <button onclick="showSolutionSection('smr')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-smr">SMR</button>
+                <!-- Local Tab Navigation Bar Wrapper -->
+                <div class="relative group reveal">
+                    <!-- Left Arrow -->
+                    <button onclick="scrollTabs('left')" class="absolute -left-6 md:-left-8 top-1/2 -translate-y-[calc(50%+12px)] z-10 bg-white/90 p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-50" id="tab-scroll-left" style="display: none;">
+                        <i class="fa-solid fa-chevron-left text-blue-800"></i>
+                    </button>
+                    
+                    <!-- Tab Container -->
+                    <div id="tabs-scroll-container" class="tabs-container flex overflow-x-auto gap-8 md:gap-12 border-b border-gray-100 pb-4 whitespace-nowrap scroll-smooth no-scrollbar">
+                        <button onclick="showSolutionSection('nuclear')" class="tab-btn active text-lg font-bold uppercase tracking-widest" id="btn-nuclear">원자력</button>
+                        <button onclick="showSolutionSection('combined')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-combined">복합화력</button>
+                        <button onclick="showSolutionSection('renewable')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-renewable">신재생에너지</button>
+                        <button onclick="showSolutionSection('hydrogen')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-hydrogen">그린수소/암모니아</button>
+                        <button onclick="showSolutionSection('substation')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-substation">변전소</button>
+                        <button onclick="showSolutionSection('bess')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-bess">BESS</button>
+                        <button onclick="showSolutionSection('datacenter')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-datacenter">데이터센터</button>
+                        <button onclick="showSolutionSection('valve')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-valve">콘트롤밸브</button>
+                        <button onclick="showSolutionSection('military')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-military">미군기지</button>
+                        <button onclick="showSolutionSection('smr')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-smr">SMR</button>
+                    </div>
+
+                    <!-- Right Arrow -->
+                    <button onclick="scrollTabs('right')" class="absolute -right-8 md:-right-8 top-1/2 -translate-y-[calc(50%+12px)] z-10 bg-white/90 p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-50" id="tab-scroll-right">
+                        <i class="fa-solid fa-chevron-right text-blue-800"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -94,7 +107,7 @@
                         </div>
                         <div class="reveal delay-200">
                             <div class="aspect-video bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl relative group">
-                                <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=1200" alt="Nuclear Power Plant" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1630142895963-6996ae6b3a5b?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nuclear Power Plant" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-500"></div>
                             </div>
                         </div>
@@ -412,7 +425,7 @@
                         </div>
                         <div class="reveal delay-200">
                             <div class="aspect-video bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1473081556163-2a17de81fc97?auto=format&fit=crop&q=80&w=1200" alt="Power Plant" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=1200" alt="Combined Cycle Power Plant" class="w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -536,10 +549,10 @@
                         <div class="reveal delay-200">
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="aspect-[3/4] bg-gray-100 rounded-3xl overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1509391366360-fe5bb65830bb?auto=format&fit=crop&q=80&w=600" alt="Solar" class="w-full h-full object-cover">
+                                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800" alt="Solar Panels" class="w-full h-full object-cover">
                                 </div>
                                 <div class="aspect-[3/4] bg-gray-100 rounded-3xl overflow-hidden mt-12">
-                                    <img src="https://images.unsplash.com/photo-1466611653911-95281773ad90?auto=format&fit=crop&q=80&w=600" alt="Wind" class="w-full h-full object-cover">
+                                    <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&q=80&w=800" alt="Wind Turbines" class="w-full h-full object-cover">
                                 </div>
                             </div>
                         </div>
@@ -975,7 +988,7 @@
                         </div>
                         <div class="reveal delay-200">
                             <div class="aspect-video bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl relative">
-                                <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1200" alt="Substation" class="w-full h-full object-cover">
+                                <img src="https://images.unsplash.com/photo-1509390144018-eeaf65052242?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Modern Electrical Substation" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-indigo-900/20"></div>
                             </div>
                         </div>
@@ -1114,7 +1127,7 @@
                         <div class="reveal delay-200">
                             <div class="relative group">
                                 <div class="aspect-square bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl">
-                                    <img src="https://images.unsplash.com/photo-1620714223084-8dfca6df732d?auto=format&fit=crop&q=80&w=1000" alt="BESS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                    <img src="https://media.istockphoto.com/id/2235162424/ko/%EC%82%AC%EC%A7%84/%EB%A7%91%EA%B3%A0-%ED%91%B8%EB%A5%B8-%ED%95%98%EB%8A%98-%EC%95%84%EB%9E%98-%EB%B0%B0%ED%84%B0%EB%A6%AC-%EC%97%90%EB%84%88%EC%A7%80-%EC%A0%80%EC%9E%A5-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EC%A1%B0%EA%B0%90%EB%8F%84.webp?a=1&b=1&s=612x612&w=0&k=20&c=bU7fQ7v_XpCWjnb_6amgNueN47ci9A-gEhDjjXwcGdg=" alt="BESS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 </div>
                                 <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
                             </div>
@@ -1233,7 +1246,7 @@
                         </div>
                         <div class="reveal delay-200">
                             <div class="aspect-square bg-gray-100 rounded-[4rem] overflow-hidden shadow-2xl relative">
-                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1200" alt="Data Center" class="w-full h-full object-cover">
+                                <img src="./assets/images/data-center_imgupscaler.ai_베타_2K.jpg" alt="Data Center" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/40 to-transparent"></div>
                             </div>
                         </div>
@@ -1393,7 +1406,7 @@
                         </div>
                         <div class="reveal delay-200">
                             <div class="aspect-square bg-gray-100 rounded-[4rem] overflow-hidden shadow-2xl relative">
-                                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200" alt="Control Valve" class="w-full h-full object-cover">
+                                <img src="./assets/images/Gemini_Generated_Image_2lj2op2lj2op2lj2_imgupscaler.ai_베타_2K.jpg" alt="Control Valve" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-transparent"></div>
                             </div>
                         </div>
@@ -1566,7 +1579,7 @@
                         <div class="reveal delay-200">
                             <div class="relative">
                                 <div class="aspect-video bg-slate-200 rounded-[3rem] overflow-hidden shadow-2xl">
-                                    <img src="https://images.unsplash.com/photo-1590674154471-c6ca0218503e?auto=format&fit=crop&q=80&w=1200" alt="Military Base" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                                    <img src="./assets/images/Gemini_Generated_Image_fjrkh8fjrkh8fjrk_imgupscaler.ai_베타_2K.jpg" alt="Military Base" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                                 </div>
                                 <div class="absolute -bottom-6 -right-6 bg-white p-8 rounded-3xl shadow-xl border border-slate-100 hidden md:block">
                                     <div class="flex items-center gap-4">
@@ -1779,7 +1792,7 @@
                         </div>
                         <div class="reveal delay-200">
                             <div class="aspect-video bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl relative group">
-                                <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&q=80&w=1200" alt="SMR Technology" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                                <img src="./assets/images/Gemini_Generated_Image_y4teniy4teniy4te.png" alt="SMR Technology" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <div class="text-center">
                                         <div class="text-purple-400 text-6xl mb-4"><i class="fa-solid fa-atom fa-spin-slow"></i></div>
@@ -1914,6 +1927,40 @@
     <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
     <script>
+        function scrollTabs(direction) {
+            const container = document.getElementById('tabs-scroll-container');
+            const scrollAmount = 300;
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Update arrow visibility based on scroll position
+        function updateArrowVisibility() {
+            const container = document.getElementById('tabs-scroll-container');
+            const leftArrow = document.getElementById('tab-scroll-left');
+            const rightArrow = document.getElementById('tab-scroll-right');
+            
+            if (!container || !leftArrow || !rightArrow) return;
+
+            const isAtStart = container.scrollLeft <= 0;
+            const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 1;
+
+            leftArrow.style.display = isAtStart ? 'none' : 'block';
+            rightArrow.style.display = isAtEnd ? 'none' : 'block';
+        }
+
+        window.addEventListener('load', () => {
+            const container = document.getElementById('tabs-scroll-container');
+            if (container) {
+                container.addEventListener('scroll', updateArrowVisibility);
+                // Initial check
+                setTimeout(updateArrowVisibility, 100);
+            }
+        });
+
         function showSolutionSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('.solution-section').forEach(section => {
@@ -1935,8 +1982,14 @@
             const targetBtn = document.getElementById('btn-' + sectionId);
             if (targetBtn) {
                 targetBtn.classList.add('active');
+                // Scroll tab into view if needed
+                targetBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
             
+            // Scroll to top of content area
+            const contentTop = document.getElementById('page-solutions').offsetTop;
+            window.scrollTo({ top: contentTop - 100, behavior: 'smooth' });
+
             // Trigger reveal animations
             setTimeout(() => {
                 window.dispatchEvent(new Event('scroll'));
@@ -1945,6 +1998,14 @@
 
         // Handle URL hash for direct linking to tabs
         window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                showSolutionSection(hash);
+            }
+        });
+
+        // Listen for hash changes (for when clicking menu links while already on the solutions page)
+        window.addEventListener('hashchange', () => {
             const hash = window.location.hash.replace('#', '');
             if (hash) {
                 showSolutionSection(hash);

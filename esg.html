@@ -7,71 +7,844 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .esg-section { display: none; }
+        .esg-section.active { display: block; }
+        .tab-btn { position: relative; opacity: 0.4; transition: all 0.3s ease; }
+        .tab-btn:hover { opacity: 1; color: #000; }
+        .tab-btn.active { opacity: 1; }
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .tab-btn.active::after { width: 100%; }
+        
+        /* Custom scrollbar for horizontal tabs on mobile */
+        .tabs-container::-webkit-scrollbar { display: none; }
+        .tabs-container { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 <body class="selection:bg-blue-600 selection:text-white">
 
-    <div class="custom-cursor hidden md:block" id="cursor"></div>
+    <div id="cursor-placeholder"></div>
+    <div id="menu-placeholder"></div>
+    <div id="nav-placeholder"></div>
 
-    <!-- Full Screen Menu Overlay -->
-    <div id="menu-overlay">
-        <div id="menu-bg-circle"></div>
-        <div id="menu-content" class="max-w-6xl mx-auto flex flex-col min-h-screen">
-            <button id="close-menu" class="fixed top-8 right-8 text-white text-xl font-bold uppercase tracking-widest hover:opacity-50 transition-opacity z-[300]">Close</button>
+    <!-- Page: ESG -->
+    <div id="page-esg" class="page-content">
+        <!-- Hero Header & Tab Navigation -->
+        <section class="pt-48 pb-10 px-8 md:px-16 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-12 reveal text-green-600">ESG.</h1>
+                
+                <!-- Local Tab Navigation Bar Wrapper -->
+                <div class="relative group reveal">
+                    <!-- Left Arrow -->
+                    <button onclick="scrollTabs('left')" class="absolute -left-6 md:-left-8 top-1/2 -translate-y-[calc(50%+12px)] z-10 bg-white/90 p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-50" id="tab-scroll-left" style="display: none;">
+                        <i class="fa-solid fa-chevron-left text-blue-800"></i>
+                    </button>
+                    
+                    <!-- Tab Container -->
+                    <div id="tabs-scroll-container" class="tabs-container flex overflow-x-auto gap-8 md:gap-12 border-b border-gray-100 pb-4 whitespace-nowrap scroll-smooth no-scrollbar">
+                        <button onclick="showESGSection('management')" class="tab-btn active text-lg font-bold uppercase tracking-widest" id="btn-management">경영</button>
+                        <button onclick="showESGSection('environmental')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-environmental">환경</button>
+                        <button onclick="showESGSection('social')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-social">사회</button>
+                        <button onclick="showESGSection('governance')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-governance">지배구조</button>
+                    </div>
+
+                    <!-- Right Arrow -->
+                    <button onclick="scrollTabs('right')" class="absolute -right-6 md:-right-8 top-1/2 -translate-y-[calc(50%+12px)] z-10 bg-white/90 p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-50" id="tab-scroll-right">
+                        <i class="fa-solid fa-chevron-right text-blue-800"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Content Container -->
+        <div class="min-h-[60vh]">
             
-            <div class="flex-grow flex flex-col gap-12 pt-12 pb-12">
-                <!-- Navigation -->
-                <div class="flex flex-col gap-6">
-                    <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Navigation</span>
-                    <div class="flex flex-col">
-                        <a href="index.html" class="menu-item menu-link">HOME</a>
-                        <a href="about.html" class="menu-item menu-link">ABOUT</a>
-                        <a href="solutions.html" class="menu-item menu-link">SOLUTIONS</a>
-                        <a href="community.html" class="menu-item menu-link">COMMUNITY</a>
-                        <a href="academy.html" class="menu-item menu-link">ACADEMY</a>
-                        <a href="esg.html" class="menu-item menu-link">ESG</a>
-                        <a href="contact.html" class="menu-item menu-link">CONTACT</a>
+            <!-- 1. Section: 경영 (Management) -->
+            <section id="sect-management" class="esg-section active py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-blue-800 font-bold tracking-widest uppercase mb-4">ESG Management</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">지속가능한 미래를 위한<br>YPP의 ESG 경영 비전</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                YPP는 에너지 기술 전문 기업으로서 사회적 책임을 다하고, 투명한 경영 체계를 구축하여 이해관계자와 함께 성장하는 지속가능한 미래를 만들어갑니다.
+                            </p>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-video bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200" alt="Management" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+                        <div class="bg-slate-50 p-12 rounded-[3rem] reveal">
+                            <h4 class="text-2xl font-black mb-6">ESG 비전</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">에너지 기술 혁신을 통한 친환경 가치 창출 및 사회적 책임 경영 실현</p>
+                        </div>
+                        <div class="bg-slate-50 p-12 rounded-[3rem] reveal delay-100">
+                            <h4 class="text-2xl font-black mb-6">핵심 가치</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">신뢰, 혁신, 상생을 바탕으로 한 지속가능한 비즈니스 모델 구축</p>
+                        </div>
+                        <div class="bg-slate-50 p-12 rounded-[3rem] reveal delay-200">
+                            <h4 class="text-2xl font-black mb-6">추진 전략</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">환경 경영 고도화, 사회적 가치 확산, 투명한 거버넌스 확립</p>
+                        </div>
+                    </div>
+
+                    <!-- ESG Management Charter -->
+                    <div class="bg-blue-50 rounded-[4rem] p-12 md:p-24 reveal">
+                        <div class="max-w-4xl mx-auto">
+                            <div class="text-center mb-16">
+                                <h3 class="text-blue-800 font-bold tracking-widest uppercase mb-6">ESG Management Charter</h3>
+                                <h2 class="text-4xl md:text-5xl font-black mb-10">YPP ENERGY ESG 경영 강령</h2>
+                                <p class="text-lg text-gray-600 leading-relaxed">
+                                    YPP ENERGY는 전력계통분야의 에너지 전문기업으로서 모든 이해관계자를 중시하는 경제, 환경, 사회, 인간측면의 지속가능 경영을 실천하여 기술로 국가와 사회에 공헌하는 글로벌 기업으로 도약하고자 ESG 경영 강령을 선언한다.
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                                <!-- Economy -->
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center font-bold">경</div>
+                                        <h4 class="text-2xl font-black">경제</h4>
+                                    </div>
+                                    <ul class="space-y-4 text-gray-600 text-sm leading-relaxed">
+                                        <li class="flex gap-3">
+                                            <span class="text-blue-800 font-bold">하나,</span>
+                                            <span>도전정신·책임감·전문성·창조력을 바탕으로 국내 및 글로벌 시장에서의 경쟁우위와 미래 성장동력을 확보하고 건실한 재무구조를 유지하여 기업가치를 제고한다.</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-blue-800 font-bold">하나,</span>
+                                            <span>투명 경영과 자율적 경영혁신을 실천하여 경영효율 수준을 국가 최고 수준으로 높여 나간다.</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-blue-800 font-bold">하나,</span>
+                                            <span>끊임없는 기술혁신을 통해 전력계통분야 핵심기술을 선점하고, 나아가 국가 에너지기술 발전을 선도한다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Environment -->
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">환</div>
+                                        <h4 class="text-2xl font-black">환경</h4>
+                                    </div>
+                                    <ul class="space-y-4 text-gray-600 text-sm leading-relaxed">
+                                        <li class="flex gap-3">
+                                            <span class="text-green-600 font-bold">하나,</span>
+                                            <span>환경보존과 생명존중의 체계적 실천을 통해 환경효율을 극대화하고 지속가능한 에너지 사업을 추진한다.</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-green-600 font-bold">하나,</span>
+                                            <span>제품 생산에서부터 판매까지 전 영역에 걸쳐 친환경화를 위해 노력한다.</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-green-600 font-bold">하나,</span>
+                                            <span>환경과 기후변화 이슈에 이해관계자와 공동으로 적극 대응하여 지구환경보전에 기여하고 미래세대의 환경가치를 높여 나간다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Social -->
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">사</div>
+                                        <h4 class="text-2xl font-black">사회</h4>
+                                    </div>
+                                    <ul class="space-y-4 text-gray-600 text-sm leading-relaxed">
+                                        <li class="flex gap-3">
+                                            <span class="text-orange-500 font-bold">하나,</span>
+                                            <span>인권헌장, 윤리헌장 및 윤리강령에 따라 업무를 공정하게 처리하고 이를 성실하게 공개하여 경영의 투명성을 높여 나간다.</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-orange-500 font-bold">하나,</span>
+                                            <span>모든 이해관계자들(임직원 및 고객사 등)과의 상생경영을 실천하여 동반성장을 추구한다.</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-orange-500 font-bold">하나,</span>
+                                            <span>모든 임직원이 함께하는 나눔 경영을 적극 실천해 사회적 책임을 다하고 신뢰받는 기업이 된다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Human Rights -->
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="w-10 h-10 bg-slate-700 text-white rounded-full flex items-center justify-center font-bold">인</div>
+                                        <h4 class="text-2xl font-black">인권</h4>
+                                    </div>
+                                    <ul class="space-y-4 text-gray-600 text-sm leading-relaxed">
+                                        <li class="flex gap-3">
+                                            <span class="text-slate-700 font-bold">하나,</span>
+                                            <span>UN, 국제노동기구 등 국제적으로 통용되는 인권, 노동, 반부패 등의 관련 국제기준 및 규범을 지지하고 준수한다.</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-slate-700 font-bold">하나,</span>
+                                            <span>임직원 및 이해관계자의 다양성 존중, 직장에서의 산업안전 및 보건 증진, 복지증진을 통해 고객과 임직원의 삶의 질을 지속적으로 높이기 위해 노력한다.</span>
+                                        </li>
+                                        <li class="flex gap-3">
+                                            <span class="text-slate-700 font-bold">하나,</span>
+                                            <span>미래지향적인 인재상을 정립하고 글로벌 인재를 체계적으로 양성하여 글로벌 기업으로서의 미래 대응능력을 높여 나간다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="text-center pt-12 border-t border-blue-100">
+                                <div class="text-2xl font-black tracking-widest text-blue-900 mb-2">2022. 04. 27</div>
+                                <div class="text-sm text-gray-400 uppercase tracking-widest">YPP ENERGY Co., Ltd.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Language Switcher in Menu (Bottom Position) -->
-            <div class="pb-12 pt-12 border-t border-white/10 flex items-center justify-between">
-                <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Region & Language</span>
-                <div class="flex gap-2">
-                    <button class="lang-btn active" onclick="toggleLang('KR')">KR</button>
-                    <button class="lang-btn inactive" onclick="toggleLang('EN')">EN</button>
+            <!-- 2. Section: 환경 (Environmental) -->
+            <section id="sect-environmental" class="esg-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-green-600 font-bold tracking-widest uppercase mb-4">Environmental</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">기후 위기 대응과<br>친환경 에너지 솔루션</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                탄소 중립 실현을 위해 에너지 효율을 극대화하고, 신재생 에너지 기술 개발을 통해 환경 영향을 최소화하는 친환경 경영을 실천합니다.
+                            </p>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-video bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200" alt="Environmental" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+                        <div class="group bg-white border border-gray-100 p-12 rounded-[3rem] hover:shadow-2xl transition-all reveal">
+                            <div class="text-green-600 text-4xl mb-6"><i class="fa-solid fa-leaf"></i></div>
+                            <h4 class="text-2xl font-black mb-4">탄소 중립 실천</h4>
+                            <p class="text-gray-500 leading-relaxed">사업장 내 에너지 소비 절감 및 재생 에너지 사용 확대를 통해 탄소 배출량을 단계적으로 감축합니다.</p>
+                        </div>
+                        <div class="group bg-white border border-gray-100 p-12 rounded-[3rem] hover:shadow-2xl transition-all reveal delay-200">
+                            <div class="text-green-600 text-4xl mb-6"><i class="fa-solid fa-recycle"></i></div>
+                            <h4 class="text-2xl font-black mb-4">자원 순환 및 관리</h4>
+                            <p class="text-gray-500 leading-relaxed">폐기물 발생을 최소화하고 재활용률을 높여 자원 순환 체계를 강화하며, 유해 물질 관리를 철저히 수행합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Environmental Management Policy -->
+                    <div class="bg-green-50 rounded-[4rem] p-12 md:p-24 reveal">
+                        <div class="max-w-4xl mx-auto">
+                            <div class="text-center mb-16">
+                                <h3 class="text-green-700 font-bold tracking-widest uppercase mb-6">Environmental Management Policy</h3>
+                                <h2 class="text-4xl md:text-5xl font-black mb-10">YPP ENERGY 환경경영방침</h2>
+                                <p class="text-lg text-gray-600 leading-relaxed">
+                                    우리 YPP ENERGY는 환경보전과 생명존중의 가치를 경영의 중심축으로 삼고, 지구 온난화 방지에 대한 노력을 기울이며, 기후변화에 적극적으로 대응하여 지속가능한 에너지 사업을 추진하기 위해 다음의 환경경영방침을 준수한다.
+                                </p>
+                            </div>
+
+                            <div class="bg-white rounded-[3rem] p-10 md:p-16 shadow-sm mb-16">
+                                <ul class="space-y-8">
+                                    <li class="flex items-start gap-6">
+                                        <div class="w-8 h-8 bg-green-600 text-white rounded-lg flex-shrink-0 flex items-center justify-center font-bold mt-1">01</div>
+                                        <p class="text-xl font-bold text-gray-800">환경법규 위반 및 환경사고 ZERO화</p>
+                                    </li>
+                                    <li class="flex items-start gap-6">
+                                        <div class="w-8 h-8 bg-green-600 text-white rounded-lg flex-shrink-0 flex items-center justify-center font-bold mt-1">02</div>
+                                        <p class="text-xl font-bold text-gray-800">에너지, 자원 등의 절약목표 설정 및 달성</p>
+                                    </li>
+                                    <li class="flex items-start gap-6">
+                                        <div class="w-8 h-8 bg-green-600 text-white rounded-lg flex-shrink-0 flex items-center justify-center font-bold mt-1">03</div>
+                                        <p class="text-xl font-bold text-gray-800">ISO 14001에 의한 환경경영시스템 운영 및 환경법규 준수</p>
+                                    </li>
+                                    <li class="flex items-start gap-6">
+                                        <div class="w-8 h-8 bg-green-600 text-white rounded-lg flex-shrink-0 flex items-center justify-center font-bold mt-1">04</div>
+                                        <p class="text-xl font-bold text-gray-800">에너지 사업영위로 인한 환경오염방지 및 제거</p>
+                                    </li>
+                                    <li class="flex items-start gap-6">
+                                        <div class="w-8 h-8 bg-green-600 text-white rounded-lg flex-shrink-0 flex items-center justify-center font-bold mt-1">05</div>
+                                        <p class="text-xl font-bold text-gray-800">환경과 기후변화에 관한 이해관계자의 견해반영 및 실행</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="text-center mb-16">
+                                <p class="text-gray-500 leading-relaxed italic">
+                                    이상의 환경경영방침은 대내외에 공포될 것이며, 회사의 모든 임직원 및 당사를 대신하여 업무를 수행하는 협력업체 임직원들은 이를 숙지하고 준수하여 환경의식을 고취, 환경경영활동에 적극적인 참여와 노력을 경주한다.
+                                </p>
+                            </div>
+
+                            <div class="text-center pt-12 border-t border-green-200">
+                                <div class="text-2xl font-black tracking-widest text-green-900 mb-2">2022. 04. 27</div>
+                                <div class="text-sm text-gray-400 uppercase tracking-widest">YPP ENERGY Co., Ltd.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- 3. Section: 사회 (Social) -->
+            <section id="sect-social" class="esg-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-orange-600 font-bold tracking-widest uppercase mb-4">Social</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">함께 성장하는 사회,<br>안전하고 행복한 일터</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                임직원의 안전과 인권을 존중하고, 지역사회와의 상생 협력을 통해 사회적 가치를 창출하며 모두가 행복한 사회를 만드는 데 기여합니다.
+                            </p>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-video bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200" alt="Social" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+                        <div class="bg-orange-50 p-10 rounded-[2.5rem] reveal">
+                            <h4 class="text-xl font-bold mb-4">안전 보건 경영</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">무재해 사업장 실현을 위해 안전 관리 시스템을 강화하고 정기적인 교육과 점검을 실시합니다.</p>
+                        </div>
+                        <div class="bg-orange-50 p-10 rounded-[2.5rem] reveal delay-100">
+                            <h4 class="text-xl font-bold mb-4">인재 육성 및 존중</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">다양성을 존중하는 조직 문화를 조성하고, 임직원의 역량 강화를 위한 다양한 교육 프로그램을 지원합니다.</p>
+                        </div>
+                        <div class="bg-orange-50 p-10 rounded-[2.5rem] reveal delay-200">
+                            <h4 class="text-xl font-bold mb-4">지역사회 상생</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">지역사회 발전을 위한 사회공헌 활동을 지속적으로 전개하고 파트너사와의 동반 성장을 추구합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Human Rights Charter -->
+                    <div class="bg-orange-50 rounded-[4rem] p-12 md:p-24 reveal mb-32">
+                        <div class="max-w-4xl mx-auto">
+                            <div class="text-center mb-16">
+                                <h3 class="text-orange-700 font-bold tracking-widest uppercase mb-6">Human Rights Charter</h3>
+                                <h2 class="text-4xl md:text-5xl font-black mb-10">YPP 인권 헌장</h2>
+                                <p class="text-lg text-gray-600 leading-relaxed">
+                                    우리 YPP는 모든 경영활동에서 사회적 책임을 다하고 인간의 존엄과 가치를 중시하는 인권경영을 적극 실천한다. 이를 위하여 우리는 임직원, 협력사, 고객, 지역사회에 대한 인권존중의 책무를 정의하고 다음과 같이 인권경영 이행을 선언한다.
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-6 mb-16">
+                                <div class="bg-white p-8 rounded-[2rem] shadow-sm">
+                                    <ul class="space-y-6 text-gray-600 text-sm leading-relaxed">
+                                        <li class="flex gap-4">
+                                            <span class="text-orange-600 font-bold flex-shrink-0">하나,</span>
+                                            <span>우리는 인권, 노동, 환경, 반부패 등의 가치를 지지하는 국제기준 및 규범을 지지하고 준수한다.</span>
+                                        </li>
+                                        <li class="flex gap-4">
+                                            <span class="text-orange-600 font-bold flex-shrink-0">하나,</span>
+                                            <span>우리는 인권침해를 사전에 예방하며, 구제를 위해 적극 노력한다.</span>
+                                        </li>
+                                        <li class="flex gap-4">
+                                            <span class="text-orange-600 font-bold flex-shrink-0">하나,</span>
+                                            <span>우리는 임직원을 포함한 이해관계자에 대하여 다양성을 존중하며 인종, 종교, 장애, 성별, 연령, 출생지, 정치적 견해 등을 이유로 차별하지 않는다.</span>
+                                        </li>
+                                        <li class="flex gap-4">
+                                            <span class="text-orange-600 font-bold flex-shrink-0">하나,</span>
+                                            <span>우리는 결사 및 단체교섭의 자유를 보장하고, 어떠한 형태라도 강제노동과 아동노동을 허용하지 않는다.</span>
+                                        </li>
+                                        <li class="flex gap-4">
+                                            <span class="text-orange-600 font-bold flex-shrink-0">하나,</span>
+                                            <span>우리는 국제노동기구에서 권하고 국가가 비준한 모든 노동원칙을 준수하며, 임직원을 포함한 이해관계들이 안전하게 근무할 수 있도록 산업안전 및 보건을 증진한다.</span>
+                                        </li>
+                                        <li class="flex gap-4">
+                                            <span class="text-orange-600 font-bold flex-shrink-0">하나,</span>
+                                            <span>우리는 책임 있는 공급망 관리를 위해 자회사 및 협력사와의 계약, 거래 및 모든 활동에서 공정하게 대우하며 인권경영을 실천할 수 있도록 노력한다.</span>
+                                        </li>
+                                        <li class="flex gap-4">
+                                            <span class="text-orange-600 font-bold flex-shrink-0">하나,</span>
+                                            <span>우리는 고객의 안전과 보건, 개인정보보호를 위해 노력한다.</span>
+                                        </li>
+                                        <li class="flex gap-4">
+                                            <span class="text-orange-600 font-bold flex-shrink-0">하나,</span>
+                                            <span>우리는 사업활동 지역에서 현지주민의 인권을 존중하고 보호한다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="text-center mb-16">
+                                <p class="text-gray-500 leading-relaxed italic">
+                                    이 같은 약속을 위해 우리는 임직원을 비롯한 모든 이해관계가 보편적 자유와 권리, 인간적 존엄성을 보장받으면서 지속가능한 발전을 할 수 있도록 함께 노력할 것을 다짐 한다.
+                                </p>
+                            </div>
+
+                            <div class="text-center pt-12 border-t border-orange-200">
+                                <div class="text-2xl font-black tracking-widest text-orange-900 mb-2">2022. 04. 26</div>
+                                <div class="text-sm text-gray-400 uppercase tracking-widest">YPP ENERGY Co., Ltd.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Contribution -->
+                    <div class="reveal">
+                        <div class="text-center mb-20">
+                            <h3 class="text-orange-600 font-bold tracking-widest uppercase mb-4">Social Contribution</h3>
+                            <h2 class="text-4xl font-black mb-8">사회공헌</h2>
+                            <p class="text-gray-500 max-w-3xl mx-auto leading-relaxed">
+                                YPP는 기관 사회복지시설과 현장관람을 통한 기부와 지원사업으로 취약계층에 대한 보호와 자립을 돕고 있으며, 국가기관 전략산업을 선도함으로써 전기/전력분야의 청년 인재양성과 산업체 인재 개발에 기여하고 있습니다.
+                            </p>
+                        </div>
+
+                        <div class="relative max-w-4xl mx-auto">
+                            <!-- Timeline Line -->
+                            <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-orange-200 -translate-x-1/2 hidden md:block"></div>
+
+                            <div class="space-y-12">
+                                <!-- 2021 -->
+                                <div class="relative flex flex-col md:flex-row items-center">
+                                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                        <h4 class="text-3xl font-black text-orange-600">2021</h4>
+                                    </div>
+                                    <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-orange-600 rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                                    <div class="md:w-1/2 md:pl-12">
+                                        <ul class="space-y-2 text-gray-600 text-sm">
+                                            <li>• 따뜻한 겨울나기 성금 금천구청 기부</li>
+                                            <li>• 우수인력 확보와 기술 확산을 위한 인턴십 사업-인하대, 단국대</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- 2017~2020 -->
+                                <div class="relative flex flex-col md:flex-row items-center">
+                                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                        <h4 class="text-3xl font-black text-orange-600">2017~2020</h4>
+                                    </div>
+                                    <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-orange-600 rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                                    <div class="md:w-1/2 md:pl-12">
+                                        <ul class="space-y-2 text-gray-600 text-sm">
+                                            <li>• 전력계 인재 양성과 취업역량 강화 - 경기과학대, 대림대, 인천대, 연성대</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- 2013 -->
+                                <div class="relative flex flex-col md:flex-row items-center">
+                                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                        <h4 class="text-3xl font-black text-orange-600">2013</h4>
+                                    </div>
+                                    <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-orange-600 rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                                    <div class="md:w-1/2 md:pl-12">
+                                        <ul class="space-y-2 text-gray-600 text-sm">
+                                            <li>• 문화와 본질 활동을 위한 문화유산연구원 기부</li>
+                                            <li>• 금천구청 여성비전 분야 우수자 시상 및 장학사업 기여</li>
+                                            <li>• 금천구청 여성비전 동계봉사팀 지원사업 후원</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- 2012 -->
+                                <div class="relative flex flex-col md:flex-row items-center">
+                                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                        <h4 class="text-3xl font-black text-orange-600">2012</h4>
+                                    </div>
+                                    <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-orange-600 rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                                    <div class="md:w-1/2 md:pl-12">
+                                        <ul class="space-y-2 text-gray-600 text-sm">
+                                            <li>• 전력계통 기술분야 인재교육 및 고급기술 교육과정 설립</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- 2008 -->
+                                <div class="relative flex flex-col md:flex-row items-center">
+                                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                                        <h4 class="text-3xl font-black text-orange-600">2008</h4>
+                                    </div>
+                                    <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-orange-600 rounded-full -translate-x-1/2 z-10 hidden md:block"></div>
+                                    <div class="md:w-1/2 md:pl-12">
+                                        <ul class="space-y-2 text-gray-600 text-sm">
+                                            <li>• 고객사와의 인적자원 육성 및 특화 인력 양성, 전력계통 기술 전문가 양성반 개설</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Section: 지배구조 (Governance) -->
+            <section id="sect-governance" class="esg-section py-20 px-8 md:px-16">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center">
+                        <div class="reveal">
+                            <h3 class="text-blue-900 font-bold tracking-widest uppercase mb-4">Governance</h3>
+                            <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8">투명하고 공정한<br>지배구조 확립</h2>
+                            <p class="text-xl text-gray-500 font-light leading-relaxed mb-10">
+                                윤리 경영을 바탕으로 투명한 의사결정 체계를 구축하고, 법규 준수 및 리스크 관리를 통해 기업의 신뢰도를 높여갑니다.
+                            </p>
+                        </div>
+                        <div class="reveal delay-200">
+                            <div class="aspect-video bg-gray-100 rounded-[3rem] overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200" alt="Governance" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 윤리강령/윤리헌장 -->
+                    <div class="mb-32 reveal">
+                        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                            <div>
+                                <h3 class="text-4xl font-black text-blue-900 mb-4">윤리강령 / 윤리헌장</h3>
+                                <p class="text-gray-500">투명성·합리성·이타성을 바탕으로 한 합법적·윤리적인 정도 경영</p>
+                            </div>
+                        </div>
+
+                        <!-- 윤리헌장 -->
+                        <div class="bg-blue-50 rounded-[2rem] p-8 md:p-12 mb-16 border border-blue-100">
+                            <h4 class="text-2xl font-bold text-blue-900 mb-6 flex items-center">
+                                <i class="fa-solid fa-scroll mr-3"></i> YPP 윤리 헌장
+                            </h4>
+                            <p class="text-gray-700 leading-relaxed text-lg">
+                                우리 YPP는 윤리경영을 바탕으로 투명 경영, 준법과 손님에 대한 봉사정신을 경영의 가치로 삼아, 다함께 발전하는 미래지향적 경영과 창의적 학습이 기업성장의 원동력이 됨을 실천하고자 한다. 윤리경영은 투명, 공정, 신뢰, 책임의 가치관을 바탕으로 임직원 상호간의 약속과 고객과의 신뢰를 최우선 가치로 삼고, 회사의 명예와 품위를 유지하며, 회사의 이익을 우선으로 한다. 임직원은 회사의 자산을 보호하고, 사적인 이익을 위해 사용하지 않으며, 직무와 관련하여 금품, 향응, 접대 등을 받지 않는다. 임직원은 회사의 비밀을 보호하고, 외부에 유출하지 않으며, 상사에 대한 예의를 갖추고, 조직의 질서를 존중한다. 임직원은 회사의 전통과 문화를 계승·발전시키며, 윤리강령을 숙지하고, 이를 성실히 실천한다. 임직원은 윤리강령에 위반되는 행위를 발견한 경우 즉시 보고한다.
+                            </p>
+                        </div>
+
+                        <!-- 윤리강령 -->
+                        <div class="space-y-8">
+                            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+                                <h4 class="text-2xl font-black text-blue-900 mb-8 pb-4 border-b border-gray-100">YPP 윤리 강령</h4>
+                                
+                                <div class="mb-12">
+                                    <h5 class="text-xl font-bold text-blue-700 mb-4">제 1장 총칙</h5>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        우리는 위대한 기업의 구현을 위해 주주 측면에서 '우량기업'으로 종업원 측면에서 '좋은 직장'으로 고객 및 사회적 측면에서 '신뢰받는 기업'으로 성장하고 발전할 수 있도록 투명성·합리성·이타성을 바탕으로 하여 합법적·윤리적인 정도 경영을 추구한다. 이에 모든 임직원이 지켜야 할 올바른 가치판단의 기준과 행동원칙이 되는 윤리강령을 제정하고 이를 철저히 실천한다.
+                                    </p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                    <!-- 제2장 -->
+                                    <div>
+                                        <h5 class="text-lg font-bold text-blue-700 mb-4">제2장 고객에 대한 책임과 의무</h5>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제1조 고객 최우선 경영</h6>
+                                                <p class="text-sm text-gray-600">신의와 성실을 바탕으로 고객의 신뢰를 얻을 수 있도록 끊임없이 노력한다. 항상 고객의 입장에서 생각하고 행동하며, 고객을 위한 봉사자세를 견지함으로써 고객 만족을 실천한다.</p>
+                                            </div>
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제2조 고객의 권익보호 및 가치 증대</h6>
+                                                <p class="text-sm text-gray-600">고객의 불만이나 제안을 적극 수용하고, 민원 및 분쟁은 적절하게 해결할 수 있는 투명하고 효과적인 절차를 마련한다. 고객 관련 정보는 사전 동의 없이 외부에 유출하지 않는다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 제3장 -->
+                                    <div>
+                                        <h5 class="text-lg font-bold text-blue-700 mb-4">제3장 주주에 대한 책임과 의무</h5>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제3조 주주의 신뢰 확보</h6>
+                                                <p class="text-sm text-gray-600">책임경영체제를 구축하며 경영의사 결정 시 필요한 절차를 준수함으로써 주주의 신뢰를 확보하고 모든 주주에게 공평한 의결권을 부여한다.</p>
+                                            </div>
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제4조 주주의 권익 존중 및 가치 극대화</h6>
+                                                <p class="text-sm text-gray-600">주주의 정당한 요구를 존중하며, 주주의 권익과 투자가치를 적극 보호한다. 기업가치에 상응하는 시장의 평가를 받기 위해 적극적인 IR 활동을 전개한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 제4장 -->
+                                    <div>
+                                        <h5 class="text-lg font-bold text-blue-700 mb-4">제4장 임직원에 대한 책임과 의무</h5>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제5조 개인 존중</h6>
+                                                <p class="text-sm text-gray-600">개개인을 하나의 독립된 인격체로 대하며, 근로자의 권리를 존중하고 회사의 가장 소중한 자산으로 여긴다. 주인의식과 자긍심을 가지고 일할 수 있는 근무환경을 조성한다.</p>
+                                            </div>
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제6조 공정한 대우</h6>
+                                                <p class="text-sm text-gray-600">고용·업무·승진 등에 있어 국적, 인종, 성별, 종교 등을 이유로 차별하지 않는다. 개인의 능력과 성과에 대한 공정한 평가와 합리적인 보상을 시행한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 제5장 -->
+                                    <div>
+                                        <h5 class="text-lg font-bold text-blue-700 mb-4">제5장 지역사회 및 국가에 대한 책임과 의무</h5>
+                                        <div class="space-y-4">
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제7조 정치 및 자선단체의 기부금</h6>
+                                                <p class="text-sm text-gray-600">개개인을 하나의 독립된 인격체로 대하며, 근로자의 권리를 존중하고 회사의 가장 소중한 자산으로 여긴다.</p>
+                                            </div>
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제8조 공정 거래질서 확립을 위한 법규준수</h6>
+                                                <p class="text-sm text-gray-600">OECD 뇌물방지협약, 독점규제 및 공정거래법, 부패방지법 등 국내외 부패 관련 법규를 준수하며 공정한 경쟁질서 확립에 기여한다.</p>
+                                            </div>
+                                            <div>
+                                                <h6 class="font-bold text-gray-800 mb-1">제9조 기업의 사회적 책임 수행</h6>
+                                                <p class="text-sm text-gray-600">사회적 가치·관습·문화를 존중하고 환경보호를 위해 기업시민으로서 사회적 책임과 역할을 다한다. 국가 및 지역의 조세 법규를 준수한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-12 pt-12 border-t border-gray-100">
+                                    <h5 class="text-xl font-bold text-blue-700 mb-6">제6장 임직원의 기본윤리</h5>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-600">
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제10조 기업이념의 공감</span>
+                                            회사의 기업이념을 공감하고, 직무 수행 시 이를 최우선 원칙으로 삼는다.
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제11조 직무 기본윤리</span>
+                                            정직과 성실로 임하며, 개인의 사적인 이득 때문에 윤리에 어긋나는 행동을 하지 않는다.
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제12조 회사 재산의 보호</span>
+                                            회사의 모든 재산, 지식재산권은 개인의 목적을 위해 사용하지 않는다.
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제13조 타업 종사 금지</span>
+                                            회사의 승인 없이는 다른 사업체에 특별한 직위를 가지지 않는다.
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제14조 불공정거래 금지</span>
+                                            내부정보를 허가 없이 유출하거나 개인적인 주식거래 등에 활용하지 않는다.
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제15조 기밀 및 보안 유지</span>
+                                            회사의 기밀·정보 및 기록은 관계자 이외에는 반드시 적절하게 보안이 유지되어야 한다.
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제17조 금품 제공 금지</span>
+                                            업무수행 중에 금품 등을 제3자에게 직접 또는 간접적으로 제공하지 않는다.
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제18조 금품 수수 금지</span>
+                                            업무수행 중에 자신 또는 타인을 위해 선물이나 기타 금품 사례를 요구하거나 받지 않는다.
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-xl">
+                                            <span class="font-bold text-blue-900 block mb-2">제22조 위반 사례 보고</span>
+                                            윤리강령 위반 사례를 발견한 경우 즉시 보고하고 철저히 실천한다.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-12 p-6 bg-red-50 rounded-2xl border border-red-100">
+                                    <h5 class="text-lg font-bold text-red-700 mb-2">별첨. 세부징계</h5>
+                                    <p class="text-sm text-red-600">이 강령의 제17조, 제18조 및 기타 조항을 위반하는 경우 윤리강령 세부징계 기준에 의해 징계한다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 협력사 ESG 행동규범 -->
+                    <div class="mb-32 reveal">
+                        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                            <div>
+                                <h3 class="text-4xl font-black text-blue-900 mb-4">협력사 ESG 행동규범</h3>
+                                <p class="text-gray-500">지속가능한 공급망 구축을 위한 협력사 가이드라인 (2024. 11. 08 제정)</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- 1. 노동/인권 -->
+                            <div class="bg-white p-8 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-gray-100 hover:border-blue-200 transition-colors">
+                                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-users text-blue-600 text-2xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-4">1. 노동 / 인권</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm">
+                                    <li><span class="font-bold text-blue-600 mr-2">1.1</span> 차별금지 및 괴롭힘 없는 환경</li>
+                                    <li><span class="font-bold text-blue-600 mr-2">1.2</span> 자발적 근로 (강제노동 금지)</li>
+                                    <li><span class="font-bold text-blue-600 mr-2">1.3</span> 법정 근로연령 준수 (아동노동 금지)</li>
+                                    <li><span class="font-bold text-blue-600 mr-2">1.4</span> 인도적 대우 및 가혹행위 금지</li>
+                                </ul>
+                            </div>
+
+                            <!-- 2. 환경 -->
+                            <div class="bg-white p-8 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-gray-100 hover:border-blue-200 transition-colors">
+                                <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-leaf text-green-600 text-2xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-4">2. 환경</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm">
+                                    <li><span class="font-bold text-green-600 mr-2">2.1</span> 환경 인허가 취득 및 유지</li>
+                                    <li><span class="font-bold text-green-600 mr-2">2.2</span> 오염예방 및 자원 사용 최소화</li>
+                                    <li><span class="font-bold text-green-600 mr-2">2.3</span> 환경 관련 법률 및 규정 준수</li>
+                                </ul>
+                            </div>
+
+                            <!-- 3. 분쟁광물 -->
+                            <div class="bg-white p-8 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-gray-100 hover:border-blue-200 transition-colors">
+                                <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-gem text-amber-600 text-2xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-4">3. 분쟁광물</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm">
+                                    <li><span class="font-bold text-amber-600 mr-2">3.1</span> 분쟁광물(3TG) 사용 금지</li>
+                                    <li class="text-xs text-gray-400 leading-tight">※ 콩고민주공화국 등 10개국 무장세력 자금원 광물 조달 금지</li>
+                                </ul>
+                            </div>
+
+                            <!-- 4. 안전/보건 -->
+                            <div class="bg-white p-8 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-gray-100 hover:border-blue-200 transition-colors">
+                                <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-shield-heart text-red-600 text-2xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-4">4. 안전 / 보건</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm">
+                                    <li><span class="font-bold text-red-600 mr-2">4.1</span> 산업안전 위험 요소 제거</li>
+                                    <li><span class="font-bold text-red-600 mr-2">4.2</span> 육체노동/근골격계 위험 통제</li>
+                                    <li><span class="font-bold text-red-600 mr-2">4.3</span> 기계안전 및 화학물질 관리</li>
+                                </ul>
+                            </div>
+
+                            <!-- 5. 윤리 -->
+                            <div class="bg-white p-8 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-gray-100 hover:border-blue-200 transition-colors">
+                                <div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6">
+                                    <i class="fa-solid fa-scale-balanced text-indigo-600 text-2xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-4">5. 윤리</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm">
+                                    <li><span class="font-bold text-indigo-600 mr-2">5.1</span> 비즈니스 청렴성 및 법규 준수</li>
+                                    <li><span class="font-bold text-indigo-600 mr-2">5.2</span> 신분보호 및 보복금지</li>
+                                    <li><span class="font-bold text-indigo-600 mr-2">5.3</span> 부당이익(뇌물, 횡령) 금지</li>
+                                    <li><span class="font-bold text-indigo-600 mr-2">5.4</span> 고객가치 및 품질 유지</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 부패 및 비윤리신고 (신문고) -->
+                    <div class="reveal">
+                        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white overflow-hidden relative">
+                            <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 -skew-x-12 translate-x-1/2"></div>
+                            
+                            <div class="relative z-10">
+                                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                                    <div class="md:w-2/3">
+                                        <h3 class="text-3xl md:text-4xl font-black mb-6">부패 및 비윤리 신고 (신문고)</h3>
+                                        <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                                            YPP는 깨끗한 경영을 위해 비리 및 부정에 관련된 의견을 수렴하고 있습니다.<br>
+                                            익명성이 보장되며, 제보자의 신분은 철저히 보호됩니다.
+                                        </p>
+                                        
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                                                <span class="text-gray-300 text-sm">부정청탁, 금품 등 수수행위</span>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                                                <span class="text-gray-300 text-sm">직원 부패 / 비위 행위</span>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                                                <span class="text-gray-300 text-sm">허위/부실공사, 회계 부정</span>
+                                            </div>
+                                            <div class="flex items-start space-x-3">
+                                                <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                                                <span class="text-gray-300 text-sm">공사계약, 자재납품 관련 비리</span>
+                                            </div>
+                                        </div>
+
+                                        <a href="#" class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all transform hover:scale-105">
+                                            신고하기 <i class="fa-solid fa-arrow-right ml-2"></i>
+                                        </a>
+                                    </div>
+                                    <div class="md:w-1/3 flex justify-center">
+                                        <div class="w-48 h-48 bg-white/5 rounded-full flex items-center justify-center border border-white/10">
+                                            <i class="fa-solid fa-bullhorn text-7xl text-blue-500"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-[100] mix-blend-difference text-white p-8 flex justify-between items-center"
-    style="background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
-        <a href="index.html" class="text-2xl font-black tracking-tighter">YPP ENERGY</a>
-        <div class="space-x-12 flex font-bold uppercase text-sm tracking-widest items-center">
-            <a href="about.html" class="hidden md:inline-block hover:opacity-50 transition-opacity">About</a>
-            <a href="solutions.html" class="hidden md:inline-block hover:opacity-50 transition-opacity">Expertise</a>
-            <button id="open-menu" class="bg-white text-black px-4 py-1 rounded-full hover:bg-blue-600 hover:text-white transition-all">MORE</button>
-        </div>
-    </nav>
+    <div id="footer-placeholder"></div>
 
-    <!-- Content Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center p-8 md:p-16 pt-32">
-        <div class="reveal active text-center">
-            <h1 class="text-6xl md:text-8xl font-black mb-8 uppercase">ESG</h1>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto">YPP ENERGY의 ESG 경영 페이지입니다. 현재 콘텐츠 준비 중입니다.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="p-8 md:p-16 flex flex-col gap-12 bg-white">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <img src="logo/logo.png" alt="YPP ENERGY" class="h-10 w-auto">
-            <div class="text-sm text-gray-400">© 2025 ALL RIGHTS RESERVED.</div>
-        </div>
-    </footer>
-
+    <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function scrollTabs(direction) {
+            const container = document.getElementById('tabs-scroll-container');
+            const scrollAmount = 300;
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Update arrow visibility based on scroll position
+        function updateArrowVisibility() {
+            const container = document.getElementById('tabs-scroll-container');
+            const leftArrow = document.getElementById('tab-scroll-left');
+            const rightArrow = document.getElementById('tab-scroll-right');
+            
+            if (!container || !leftArrow || !rightArrow) return;
+
+            const isAtStart = container.scrollLeft <= 0;
+            const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 1;
+
+            leftArrow.style.display = isAtStart ? 'none' : 'block';
+            rightArrow.style.display = isAtEnd ? 'none' : 'block';
+        }
+
+        window.addEventListener('load', () => {
+            const container = document.getElementById('tabs-scroll-container');
+            if (container) {
+                container.addEventListener('scroll', updateArrowVisibility);
+                // Initial check
+                setTimeout(updateArrowVisibility, 100);
+            }
+        });
+
+        function showESGSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.esg-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show target section
+            const targetSection = document.getElementById('sect-' + sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Activate target button
+            const targetBtn = document.getElementById('btn-' + sectionId);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+            
+            // Trigger reveal animations
+            setTimeout(() => {
+                window.dispatchEvent(new Event('scroll'));
+            }, 100);
+        }
+
+        // Handle URL hash for direct linking to tabs
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                showESGSection(hash);
+            }
+        });
+    </script>
 </body>
 </html>

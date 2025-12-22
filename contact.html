@@ -10,68 +10,260 @@
 </head>
 <body class="selection:bg-blue-600 selection:text-white">
 
-    <div class="custom-cursor hidden md:block" id="cursor"></div>
+    <div id="cursor-placeholder"></div>
+    <div id="menu-placeholder"></div>
+    <div id="nav-placeholder"></div>
 
-    <!-- Full Screen Menu Overlay -->
-    <div id="menu-overlay">
-        <div id="menu-bg-circle"></div>
-        <div id="menu-content" class="max-w-6xl mx-auto flex flex-col min-h-screen">
-            <button id="close-menu" class="fixed top-8 right-8 text-white text-xl font-bold uppercase tracking-widest hover:opacity-50 transition-opacity z-[300]">Close</button>
-            
-            <div class="flex-grow flex flex-col gap-12 pt-12 pb-12">
-                <!-- Navigation -->
-                <div class="flex flex-col gap-6">
-                    <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Navigation</span>
-                    <div class="flex flex-col">
-                        <a href="index.html" class="menu-item menu-link">HOME</a>
-                        <a href="about.html" class="menu-item menu-link">ABOUT</a>
-                        <a href="solutions.html" class="menu-item menu-link">SOLUTIONS</a>
-                        <a href="community.html" class="menu-item menu-link">COMMUNITY</a>
-                        <a href="academy.html" class="menu-item menu-link">ACADEMY</a>
-                        <a href="esg.html" class="menu-item menu-link">ESG</a>
-                        <a href="contact.html" class="menu-item menu-link">CONTACT</a>
+    <!-- Content Section -->
+    <section class="pt-48 pb-32 px-8 md:px-16 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24 reveal">
+                <h1 class="text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-12">CONTACT.</h1>
+                <p class="text-xl text-gray-500 font-light max-w-2xl leading-relaxed">
+                    YPP ENERGY는 고객의 목소리에 귀를 기울입니다. <br class="hidden md:block">
+                    사업 협력, 기술 지원, 채용 등 궁금한 점을 남겨주세요.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <!-- Left: Inquiry Form -->
+                <div class="reveal">
+                    <h2 class="text-4xl font-black mb-12 flex items-center">
+                        문의하기 <span class="ml-4 w-12 h-1 bg-blue-600"></span>
+                    </h2>
+                    
+                    <form action="#" class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="relative">
+                                <input type="text" id="name" class="peer w-full border-b-2 border-gray-200 py-4 focus:border-blue-600 outline-none transition-colors bg-transparent" placeholder=" ">
+                                <label for="name" class="absolute left-0 top-4 text-gray-400 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">성함 / 담당자명</label>
+                            </div>
+                            <div class="relative">
+                                <input type="email" id="email" class="peer w-full border-b-2 border-gray-200 py-4 focus:border-blue-600 outline-none transition-colors bg-transparent" placeholder=" ">
+                                <label for="email" class="absolute left-0 top-4 text-gray-400 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">이메일 주소</label>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <select id="category" class="peer w-full border-b-2 border-gray-200 py-4 focus:border-blue-600 outline-none transition-colors bg-transparent appearance-none">
+                                <option value="" disabled selected></option>
+                                <option value="project">프로젝트 & 사업 협력</option>
+                                <option value="tech">기술 지원 & O&M</option>
+                                <option value="partner">협력사 등록 문의</option>
+                                <option value="recruit">채용 문의</option>
+                                <option value="other">기타 문의</option>
+                            </select>
+                            <label for="category" class="absolute left-0 top-4 text-gray-400 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-600 peer-valid:-top-4 peer-valid:text-xs">문의 유형</label>
+                            <div class="absolute right-0 top-6 pointer-events-none">
+                                <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <textarea id="message" rows="5" class="peer w-full border-b-2 border-gray-200 py-4 focus:border-blue-600 outline-none transition-colors bg-transparent resize-none" placeholder=" "></textarea>
+                            <label for="message" class="absolute left-0 top-4 text-gray-400 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-600 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs">문의 내용</label>
+                        </div>
+
+                        <div class="flex items-center gap-4 py-4">
+                            <input type="checkbox" id="privacy" class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                            <label for="privacy" class="text-sm text-gray-500">개인정보 수집 및 이용에 동의합니다. <a href="#" class="underline ml-2">약관보기</a></label>
+                        </div>
+
+                        <button type="submit" class="group relative inline-flex items-center justify-center px-12 py-5 bg-black text-white font-bold rounded-full overflow-hidden transition-all hover:bg-blue-600">
+                            <span class="relative z-10">문의 보내기</span>
+                            <i class="fa-solid fa-paper-plane ml-3 relative z-10 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </form>
+
+                    <div class="mt-24 grid grid-cols-1 sm:grid-cols-2 gap-12">
+                        <div>
+                            <h4 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">Office</h4>
+                            <p class="text-gray-900 font-medium leading-relaxed">
+                                서울특별시 금천구 가산디지털1로 181<br>
+                                가산 W센터 18층
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">Contact</h4>
+                            <p class="text-gray-900 font-medium leading-relaxed">
+                                T. 02-2103-5114<br>
+                                E. info@yppenergy.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: FAQ -->
+                <div class="reveal delay-200">
+                    <h2 class="text-4xl font-black mb-12 flex items-center">
+                        자주 묻는 질문 <span class="ml-4 w-12 h-1 bg-gray-200"></span>
+                    </h2>
+
+                    <div class="space-y-4">
+                        <!-- Category 1 -->
+                        <div class="mb-8">
+                            <h3 class="text-sm font-bold text-blue-600 mb-4 px-4">1. 프로젝트 & 사업영역</h3>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">YPP의 대표 프로젝트는 무엇인가요?</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        <ul class="space-y-2">
+                                            <li>• <strong>카자흐스탄 Green Energy Complex:</strong> 연간 75,000톤 그린수소, 310,000톤 그린암모니아 생산, 2GW 재생에너지 기반</li>
+                                            <li>• <strong>국내 원자력 발전소:</strong> 신한울 3·4호기, 신고리 1~6호기, 한빛·한울·고리·신월성 전기·계측·제어 시스템 납품</li>
+                                            <li>• <strong>설비 개선 & 예비품 공급:</strong> 현장 제어반, 전원공급기, 변류기(Q-Class), GCB, UR, O&M 서비스</li>
+                                            <li>• <strong>해외 원전 프로젝트:</strong> 튀르키예 Akkuyu, 이집트 El-Dabaa, UAE BNPP, 체코·루마니아·헝가리 신규 원전 및 SMR 진출 준비</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 2 -->
+                        <div class="mb-8">
+                            <h3 class="text-sm font-bold text-blue-600 mb-4 px-4">2. 기술 & 품질</h3>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">YPP의 원자력 품질시스템의 기준은 무엇인가요?</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        KEPIC QAP와 ISO 19443을 기준으로 수립, 운영되고 있습니다.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">O&M(운영·정비) 서비스 범위는 어디까지인가요?</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        설치·시운전부터 정기점검, 고장 진단·수리, 성능 개선, 예비품 공급까지 전 과정을 지원합니다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 3 -->
+                        <div class="mb-8">
+                            <h3 class="text-sm font-bold text-blue-600 mb-4 px-4">3. 글로벌 협력 & 투자</h3>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">해외 프로젝트 파트너쉽 절차</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        EPC사·부품공급사·투자사는 '사업협력 문의' 채널로 제안서를 제출하면, 전문 부서에서 검토 후 연락드립니다.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">YPP의 해외 네트워크는 어떻게 되나요?</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        GE, 삼성물산, 글로벌 발전사, 각국 정부 투자청 등과 전략적 협력 관계를 유지합니다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 4 -->
+                        <div class="mb-8">
+                            <h3 class="text-sm font-bold text-blue-600 mb-4 px-4">4. 고객 & 공급업체 지원</h3>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">YPP 협력사 등록 절차는 어떻게 되나요?</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        1. 협력사 등록 신청 → 2) 품질·재무·기술 심사 → 3) 승인 후 전용 포털 접근<br>
+                                        (교육 자료, 기술 사양서, 프로젝트 문서 제공)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">해외 현장 기술 지원은 어떻게 받나요?</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        프로젝트 전담 PM 또는 기술지원팀이 신속히 응답하며, 긴급 시 엔지니어를 현장 파견합니다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 5 -->
+                        <div class="mb-8">
+                            <h3 class="text-sm font-bold text-blue-600 mb-4 px-4">5. 채용 & 인재</h3>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">해외 프로젝트 인재 채용은 어떻게 진행되나요?</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        '인재채용' 메뉴에 공고가 게시되며, 프로젝트별 어학·전문기술 및 기타 요건이 명시됩니다.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden mb-2">
+                                <button class="faq-trigger w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                                    <span class="font-bold text-gray-900">YPP에서 어떤 글로벌 경험을 쌓을 수 있나요?</span>
+                                    <i class="fa-solid fa-plus text-xs text-gray-400 transition-transform duration-300"></i>
+                                </button>
+                                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50">
+                                    <div class="p-6 pt-3 text-gray-600 text-sm leading-relaxed">
+                                        해외 플랜트, 그린에너지 설비 구축, 국제 협력 프로젝트 참여 경험을 제공합니다.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Language Switcher in Menu (Bottom Position) -->
-            <div class="pb-12 pt-12 border-t border-white/10 flex items-center justify-between">
-                <span class="text-white/40 font-bold uppercase tracking-widest text-xs">Region & Language</span>
-                <div class="flex gap-2">
-                    <button class="lang-btn active" onclick="toggleLang('KR')">KR</button>
-                    <button class="lang-btn inactive" onclick="toggleLang('EN')">EN</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-[100] mix-blend-difference text-white p-8 flex justify-between items-center"
-    style="background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px);">
-        <a href="index.html" class="text-2xl font-black tracking-tighter">YPP ENERGY</a>
-        <div class="space-x-12 flex font-bold uppercase text-sm tracking-widest items-center">
-            <a href="about.html" class="hidden md:inline-block hover:opacity-50 transition-opacity">About</a>
-            <a href="solutions.html" class="hidden md:inline-block hover:opacity-50 transition-opacity">Expertise</a>
-            <button id="open-menu" class="bg-white text-black px-4 py-1 rounded-full hover:bg-blue-600 hover:text-white transition-all">MORE</button>
-        </div>
-    </nav>
-
-    <!-- Content Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center p-8 md:p-16 pt-32">
-        <div class="reveal active text-center">
-            <h1 class="text-6xl md:text-8xl font-black mb-8 uppercase">CONTACT</h1>
-            <p class="text-xl text-gray-500 max-w-2xl mx-auto">YPP ENERGY의 문의하기 페이지입니다. 현재 콘텐츠 준비 중입니다.</p>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="p-8 md:p-16 flex flex-col gap-12 bg-white">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <img src="logo/logo.png" alt="YPP ENERGY" class="h-10 w-auto">
-            <div class="text-sm text-gray-400">© 2025 ALL RIGHTS RESERVED.</div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const content = trigger.nextElementSibling;
+                const icon = trigger.querySelector('i');
+                
+                // Close other items
+                document.querySelectorAll('.faq-content').forEach(item => {
+                    if (item !== content) {
+                        item.style.maxHeight = null;
+                        item.previousElementSibling.querySelector('i').classList.replace('fa-minus', 'fa-plus');
+                    }
+                });
+
+                // Toggle current item
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.replace('fa-minus', 'fa-plus');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.classList.replace('fa-plus', 'fa-minus');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
