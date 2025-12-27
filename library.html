@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRARY | YPP ENERGY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <div id="cursor-placeholder"></div>
+    <div id="menu-placeholder"></div>
+    <div id="nav-placeholder"></div>
+
+    <!-- Page: LIBRARY -->
+    <div id="page-library" class="page-content">
+        <!-- Hero Header -->
+        <section class="pt-48 pb-10 px-8 md:px-16 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-8 reveal">LIBRARY.</h1>
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-gray-100 pb-8 reveal">
+                    <p class="text-xl text-gray-500 font-light max-w-2xl">
+                        YPP ENERGY의 기술 리포트, 제품 브로슈어 및 교육 자료를 자유롭게 열람하고 다운로드하실 수 있습니다.
+                    </p>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative w-full md:w-96">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" placeholder="자료 검색..." class="w-full pl-12 pr-4 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-blue-500/20 transition-all text-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="py-20 px-8 md:px-16 bg-white min-h-[60vh]">
+            <div class="max-w-7xl mx-auto">
+                
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap gap-4 mb-12 reveal">
+                    <button class="px-8 py-3 bg-black text-white text-sm font-bold rounded-full">전체</button>
+                    <button class="px-8 py-3 bg-gray-50 text-gray-500 text-sm font-bold rounded-full hover:bg-gray-100 transition-all">기술리포트</button>
+                    <button class="px-8 py-3 bg-gray-50 text-gray-500 text-sm font-bold rounded-full hover:bg-gray-100 transition-all">제품브로슈어</button>
+                    <button class="px-8 py-3 bg-gray-50 text-gray-500 text-sm font-bold rounded-full hover:bg-gray-100 transition-all">교육자료</button>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Item 1 -->
+                    <div class="group bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 reveal">
+                        <div class="flex flex-col h-full">
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center group-hover:bg-red-500 transition-colors duration-500">
+                                    <i class="fa-solid fa-file-pdf text-2xl text-red-500 group-hover:text-white"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">2025.12.20</span>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-lg mb-4 uppercase tracking-wider">교육자료</span>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">2025 릴레이스쿨 정규과정 교재</h3>
+                                <p class="text-gray-500 font-light leading-relaxed">보호계전기 기초 및 전력계통 보호협조 실무 교육을 위한 통합 교재입니다.</p>
+                            </div>
+
+                            <div class="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
+                                <span class="text-xs text-gray-400 font-medium">12.4 MB</span>
+                                <a href="#" class="flex items-center gap-3 text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                    <span>DOWNLOAD</span>
+                                    <i class="fa-solid fa-arrow-down-long"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="group bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 reveal delay-100">
+                        <div class="flex flex-col h-full">
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center group-hover:bg-red-500 transition-colors duration-500">
+                                    <i class="fa-solid fa-file-pdf text-2xl text-red-500 group-hover:text-white"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">2025.11.15</span>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-lg mb-4 uppercase tracking-wider">기술리포트</span>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">디지털 변전소 IEC 61850 가이드</h3>
+                                <p class="text-gray-500 font-light leading-relaxed">디지털 변전소 시스템 설계 및 운영을 위한 IEC 61850 표준 기술 가이드라인입니다.</p>
+                            </div>
+
+                            <div class="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
+                                <span class="text-xs text-gray-400 font-medium">8.2 MB</span>
+                                <a href="#" class="flex items-center gap-3 text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                    <span>DOWNLOAD</span>
+                                    <i class="fa-solid fa-arrow-down-long"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="group bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 reveal delay-200">
+                        <div class="flex flex-col h-full">
+                            <div class="flex items-center justify-between mb-8">
+                                <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center group-hover:bg-red-500 transition-colors duration-500">
+                                    <i class="fa-solid fa-file-pdf text-2xl text-red-500 group-hover:text-white"></i>
+                                </div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">2025.10.05</span>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-lg mb-4 uppercase tracking-wider">제품브로슈어</span>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">YPP BESS 솔루션 카탈로그</h3>
+                                <p class="text-gray-500 font-light leading-relaxed">에너지 저장 장치(BESS)의 주요 사양 및 설치 사례를 포함한 종합 카탈로그입니다.</p>
+                            </div>
+
+                            <div class="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
+                                <span class="text-xs text-gray-400 font-medium">15.7 MB</span>
+                                <a href="#" class="flex items-center gap-3 text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                    <span>DOWNLOAD</span>
+                                    <i class="fa-solid fa-arrow-down-long"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

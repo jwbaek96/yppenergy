@@ -1,0 +1,104 @@
+<!-- Search Floating Button -->
+<button id="open-search" class="fixed bottom-24 right-8 w-12 h-12 bg-white text-gray-900 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center justify-center transition-all duration-300 z-[100] hover:bg-blue-600 hover:text-white hover:scale-110 group">
+    <i class="fa-solid fa-magnifying-glass group-hover:rotate-12 transition-transform"></i>
+</button>
+
+<!-- Search Modal Overlay -->
+<div id="search-modal" class="fixed inset-0 z-[10000] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500">
+    <!-- Backdrop -->
+    <div id="search-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-xl"></div>
+    
+    <!-- Modal Content -->
+    <div class="relative w-full max-w-2xl mx-4 transform scale-95 transition-all duration-500" id="search-container">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden">
+            <!-- Search Header -->
+            <div class="p-8 border-b border-gray-100">
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-magnifying-glass text-2xl text-blue-600"></i>
+                    <input type="text" id="search-input" placeholder="무엇을 찾으시나요?" class="w-full text-2xl font-bold border-none focus:ring-0 placeholder:text-gray-300" autocomplete="off">
+                    <button id="close-search" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                        <i class="fa-solid fa-xmark text-xl text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Results (Placeholder) -->
+            <div class="max-h-[60vh] overflow-y-auto p-8 custom-scrollbar">
+                <div id="search-results-info" class="mb-6">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Quick Links</span>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Sample Quick Links -->
+                    <a href="solutions.html" class="flex items-center justify-between p-4 rounded-2xl hover:bg-blue-50 transition-all group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center group-hover:bg-white transition-colors">
+                                <i class="fa-solid fa-bolt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Solutions</h4>
+                                <p class="text-xs text-gray-500">YPP의 핵심 에너지 솔루션 확인</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-300 group-hover:text-blue-600 transition-colors"></i>
+                    </a>
+
+                    <a href="library.html" class="flex items-center justify-between p-4 rounded-2xl hover:bg-blue-50 transition-all group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center group-hover:bg-white transition-colors">
+                                <i class="fa-solid fa-book text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Library</h4>
+                                <p class="text-xs text-gray-500">기술 자료 및 브로슈어 다운로드</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-300 group-hover:text-blue-600 transition-colors"></i>
+                    </a>
+
+                    <a href="about.html" class="flex items-center justify-between p-4 rounded-2xl hover:bg-blue-50 transition-all group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center group-hover:bg-white transition-colors">
+                                <i class="fa-solid fa-building text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">About Us</h4>
+                                <p class="text-xs text-gray-500">YPP ENERGY 기업 정보</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-300 group-hover:text-blue-600 transition-colors"></i>
+                    </a>
+                </div>
+
+                <!-- No Results State (Hidden by default) -->
+                <div id="no-results" class="hidden py-12 text-center">
+                    <i class="fa-solid fa-face-frown text-4xl text-gray-200 mb-4"></i>
+                    <p class="text-gray-500">검색 결과가 없습니다.</p>
+                </div>
+            </div>
+
+            <!-- Search Footer -->
+            <div class="p-6 bg-gray-50 flex justify-between items-center">
+                <div class="flex gap-4">
+                    <div class="flex items-center gap-2">
+                        <kbd class="px-2 py-1 bg-white border border-gray-200 rounded text-[10px] font-bold text-gray-400 shadow-sm">ESC</kbd>
+                        <span class="text-[10px] text-gray-400 font-bold uppercase">Close</span>
+                    </div>
+                </div>
+                <div class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">
+                    Powered by YPP Search
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #search-modal.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    #search-modal.active #search-container {
+        transform: scale(1);
+    }
+</style>

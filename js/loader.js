@@ -4,8 +4,14 @@
  */
 
 async function loadComponent(id, path) {
-    const element = document.getElementById(id);
-    if (!element) return;
+    let element = document.getElementById(id);
+    
+    // If placeholder doesn't exist, create it and append to body
+    if (!element) {
+        element = document.createElement('div');
+        element.id = id;
+        document.body.appendChild(element);
+    }
 
     try {
         const response = await fetch(path);
@@ -23,7 +29,9 @@ async function initApp() {
         loadComponent('cursor-placeholder', 'components/cursor.html'),
         loadComponent('menu-placeholder', 'components/menu.html'),
         loadComponent('nav-placeholder', 'components/nav.html'),
-        loadComponent('footer-placeholder', 'components/footer.html')
+        loadComponent('footer-placeholder', 'components/footer.html'),
+        loadComponent('scroll-top-placeholder', 'components/scroll-top.html'),
+        loadComponent('search-ui-placeholder', 'components/search-ui.html')
     ]);
 
     // Initialize UI logic after components are loaded
