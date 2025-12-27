@@ -6,7 +6,9 @@
     --brand-blue: #0022ff;
     --bg-white: #ffffff;
 }
-
+html{
+    /* overflow-y: hidden; */
+}
 body {
     font-family: 'Inter', 'Noto Sans KR', sans-serif;
     background-color: var(--bg-white);
@@ -246,7 +248,7 @@ body {
 }
 .tab-btn {
     position: relative;
-    color: #ccc;
+    color: #a2a2a2;
     transition: color 0.3s ease;
 }
 .tab-btn.active {
