@@ -7,6 +7,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-section { display: none; }
+        .about-section.active { display: block; }
+        .tab-btn { position: relative; opacity: 0.4; transition: all 0.3s ease; }
+        .tab-btn:hover { opacity: 1; color: #000; }
+        .tab-btn.active { opacity: 1; }
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .tab-btn.active::after { width: 100%; }
+        
+        /* Custom scrollbar for horizontal tabs on mobile */
+        .tabs-container::-webkit-scrollbar { display: none; }
+        .tabs-container { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 <body class="selection:bg-blue-600 selection:text-white">
 
@@ -19,16 +41,29 @@
         <!-- Hero Header & Tab Navigation -->
         <section class="pt-48 pb-10 px-8 md:px-16 bg-white">
             <div class="max-w-7xl mx-auto">
-                <h1 class="text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-8 reveal">ABOUT US.</h1>
+                <h1 class="text-5xl sm:text-7xl md:text-[9rem] font-black leading-[0.8] tracking-tighter mb-8 reveal">ABOUT US.</h1>
                 
-                <!-- Local Tab Navigation Bar -->
-                <div class="flex flex-wrap gap-8 md:gap-16 border-b border-gray-100 pb-4 reveal">
-                    <button onclick="showAboutSection('greeting')" class="tab-btn active text-lg font-bold uppercase tracking-widest" id="btn-greeting">Greeting</button>
-                    <button onclick="showAboutSection('history')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-history">History</button>
-                    <button onclick="showAboutSection('partners')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-partners">Partners</button>
-                    <button onclick="showAboutSection('certs')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-certs">Certifications</button>
-                    <button onclick="showAboutSection('culture')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-culture">Culture</button>
-                    <button onclick="showAboutSection('rnd')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-rnd">R&D Center</button>
+                <!-- Local Tab Navigation Bar Wrapper -->
+                <div class="relative group reveal">
+                    <!-- Left Arrow -->
+                    <button onclick="scrollTabs('left')" class="absolute -left-6 md:-left-8 top-1/2 -translate-y-[calc(50%+12px)] z-10 bg-white/90 p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-50" id="tab-scroll-left" style="display: none;">
+                        <i class="fa-solid fa-chevron-left text-blue-800"></i>
+                    </button>
+                    
+                    <!-- Tab Container -->
+                    <div id="tabs-scroll-container" class="tabs-container flex overflow-x-auto gap-8 md:gap-16 border-b border-gray-100 pb-4 whitespace-nowrap scroll-smooth no-scrollbar">
+                        <button onclick="showAboutSection('greeting')" class="tab-btn active text-lg font-bold uppercase tracking-widest" id="btn-greeting">Greeting</button>
+                        <button onclick="showAboutSection('history')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-history">History</button>
+                        <button onclick="showAboutSection('partners')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-partners">Partners</button>
+                        <button onclick="showAboutSection('certs')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-certs">Certifications</button>
+                        <button onclick="showAboutSection('culture')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-culture">Culture</button>
+                        <button onclick="showAboutSection('rnd')" class="tab-btn text-lg font-bold uppercase tracking-widest" id="btn-rnd">R&D Center</button>
+                    </div>
+
+                    <!-- Right Arrow -->
+                    <button onclick="scrollTabs('right')" class="absolute -right-8 md:-right-8 top-1/2 -translate-y-[calc(50%+12px)] z-10 bg-white/90 p-2 rounded-full shadow-lg opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-50" id="tab-scroll-right">
+                        <i class="fa-solid fa-chevron-right text-blue-800"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -815,6 +850,40 @@
     </div>
 
     <script>
+        function scrollTabs(direction) {
+            const container = document.getElementById('tabs-scroll-container');
+            const scrollAmount = 300;
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Update arrow visibility based on scroll position
+        function updateArrowVisibility() {
+            const container = document.getElementById('tabs-scroll-container');
+            const leftArrow = document.getElementById('tab-scroll-left');
+            const rightArrow = document.getElementById('tab-scroll-right');
+            
+            if (!container || !leftArrow || !rightArrow) return;
+
+            const isAtStart = container.scrollLeft <= 0;
+            const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 1;
+
+            leftArrow.style.display = isAtStart ? 'none' : 'block';
+            rightArrow.style.display = isAtEnd ? 'none' : 'block';
+        }
+
+        window.addEventListener('load', () => {
+            const container = document.getElementById('tabs-scroll-container');
+            if (container) {
+                container.addEventListener('scroll', updateArrowVisibility);
+                // Initial check
+                setTimeout(updateArrowVisibility, 100);
+            }
+        });
+
         /**
          * About 페이지 내부의 탭 전환을 관리하는 함수
          * @param {string} sectionId - 전환하고자 하는 섹션의 키워드 ('greeting', 'history', etc.)
@@ -838,6 +907,9 @@
                 targetSection.classList.add('active');
                 targetBtn.classList.add('active');
                 
+                // Scroll tab into view if needed
+                targetBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
                 // 탭 전환 후 등장 애니메이션 재실행을 위해 스크롤 이벤트 강제 트리거
                 window.dispatchEvent(new Event('scroll'));
             }
